@@ -180,6 +180,10 @@ legend{
     border: hidden;
 }
 
+.hsText:focus{
+    outline:none;
+}
+
 .hsBtn{
     width: 40px;
     height: 40px;
