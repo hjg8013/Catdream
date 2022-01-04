@@ -143,11 +143,12 @@ legend{
 
 .hUtil li a:before {
     content: '';
+    display:inline-block;
     position: absolute;
     background-color: #F38281;
     height: 2px;
     width: 0;
-    bottom: -10px;
+    bottom: -6px;
     transition: 0.5s;
     left: 50%;
     transform: translateX(-50%);
