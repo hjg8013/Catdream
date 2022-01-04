@@ -14,7 +14,7 @@
                         <li><a href="">화장실</a></li>
                         <li><a href="">생활용품</a></li>
                         <li><a href="">장난감</a></li>
-                        <li><a href="/board.html">공지사항</a></li>
+                        <li><a href="/board">공지사항</a></li>  <!-- 이거도 html 작성한거 지움 -->
                     </ul>
                 </nav> <!--.pc_gnb-->
                 <div class="hUtil">
