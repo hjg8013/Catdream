@@ -14,13 +14,13 @@
                         <li><a href="">화장실</a></li>
                         <li><a href="">생활용품</a></li>
                         <li><a href="">장난감</a></li>
-                        <li><a href="./board.html">공지사항</a></li>
+                        <li><a href="/board.html">공지사항</a></li>
                     </ul>
                 </nav> <!--.pc_gnb-->
                 <div class="hUtil">
                     <ul>
-                        <li class="point"><a href="./member.html">회원가입</a></li>
-                        <li><a href="./login.html">로그인</a></li>
+                        <li class="point"><a href="/member.html">회원가입</a></li>
+                        <li><a href="/login.html">로그인</a></li>
                         <li><a href="">고객센터</a></li>
                     </ul>
                 </div> <!--.pc_util-->
