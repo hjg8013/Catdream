@@ -54,7 +54,7 @@ legend{
 }
 
 #header{
-    height: 160px;
+    height: 200px;
     background-color: #FEFAEC;
     border-bottom: 2px solid #f38281;
 }
@@ -62,7 +62,6 @@ legend{
 #headerIn{
     position: relative;
     width: 1200px;
-    height: 160px;
     margin: 0 auto;
     box-sizing: border-box;
 }
@@ -83,8 +82,8 @@ legend{
 
 .hGnb{
     position: absolute;
-    top: 125px;
-    left: 150px;
+    top: 135px;
+    left: 130px;
     font-weight: 700;
 }
 
@@ -92,23 +91,69 @@ legend{
     display: flex;
 }
 
-.hGnb li{
-    margin-right: 50px;
+.hGnb>ul>li{
+    margin-right: 10px;
+    padding: 23px;
 }
 
-.hGnb li a{
+.hGnb ul li a{
     font-size: 16px;
     color: #555;
 }
 
-.hGnb li a:hover{  
+.hGnb>ul>li>a:hover{  
     color: #E16954;
 }
+
+.hGnb .feed2{
+    
+}
+
+.hGnb .feed2:hover .feed2Div{
+    display: block;
+}
+
+.hGnb .feed2Div{
+    display:none;
+}
+.hGnb .feed2 .feed2Detail{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    position: absolute;
+    top: 100%;
+    left: -130px;
+    width: 1100px;
+    height: 250px;
+    background-color: #ffffff;
+    z-index: 100;
+    padding: 50px 50px;
+    border-left: 1px solid #f38281;
+    border-right: 1px solid #f38281;
+    border-bottom: 1px solid #f38281;
+}
+
+.hGnb .feed2 .feed2Detail li{
+    /* background-color: cadetblue; */
+    /* border: 1px red solid; */
+    text-align: center;
+    width: 200px;
+    height: 50px;
+    margin-bottom: 10px;
+}
+
+.hGnb .feed2 .feed2Detail li:hover{
+    text-decoration: underline;
+}
+
+.hGnb .feed2 .feed2Detail li a{
+}
+
 
 
 .hUtil{
     position: absolute;
-    top: 10px;
+    top: 20px;
     right: 0;
 }
 
@@ -143,8 +188,8 @@ legend{
 
 .hUtil li a:before {
     content: '';
-    display:inline-block;
     position: absolute;
+    display: inline-block;
     background-color: #F38281;
     height: 2px;
     width: 0;
@@ -159,7 +204,7 @@ legend{
 
 .hSearch{
     position: absolute;
-    top: 65px;
+    top: 80px;
     left: 50%;
     margin-left: -270px;
     width: 500px;
@@ -182,7 +227,7 @@ legend{
 }
 
 .hsText:focus{
-    outline:none;
+	outline:none;
 }
 
 .hsBtn{
@@ -201,7 +246,7 @@ legend{
 .hIcons{
     display: flex;
     position: absolute;
-    top: 90px;
+    top: 120px;
     right: 0;
 }
 
