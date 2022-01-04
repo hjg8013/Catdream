@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 
-
+		<!-- 위에주석 -->
         <header id="header">
             <div id="headerIn">
                 <h1 class="logo">
