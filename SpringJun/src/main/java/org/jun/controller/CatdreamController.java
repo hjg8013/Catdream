@@ -45,5 +45,7 @@ public class CatdreamController {
 		return "catdream/boardDetail";
 	}
 	   
+	
+	//보이나?
 	   
 }
