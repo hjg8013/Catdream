@@ -19,8 +19,8 @@
                 </nav> <!--.pc_gnb-->
                 <div class="hUtil">
                     <ul>
-                        <li class="point"><a href="/member.html">회원가입</a></li>
-                        <li><a href="/login.html">로그인</a></li>
+                        <li class="point"><a href="/member">회원가입</a></li>
+                        <li><a href="/login">로그인</a></li>
                         <li><a href="">고객센터</a></li>
                     </ul>
                 </div> <!--.pc_util-->
