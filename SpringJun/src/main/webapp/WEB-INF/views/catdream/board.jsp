@@ -5,7 +5,7 @@
 <head>
     <meta charset="UTF-8">
     <title>공지사항</title>
-    <link rel="icon" href="./img/logo.png" type="resources/img/x-icon">
+    <link rel="icon" href="resources/img/logo.png" type="resources/img/x-icon">
     <link rel="stylesheet" href="resources/css/badStyle.css">
     <link rel="stylesheet" href="resources/css/header.css">
     <link rel="stylesheet" href="resources/css/footer.css">
