@@ -10,6 +10,7 @@
 <title>Insert title here</title>
 </head>
 <body>
+<div id="wrap">
 <%@ include file="header.jsp" %>
  <div id="container">
             <div class="row1">
@@ -170,5 +171,6 @@
 
         </div> <!--#container-->
 <%@ include file="footer.jsp" %>
+</div>
 </body>
 </html>
