@@ -101,6 +101,11 @@ legend{
     color: #555;
 }
 
+.hGnb li a:hover{  
+    color: #E16954;
+}
+
+
 .hUtil{
     position: absolute;
     top: 10px;
