@@ -44,7 +44,7 @@ public class CatdreamController {
 		logger.info("catdream 실행됨."); // console 역할
 		return "catdream/boardDetail";
 	}
-	   
+	
 	
 	//보이나?
 	// 나도 한거같아
