@@ -13,7 +13,7 @@
 <body>
 
 	<div id="wrap">
-		<%@ include file="header.jsp" %>
+		<%@ include file="../header.jsp" %>
 
 	    <div id="container">
 	        <div id="containerIn">
@@ -63,7 +63,7 @@
 
 
 
-		<%@ include file="footer.jsp" %>
+		<%@ include file="../footer.jsp" %>
 
     </div>
 </body>
