@@ -9,6 +9,8 @@ public interface BoardMapper {
 	
 	public BoardDTO detail(BoardDTO bdto);
 	
+	public void cntupdate(BoardDTO board);
+	
 	public void modify(BoardDTO bdto);
 	
 	public ArrayList<BoardDTO> list();

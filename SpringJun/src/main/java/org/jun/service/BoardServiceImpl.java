@@ -20,7 +20,7 @@ public class BoardServiceImpl implements BoardService{
 	}
 	
 	public BoardDTO detail(BoardDTO bdto) {
-		
+		bmapper.cntupdate(bdto);
 		return bmapper.detail(bdto);
 	}
 	
