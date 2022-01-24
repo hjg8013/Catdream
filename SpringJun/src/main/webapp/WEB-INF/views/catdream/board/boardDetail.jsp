@@ -45,7 +45,7 @@
 		            <a class="btn" id="btnDelete">글 삭제</a>
 		        </div>
 		    </div>
-		</div>
+		</div> <!-- wrap 끝 -->
 		<%@ include file="../footer.jsp" %>
 	</div>
 </body>

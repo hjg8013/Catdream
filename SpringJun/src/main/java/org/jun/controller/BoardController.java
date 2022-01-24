@@ -23,6 +23,12 @@ public class BoardController {
 		return "catdream/board/write";
 	}
 	
+	@PostMapping("write")
+	public String writePost() {
+		
+		return "redirect:/board/board";
+	}
+	
 	
 	//게시판 목록 리스트에서 제목을 클릭하면
 	@GetMapping("boardDetail")
