@@ -87,7 +87,7 @@
 								</li>
 							</c:if>
 						</ul>
-					</div>
+					</div> 
 
 
 				</form>
