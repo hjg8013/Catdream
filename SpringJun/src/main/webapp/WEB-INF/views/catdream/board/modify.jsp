@@ -20,13 +20,13 @@
 	                <div class="title">
 	                    <label for="title">글 제목</label>
 	                    <div class="titleBox">
-	                        <input type="text" name="title" id="title">
+	                        <input type="text" name="title" id="title" value="${detail.title}">
 	                    </div>
 	                </div>
 	                <div class="content">
 	                    <label for="content">글 내용</label>
 	                    <div class="contentBox">
-	                        <textarea name="content" id="content" cols="75" rows="20"></textarea>
+	                        <textarea name="content" id="content" cols="75" rows="20">${detail.content}</textarea>
 	                    </div>
 	                </div>
 	                <div>
