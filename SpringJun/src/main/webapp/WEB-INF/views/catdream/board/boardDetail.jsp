@@ -41,7 +41,8 @@
 		        </div>
 		        <div class="bottom">
 		            <a href="/board" class="btn" id="btnList">목록보기</a>
-		            <a class="btn" id="btnWrite">글쓰기</a>
+		            <a href="/board/modify" class="btn" id="btnWrite">글 수정</a>
+		            <a class="btn" id="btnDelete">글 삭제</a>
 		        </div>
 		    </div>
 		</div>

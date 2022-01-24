@@ -92,3 +92,29 @@ ul,ol{
     text-align: right;
     margin-right: 30px;
 }
+
+.btn{
+  display: inline-block;
+  margin:20px;
+  width: 80px;
+  height: 30px;
+  text-align: center;
+  line-height: 30px;
+  height: 30px;
+  font-size: 16px;
+  color: #333;
+}
+
+.btn:hover{
+  cursor: pointer;
+  font-weight: 700;
+}
+
+#btnList{
+  background-color: #f3b7b6b7;
+}
+
+#btnWrite, #btnDelete{
+  background-color:#f38381;
+  margin-left: 10px;
+}

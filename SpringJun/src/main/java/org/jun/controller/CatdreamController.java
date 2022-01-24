@@ -45,6 +45,12 @@ public class CatdreamController {
 		return "catdream/board/boardDetail";
 	}
 	
+	@RequestMapping(value = "/board/modify", method = RequestMethod.GET)
+	public String modify() {
+		logger.info("catdream 실행됨."); // console 역할
+		return "catdream/board/modify";
+	}
+	
 	
 	//보이나?
 	// 나도 한거같아

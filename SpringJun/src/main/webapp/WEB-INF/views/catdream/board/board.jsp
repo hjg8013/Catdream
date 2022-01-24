@@ -56,8 +56,8 @@
 	                        <p class="check">2545</p>
 	                    </li>
 	                </ul>
+	                <a href="/board/write" class="btn" id="btnWrite">글 쓰기</a>
 	            </div> <!--.board-->
-	
 	        </div>  <!--#containerIn-->
 	    </div> <!--#container-->
 

@@ -80,7 +80,7 @@
   background-color: #f3b7b6b7;
 }
 
-#btnWrite{
+#btnWrite, #btnDelete{
   background-color:#f38381;
   margin-left: 10px;
 }
