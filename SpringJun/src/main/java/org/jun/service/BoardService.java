@@ -1,5 +1,8 @@
 package org.jun.service;
 
-public interface BoardService {
+import org.jun.domain.BoardDTO;
 
+public interface BoardService {
+	
+	public void write(BoardDTO bdto);
 }

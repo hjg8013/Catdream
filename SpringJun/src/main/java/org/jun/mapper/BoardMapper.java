@@ -1,5 +1,7 @@
 package org.jun.mapper;
 
-public interface BoardMapper {
+import org.jun.domain.BoardDTO;
 
+public interface BoardMapper {
+	public void write(BoardDTO bdto);
 }

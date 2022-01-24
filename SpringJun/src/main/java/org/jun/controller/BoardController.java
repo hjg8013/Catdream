@@ -1,5 +1,8 @@
 package org.jun.controller;
 
+import org.jun.domain.BoardDTO;
+import org.jun.service.BoardService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -8,7 +11,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 @RequestMapping("board")
 public class BoardController {
-
+	
+	@Autowired
+	private BoardService bservice;
+	
 	//게시판 목록 리스트
 	@GetMapping("board")
 	public String list() {
@@ -24,7 +30,9 @@ public class BoardController {
 	}
 	
 	@PostMapping("write")
-	public String writePost() {
+	public String writePost(BoardDTO bdto) {
+		
+		bservice.write(bdto);
 		
 		return "redirect:/board/board";
 	}
