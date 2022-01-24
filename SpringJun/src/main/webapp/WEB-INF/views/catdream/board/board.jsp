@@ -52,7 +52,6 @@
 		</div>
 		<!--#container-->
 		<%@ include file="../footer.jsp"%>
-
-	</div>
+	</div> <!-- #wrap -->
 </body>
 </html>
