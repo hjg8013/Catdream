@@ -19,7 +19,8 @@ public class BoardController {
 	
 	//게시판 목록 리스트
 	@GetMapping("board")
-	public String list() {
+	public String list(Model model) {
+		model.addAttribute("list",bservice.list());
 		return "catdream/board/board";
 	}
 	
