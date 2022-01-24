@@ -12,7 +12,7 @@
 <link rel="stylesheet" href="/resources/css/header.css">
 <link rel="stylesheet" href="/resources/css/footer.css">
 <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script type="text/javascript" src="../resources/js/list.js"></script>
+<script type="text/javascript" src="../resources/js/board.js"></script>
 </head>
 <body>
 
@@ -77,7 +77,7 @@
 
 							<c:forEach var="num" begin="${pageMaker.startPage}"
 								end="${pageMaker.endPage}">
-								<li class="paginate_button"><a href="/board/board/${num}">${num}</a></li>
+								<li class="paginate_button"><a href="${num}">${num}</a></li>
 							</c:forEach>
 
 							<c:if test="${pageMaker.next}">

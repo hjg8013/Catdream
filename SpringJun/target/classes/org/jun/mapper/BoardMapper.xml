@@ -8,9 +8,6 @@
 	insert into board(writer,title,content)
 	values(#{writer},#{title},#{content})
 </insert>
-<select id="list" resultType="org.jun.domain.BoardDTO">
-	select * from board
-</select>
 <select id="detail" resultType="org.jun.domain.BoardDTO">
 	select * from board
 	where bno=#{bno}
@@ -57,7 +54,6 @@
 	   <![CDATA[
 		where rownum > (#{pageNum}-1)*#{amount} and rownum <= #{pageNum}*#{amount}
 		]]>
-
 
 </select>
 

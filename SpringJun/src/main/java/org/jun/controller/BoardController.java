@@ -24,6 +24,7 @@ public class BoardController {
 	public String list(Criteria cri,Model model) {
 		System.out.println("tablelist" + bservice.list(cri));
 		model.addAttribute("list", bservice.list(cri));
+		
 		model.addAttribute("pageMaker", new PageDTO(cri, bservice.getTotalCount(cri)));
 		return "catdream/board/board";
 	}
