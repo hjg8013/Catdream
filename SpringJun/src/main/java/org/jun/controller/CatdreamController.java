@@ -36,13 +36,13 @@ public class CatdreamController {
 	@RequestMapping(value = "/board", method = RequestMethod.GET)
 	public String board() {
 		logger.info("catdream 실행됨."); // console 역할
-		return "catdream/board";
+		return "catdream/board/board";
 	}
 	   
 	@RequestMapping(value = "/boardDetail", method = RequestMethod.GET) 
 	public String boardDetail() {
 		logger.info("catdream 실행됨."); // console 역할
-		return "catdream/boardDetail";
+		return "catdream/board/boardDetail";
 	}
 	
 	
