@@ -33,23 +33,7 @@ public class CatdreamController {
 		return "catdream/member";
 	}
 	   
-	@RequestMapping(value = "/board", method = RequestMethod.GET)
-	public String board() {
-		logger.info("catdream 실행됨."); // console 역할
-		return "catdream/board/board";
-	}
-	   
-	@RequestMapping(value = "/boardDetail", method = RequestMethod.GET) 
-	public String boardDetail() {
-		logger.info("catdream 실행됨."); // console 역할
-		return "catdream/board/boardDetail";
-	}
 	
-	@RequestMapping(value = "/board/modify", method = RequestMethod.GET)
-	public String modify() {
-		logger.info("catdream 실행됨."); // console 역할
-		return "catdream/board/modify";
-	}
 	
 	
 	//보이나?
