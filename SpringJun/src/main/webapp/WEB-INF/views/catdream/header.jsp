@@ -12,6 +12,7 @@
                         <li><a href="">브랜드별 사료</a></li>
                         <li class="feed2">
                             <a href="/subcatdream" >기능별 사료</a>
+
                             <!-- 
                             <div class="feed2Div">
                                 <ul class="feed2Detail">
@@ -43,13 +44,19 @@
                         <li><a href="">화장실</a></li>
                         <li><a href="">생활용품</a></li>
                         <li><a href="">장난감</a></li>
+
                         <li><a href="/board/board">공지사항</a></li>
+
                     </ul>
                 </nav> <!--.pc_gnb-->
                 <div class="hUtil">
                     <ul>
                         <li class="point"><a href="/member">회원가입</a></li>
+
                         <li><a href="./login.html">로그인</a></li>
+
+                        <li><a href="/login">로그인</a></li>
+
                         <li><a href="">고객센터</a></li>
                     </ul>
                 </div> <!--.pc_util-->
