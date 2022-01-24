@@ -1,5 +1,7 @@
 package org.jun.service;
 
+import java.util.ArrayList;
+
 import org.jun.domain.BoardDTO;
 import org.jun.mapper.BoardMapper;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,5 +26,9 @@ public class BoardServiceImpl implements BoardService{
 	
 	public void modify(BoardDTO bdto) {
 		bmapper.modify(bdto);
+	}
+	public ArrayList<BoardDTO> list() {
+		return bmapper.list();
+		
 	}
 }
