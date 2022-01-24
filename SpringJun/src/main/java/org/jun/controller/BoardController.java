@@ -69,5 +69,12 @@ public class BoardController {
 		return "redirect:/board/boardDetail";
 	}
 	
+	@GetMapping("remove")
+	public String remove(BoardDTO bdto,Model model) {
+		bservice.remove(bdto);
+		
+		return "redirect:/board/board";
+	}
+	
 	
 }

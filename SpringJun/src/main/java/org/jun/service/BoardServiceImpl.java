@@ -35,4 +35,8 @@ public class BoardServiceImpl implements BoardService{
 	public int getTotalCount(Criteria cri) {
 		return bmapper.getTotalCount(cri);
 	}
+	
+	public void remove(BoardDTO bdto) {
+		bmapper.remove(bdto);
+	}
 }
