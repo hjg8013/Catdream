@@ -16,4 +16,9 @@ public class BoardServiceImpl implements BoardService{
 	public void write(BoardDTO bdto) {
 		bmapper.write(bdto);
 	}
+	
+	public BoardDTO detail(BoardDTO bdto) {
+		
+		return bmapper.detail(bdto);
+	}
 }

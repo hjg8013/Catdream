@@ -4,6 +4,7 @@ import org.jun.domain.BoardDTO;
 import org.jun.service.BoardService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -40,7 +41,9 @@ public class BoardController {
 	
 	//게시판 목록 리스트에서 제목을 클릭하면
 	@GetMapping("boardDetail")
-	public String detail() {
+	public String detail(BoardDTO bdto,Model model) {
+		
+		model.addAttribute("detail", bservice.detail(bdto));
 		return "catdream/board/boardDetail";
 	}
 
