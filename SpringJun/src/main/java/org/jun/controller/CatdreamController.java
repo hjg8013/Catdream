@@ -1,7 +1,10 @@
 package org.jun.controller;
 
+import org.jun.domain.MemberDTO;
+import org.jun.service.MemberService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -9,6 +12,9 @@ import org.springframework.web.bind.annotation.RequestMethod;
 @Controller
 public class CatdreamController {
 	private static final Logger logger = LoggerFactory.getLogger(CatdreamController.class);
+	@Autowired
+	private MemberService mservice;
+	
 	@RequestMapping(value = "/catdream", method = RequestMethod.GET)  // 웹브라우저를 분석해주는 역할
 	public String catdream() {
 		logger.info("catdream 실행됨."); // console 역할
@@ -29,7 +35,15 @@ public class CatdreamController {
 	   
 	@RequestMapping(value = "/member", method = RequestMethod.GET)  // 웹브라우저를 분석해주는 역할	
 	public String member() {
-		logger.info("member 실행됨."); // console 역할
+		logger.info("get-member 실행됨."); // console 역할
+		return "catdream/member";
+	}
+	
+	@RequestMapping(value = "/member", method = RequestMethod.POST)  // 웹브라우저를 분석해주는 역할	
+	public String member(MemberDTO mdto) {
+		logger.info("post-member 실행됨."); // console 역할
+		mservice.insert(mdto);
+		
 		return "catdream/member";
 	}
 	   
