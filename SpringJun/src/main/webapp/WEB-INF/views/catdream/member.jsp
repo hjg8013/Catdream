@@ -77,9 +77,9 @@
                     </h3>
                     <select name="" class="inputText1" id="">
                         <option value="82" selected>대한민국 +82</option>
-                        <option value="233">가나</option>
-                        <option value="30">그리스</option>
-                        <option value="224">기니</option>
+                        <option value="233">가나 +233</option>
+                        <option value="30">그리스 +30</option>
+                        <option value="224">기니 +224</option>
                     </select>
                     <div class="number">
                         <input type="text" class="inputText4" id="" placeholder="전화번호 입력">
@@ -93,6 +93,7 @@
                     <a href=""><div class="memberButton">가입하기</div></a>
                 </li>
                 <li class="memberBox9">
+                <!-- 레이블에 밖에 a태그가 있어서 레이블이 a 태그를 가린다 -->
                     <a href=""><label for="">이용약관</label></a>
                     <a href=""><label for="">개인정보처리방침</label></a>
                     <a href=""><label for="">책임의 한계와 법적고지</label></a>
