@@ -14,7 +14,9 @@
 	<div id="wrap">
 		<%@ include file="../header.jsp" %>
 		<div id="container">
-        	<h2 class="notice">글쓰기</h2>
+        	<h2 class="notice">공지사항 글쓰기</h2>
+        	<div class="term"><hr></div>
+        	
 	        <div class="board">
 	            <form action="/board/write" method="post">
 	                <div class="title">
