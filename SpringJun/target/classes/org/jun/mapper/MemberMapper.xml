@@ -8,4 +8,4 @@
 		insert into member 
 		values(#{id},#{password},#{name},#{birth},#{gender},#{email},#{phone},#{jobrank});
 	</insert>
-</mapper> 
+</mapper>  
