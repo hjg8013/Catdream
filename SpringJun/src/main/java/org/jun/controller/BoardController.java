@@ -1,6 +1,8 @@
 package org.jun.controller;
 
 import org.jun.domain.BoardDTO;
+import org.jun.domain.Criteria;
+import org.jun.domain.PageDTO;
 import org.jun.service.BoardService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -19,8 +21,10 @@ public class BoardController {
 	
 	//게시판 목록 리스트
 	@GetMapping("board")
-	public String list(Model model) {
-		model.addAttribute("list",bservice.list());
+	public String list(Criteria cri,Model model) {
+		System.out.println("tablelist" + bservice.list(cri));
+		model.addAttribute("list", bservice.list(cri));
+		model.addAttribute("pageMaker", new PageDTO(cri, bservice.getTotalCount(cri)));
 		return "catdream/board/board";
 	}
 	
