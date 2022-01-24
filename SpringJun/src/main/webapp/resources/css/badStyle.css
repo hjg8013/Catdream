@@ -15,6 +15,7 @@ ul,ol{
 }
 
 #containerIn{
+    position: relative;
     width: 1200px;
     margin: 0 auto;
 }
@@ -26,95 +27,42 @@ ul,ol{
 }
 
 .board{
-    margin-left: 30px;
+    width: 100%;
+    border-collapse: collapse;
 }
 
-.board ul li{
-    display: flex;
-    border-bottom: 1px solid #aaa;
-    color: #333;
-
+.board th{
+    padding: 15px;
+    font-size: 18px;
 }
 
-.board ul li p{
+.board td{
+    padding: 15px;
     font-size: 16px;
-    padding: 20px 0;
-}
 
-.main{
-    justify-content: space-between;
-    text-align: center;
-}
-
-.mainNum{
-    margin-left: 30px;
     
 }
 
-.mainTitle{
-    width: 500px;
+.board thead{
+    border-bottom: 1px solid #aaa;
 }
 
-.mainCheck{
-    margin-right: 30px;
+.board .mainTitle{
+    width: 30%;
 }
 
-.gong{
-    color: red;
-}
-
-.num, .gong{
-    width: 50px;
+.board tbody{
     text-align: center;
-    margin-right: 20px;
-    margin-left: 20px;
 }
 
-.title a{
-    display: inline-block;
-    width: 690px;
-    margin-right: 20px;
-    color: #333;
+#boardWrite{
+    position: absolute;
+    bottom: -30px;
+    right: 10px;
 }
 
-.user{
-    width: 150px;
-    margin-right: 20px;
-}
-
-.date{
-    width: 150px;
-    margin-right: 20px;
-}
-
-.check{
-    width: 50px;
-    text-align: right;
-    margin-right: 30px;
-}
-
-.btn{
-  display: inline-block;
-  margin:20px;
-  width: 80px;
-  height: 30px;
-  text-align: center;
-  line-height: 30px;
-  height: 30px;
-  font-size: 16px;
-  color: #333;
-}
-
-.btn:hover{
-  cursor: pointer;
-  font-weight: 700;
-}
-
-#btnList{
-  background-color: #f3b7b6b7;
-}
-
-#btnWrite, #btnDelete{
-  background-color:#f38381;
-  margin-left: 10px;
+#boardWrite a{
+	color: #333;
+	border: 1px solid #aaa;
+	padding: 5px 15px;
 }
