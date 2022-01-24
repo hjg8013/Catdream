@@ -21,4 +21,8 @@ public class BoardServiceImpl implements BoardService{
 		
 		return bmapper.detail(bdto);
 	}
+	
+	public void modify(BoardDTO bdto) {
+		bmapper.modify(bdto);
+	}
 }

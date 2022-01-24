@@ -4,9 +4,41 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<link rel="stylesheet" type="text/css" href="../resources/css/footer.css">
+<link rel="stylesheet" type="text/css" href="../resources/css/header.css">
+<link rel="stylesheet" type="text/css" href="../resources/css/write.css">
+<title>글수정</title>
+<link rel="icon" href="resources/img/logo.png" type="resources/img/x-icon">
 </head>
 <body>
-modify
+	<div id="wrap">
+		<%@ include file="../header.jsp" %>
+		<div id="container">
+        	<h2 class="notice">글쓰기</h2>
+	        <div class="board">
+	            <form action="/board/write" method="post">
+	                <div class="title">
+	                    <label for="title">글 제목</label>
+	                    <div class="titleBox">
+	                        <input type="text" name="title" id="title">
+	                    </div>
+	                </div>
+	                <div class="content">
+	                    <label for="content">글 내용</label>
+	                    <div class="contentBox">
+	                        <textarea name="content" id="content" cols="75" rows="20"></textarea>
+	                    </div>
+	                </div>
+	                <div>
+	                    <input type="file" name="uploadFile" multiple>
+	                </div>
+	                <div class="bottom">
+	                    <input type="submit" class="btn" id="btnList" value="완료">
+	                </div>
+	            </form>
+	        </div>
+    	</div>
+		<%@ include file="../footer.jsp" %>
+	</div>
 </body>
 </html>

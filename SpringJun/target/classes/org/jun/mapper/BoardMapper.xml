@@ -11,4 +11,8 @@
 	select * from board
 	where bno=#{bno}
 </select>
+<update id="modify">
+	update from board
+	set title=#{title},content=#{content},regdate=now() where bno=#{bno}
+</update>
 </mapper>

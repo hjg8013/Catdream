@@ -8,6 +8,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 @Controller
 @RequestMapping("board")
@@ -49,9 +50,17 @@ public class BoardController {
 
 	//글수정 화면
 	@GetMapping("modify")
-	public String modify() {
+	public String modify(BoardDTO bdto, Model model) {
 		
+		model.addAttribute("detail",bservice.detail(bdto));
 		return "catdream/board/modify";
+	}
+	
+	@PostMapping("modify")
+	public String modify(BoardDTO bdto,RedirectAttributes rttr ) {	
+		bservice.modify(bdto);
+	      rttr.addAttribute("bno", bdto.getBno());
+		return "redirect:/board/boardDetail";
 	}
 	
 	
