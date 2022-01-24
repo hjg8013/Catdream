@@ -6,6 +6,10 @@
   margin: 0 auto;
 }
 
+.term{
+	width: 1100px;
+	margin: 0 auto;
+}
 .board{
   width: 1100px;
   margin: 0 auto 100px auto;
@@ -24,8 +28,19 @@
   font-weight: 500;
 }
 #title{
-  width: 540px;
-  height: 30px;
+    display: block;
+    width: 100%;
+    min-height: 40px;
+    padding: 11px 12px 10px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    overflow: hidden;
+    resize: none;
+    word-break: break-all;
+    font-size: 15px;
+    letter-spacing: -.23px;
+    line-height: 17px;
+    outline: none;
 }
 
 .center{
@@ -44,6 +59,18 @@
   line-height: 1.5em;
 }
 
+#content{
+	width: 100%;
+	padding:15px;
+	border: 1px solid #ccc;
+	box-sizing: border-box;
+	overflow: hidden;
+    resize: none;
+    word-break: break-all;
+	font-size: 15px;
+	line-height:18px;
+	outline: none;
+}
 .sunder{
   text-decoration: underline;
 }
@@ -54,14 +81,12 @@
 }
 
 .btn{
-  display: inline-block;
-  width: 80px;
-  height: 30px;
+  margin:0 auto;
+  padding:10px 30px;
   text-align: center;
-  line-height: 30px;
-  height: 30px;
   font-size: 16px;
-  color: #333;
+  color:#625772;
+  border:transparent;
 }
 
 .btn:hover{
