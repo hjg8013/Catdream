@@ -51,17 +51,17 @@
 					<a href="/board/write">글쓰기</a>
 				</div>
 				<form id="actionForm" action="/board/board" method="get">
-					<div>
+					<div class="search">
 						<input type="hidden" name="pageNum" value="${pageMaker.cri.pageNum}">
 						<input type="hidden" name="amount" value="${pageMaker.cri.amount}">
-						<select name="search">
+						<select class="selectBox" name="search">
 							<option value="T">제목</option>
 							<option value="C">내용</option>
 							<option value="W">작성자</option>
 							<option value="TC">제목 + 내용</option>
 							<option value="TCW">제목 + 내용 + 작성자</option>
 						</select>
-						<input type="text" name="keyword" value="${pageMaker.cri.keyword}">
+						<input class="textBox" type="text" name="keyword" value="${pageMaker.cri.keyword}">
 						<input class="AS" type="submit" value="검색">
 
 
