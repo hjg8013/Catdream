@@ -22,7 +22,7 @@
 		<div id="container">
 			<div id="containerIn">
 				<h1 class="conTitle">공지사항</h1>
-				<table class="board">
+				<table class="board"> 
 					<thead>
 						<tr>
 							<th class="mainNum">게시판 번호</th>
