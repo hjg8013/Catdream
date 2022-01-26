@@ -11,7 +11,8 @@
 <link rel="stylesheet" type="text/css" href="../resources/css/boardDetail.css">
 <script type="text/javascript" src="//code.jquery.com/jquery-3.6.0.min.js"></script>
 <script type="text/javascript" src="../resources/js/detail.js"></script>
-<link rel="icon" href="/resources/img/logo.png" type="resources/img/x-icon">
+<script type="text/javascript" src="../resources/js/detailUpload.js"></script>
+<link rel="icon" href="resources/img/logo.png" type="resources/img/x-icon">
 </head>
 <body>
 	<div id="wrap">
@@ -52,7 +53,7 @@
 		        	</form>
 		        </div>
 		        <div class="bottom">
-		            <a href="/board/board" class="btn" id="btnList">목록보기</a>
+		            <a href="/board" class="btn" id="btnList">목록보기</a>
 		            <a href="/board/modify?bno=${detail.bno}" class="btn" id="btnWrite">글 수정</a>
 		            <a href="/board/remove?bno=${detail.bno}" class="btn" id="btnDelete">글 삭제</a>
 		        </div>

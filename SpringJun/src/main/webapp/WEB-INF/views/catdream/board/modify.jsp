@@ -11,6 +11,7 @@
 <link rel="icon" href="resources/img/logo.png" type="resources/img/x-icon">
 </head>
 <body>
+<!-- dd -->
 	<div id="wrap">
 		<%@ include file="../header.jsp" %>
 		<div id="container">
