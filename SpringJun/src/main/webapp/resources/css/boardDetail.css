@@ -76,6 +76,11 @@
 	font-weight:700;
 	margin-bottom:10px;
 }
+
+.replyDate{
+	font-weight:400;
+	margin-left:20px;
+}
 .replyContent{
 	display: block;
     width: 100%;

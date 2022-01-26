@@ -39,7 +39,7 @@
 		        	<c:forEach items="${reply}" var="content">
 		        		<div class="replyBoxing">
 	                  		<div class="replyBox">
-	                  			<div class="replyWriter">사용자 이름</div>
+	                  			<div class="replyWriter">사용자 이름 <span class="replyDate">${content.replydate}</span></div>
 	                  			<div>${content.reply}</div>
 							</div>
 						</div>
