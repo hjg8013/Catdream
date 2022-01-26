@@ -50,7 +50,7 @@
 		        	</form>
 		        </div>
 		        <div class="bottom">
-		            <a href="/board" class="btn" id="btnList">목록보기</a>
+		            <a href="/board/board" class="btn" id="btnList">목록보기</a>
 		            <a href="/board/modify?bno=${detail.bno}" class="btn" id="btnWrite">글 수정</a>
 		            <a href="/board/remove?bno=${detail.bno}" class="btn" id="btnDelete">글 삭제</a>
 		        </div>
