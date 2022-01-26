@@ -16,6 +16,7 @@
 </head>
 <body>
 	<div id="wrap">
+	<!-- sdd -->
 		<%@ include file="../header.jsp" %>
 		<div class="container">
 		    <h2 class="notice">공지사항</h2>
