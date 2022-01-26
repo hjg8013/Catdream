@@ -11,8 +11,7 @@
 <link rel="stylesheet" type="text/css" href="../resources/css/boardDetail.css">
 <script type="text/javascript" src="//code.jquery.com/jquery-3.6.0.min.js"></script>
 <script type="text/javascript" src="../resources/js/detail.js"></script>
-<script type="text/javascript" src="../resources/js/detailUpload.js"></script>
-<link rel="icon" href="resources/img/logo.png" type="resources/img/x-icon">
+<link rel="icon" href="/resources/img/logo.png" type="resources/img/x-icon">
 </head>
 <body>
 	<div id="wrap">
