@@ -1,6 +1,8 @@
 @charset "UTF-8";
 
-
+a{
+	color:#333;
+}
 .notice{
   padding: 30px 0 20px 0;
   width: 1100px;
@@ -82,12 +84,28 @@
 
 .hbgBtn .replyMenu{
 	display:none;
+	position:absolute;
+	top:20px;
+	right:-35px;
+	padding:5px;
 	background-color:white;
 	color:#333;
+	box-shadow: 0px 0px 2px #000;
 }
 
-#modeComment{
+.menuBtn{
+	background-color:transparent;
+	cursor:pointer;
+	border:none;
+}
+.modeComment{
 	display:none;
+	padding: 10px;
+    border: 1px solid rgba(0,0,0,0.35);
+}
+
+#modeRcoment{
+	padding-left:5px;
 }
 
 #writeComent,#modeComment{
@@ -131,6 +149,7 @@
     text-align: center;
     background-color:transparent;
     border:none;
+    cursor:pointer;
 }
 
 .bottom{

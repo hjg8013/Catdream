@@ -42,7 +42,6 @@ $(document).ready(function(){
 	$(".hbgBtn").on("click",function(e){
 		e.stopPropagation();
 		$(this).children(".replyMenu").toggle();
-		
 	})
 	
 	$(document).click(function(){
@@ -50,12 +49,25 @@ $(document).ready(function(){
 	});
 	
 	
-	$("#replyMode").on("click",function(){
+	$(".replyMode").on("click",function(e){
+		e.stopPropagation();
 		$(this).parents('.replyBoxing').children(".replyBox").hide();
-		$(this).parents('.replyBoxing').children("#modeComment").css('display','block');
+		$(this).parents('.replyBoxing').children(".modeComment").css('display','block');
 	})
+	
+	$("#cancel").on("click",function(e){
+		e.preventdefault();
+	})
+	
+	$("#replyDelete").on("click",function(e){
+		if (confirm("정말 삭제하시겠습니까??") == true){    //확인
+			
+		}else{   //취소
+			e.preventDefault();
+		}
+	})
+	
 })   //$(document).ready(function(){ 끝
-
 
 
 
