@@ -16,21 +16,21 @@
 
             <div class="loginBox1">
                 <h2 class="loginTitle">회원 로그인</h2>
+                <form action="login" method="post" >
                 <div class="loginUser">
                     <div class="loginL">
                         <div class="loginLUp">
-                            <input type="text"  class="inputText1" id="userId" placeholder="아이디">
+                            <input name="id" type="text"  class="inputText1" id="userId" placeholder="아이디">
                         </div>
                         <div class="loginLDown">
-                            <input type="text" class="inputText1" id="userPw"  placeholder="비밀번호">
+                            <input name="password" type="password" class="inputText1" id="userPw"  placeholder="비밀번호">
                         </div>
                     </div>
                     <div class="loginR">
-                        <a href="">
-                            <div class="loginButton">로그인</div>
-                        </a>
+                        <input type="submit" class="loginButton" value="로그인">
                     </div>
                 </div>
+                </form>
                 <div class="loginBox2">
                     <div class="loginMember">
                         <a href="/member">
