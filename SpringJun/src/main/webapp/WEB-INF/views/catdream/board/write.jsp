@@ -9,6 +9,8 @@
 <link rel="stylesheet" type="text/css" href="../resources/css/write.css">
 <title>글쓰기</title>
 <link rel="icon" href="resources/img/logo.png" type="resources/img/x-icon">
+<script type="text/javascript" src="//code.jquery.com/jquery-3.6.0.min.js"></script>
+<script type="text/javascript" src="../resources/js/uploadAjax2.js"></script>
 </head>
 <body>
 	<div id="wrap">
@@ -18,7 +20,7 @@
         	<div class="term"><hr></div>
         	
 	        <div class="board">
-	            <form action="/board/write" method="post">
+	            <form role="form" action="/board/write" method="post">
 	                <div class="title">
 	                    <label for="title">글 제목</label>
 	                    <div class="titleBox">
@@ -34,6 +36,9 @@
 	                <div>
 	                    <input type="file" name="uploadFile" multiple>
 	                </div>
+               	    <div id="uploadResult">
+						<ul></ul>
+					</div>
 	                <div class="bottom">
 	                    <input type="submit" class="btn" id="btnList" value="완료">
 	                </div>

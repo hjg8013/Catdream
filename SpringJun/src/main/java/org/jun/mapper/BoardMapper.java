@@ -4,9 +4,12 @@ import java.util.ArrayList;
 
 import org.jun.domain.BoardDTO;
 import org.jun.domain.Criteria;
+import org.jun.domain.ReplyDTO;
 
 public interface BoardMapper {
 	public void write(BoardDTO bdto);
+	
+	public void insertSelectKey(BoardDTO board);
 	
 	public BoardDTO detail(BoardDTO bdto);
 	
@@ -19,4 +22,9 @@ public interface BoardMapper {
 	public int getTotalCount(Criteria cri);
 	
 	public void remove(BoardDTO bdto);
+	
+	//댓글 쓰기
+	public void replyWrite(ReplyDTO rdto);
+	
+	public ArrayList<ReplyDTO> reply(ReplyDTO rdto);
 }

@@ -8,6 +8,14 @@
 	insert into board(writer,title,content)
 	values(#{writer},#{title},#{content})
 </insert>
+   <!-- board테이블에 Insert하기전에 bno값을 미리 만들어놓고 insert해야함. -->
+<insert id="insertSelectKey">
+ <selectKey keyProperty="bno" order="BEFORE" resultType="int">
+  select max(bno)+1 bno from board
+ </selectKey>
+  insert into board(bno,title,content, writer)
+    values(#{bno},#{title},#{content},#{writer})
+</insert>
 <select id="detail" resultType="org.jun.domain.BoardDTO">
 	select * from board
 	where bno=#{bno}
@@ -89,5 +97,12 @@
 <delete id="remove">
 	delete from board where bno=#{bno}
 </delete>
+<insert id="replyWrite">
+	insert into reply(reply,replyer,bno)
+	values(#{reply},#{replyer},#{bno})
+</insert>
+<select id="reply" resultType="org.jun.domain.ReplyDTO">
+	select * from reply where bno=#{bno}
+</select>
 
 </mapper>

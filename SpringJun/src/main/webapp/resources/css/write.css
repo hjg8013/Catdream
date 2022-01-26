@@ -1,5 +1,13 @@
 @charset "UTF-8";
 
+*{
+	box-sizing: border-box;
+}
+
+#uploadResult img{
+	width:auto;
+}
+
 .notice{
   padding: 30px 0 20px 0;
   width: 1100px;

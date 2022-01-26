@@ -1,12 +1,25 @@
 package org.jun.domain;
 
+import java.util.ArrayList;
+
 public class BoardDTO {
+	
+	//captured
+	private int bno;
 	private String title;
 	private String content;
 	private String writer;
 	private String regdate;
-	private int bno;
 	private int cnt;
+	
+	private ArrayList<AttachFileDTO> attachList;
+	
+	public int getBno() {
+		return bno;
+	}
+	public void setBno(int bno) {
+		this.bno = bno;
+	}
 	public String getTitle() {
 		return title;
 	}
@@ -31,23 +44,25 @@ public class BoardDTO {
 	public void setRegdate(String regdate) {
 		this.regdate = regdate;
 	}
-	public int getBno() {
-		return bno;
-	}
-	public void setBno(int bno) {
-		this.bno = bno;
-	}
 	public int getCnt() {
 		return cnt;
 	}
 	public void setCnt(int cnt) {
 		this.cnt = cnt;
 	}
+
+	public ArrayList<AttachFileDTO> getAttachList() {
+		return attachList;
+	}
+	public void setAttachList(ArrayList<AttachFileDTO> attachList) {
+		this.attachList = attachList;
+	}
 	
 	@Override
 	public String toString() {
-		return "BoardDTO [title=" + title + ", content=" + content + ", writer=" + writer + ", regdate=" + regdate
-				+ ", bno=" + bno + ", cnt=" + cnt + "]";
-	}	
+		return "BoardDTO [bno=" + bno + ", title=" + title + ", content=" + content + ", writer=" + writer
+				+ ", regdate=" + regdate + ", cnt=" + cnt + ", attachList=" + attachList + "]";
+	}
+
 	
 }

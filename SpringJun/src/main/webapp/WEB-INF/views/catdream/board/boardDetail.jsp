@@ -1,14 +1,18 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html>
 <head>
-	<meta charset="UTF-8">
-	<link rel="stylesheet" type="text/css" href="../resources/css/footer.css">
-	<link rel="stylesheet" type="text/css" href="../resources/css/header.css">
-	<link rel="stylesheet" type="text/css" href="../resources/css/boardDetail.css">
-	<title>상세페이지</title>
-	<link rel="icon" href="/resources/img/logo.png" type="image/x-icon">
+<meta charset="UTF-8">
+<title>상세페이지</title>
+<link rel="stylesheet" type="text/css" href="../resources/css/footer.css">
+<link rel="stylesheet" type="text/css" href="../resources/css/header.css">
+<link rel="stylesheet" type="text/css" href="../resources/css/boardDetail.css">
+<script type="text/javascript" src="//code.jquery.com/jquery-3.6.0.min.js"></script>
+<script type="text/javascript" src="../resources/js/detail.js"></script>
+<script type="text/javascript" src="../resources/js/detailUpload.js"></script>
+<link rel="icon" href="resources/img/logo.png" type="resources/img/x-icon">
 </head>
 <body>
 	<div id="wrap">
@@ -17,6 +21,7 @@
 		    <h2 class="notice">공지사항</h2>
 		    <div class="board">
 		        <div class="top">
+		        	<div class="col-sm-12 mb-3 mb-sm-0" id="bno">${detail.bno}</div>
 		            <h3 class="title">${detail.title}</h3>
 		            <span class="writer">캣드림</span>
 		        </div>
@@ -25,6 +30,25 @@
 		            <p class="content">
 		                ${detail.content}
 		            </p>
+           			<div id="uploadResult">
+						<ul></ul>
+					</div>
+		        </div>
+		        <div class="reply">
+		        	<c:forEach items="${reply}" var="content">
+                  		<div class="replyBox">
+                  			<div>사용자 이름</div>
+                  			<div>${content.reply}</div>
+						</div>
+                	</c:forEach>
+		        </div>
+		        <div class="replyInput" method="post">
+		        	<form action="/reply/write/${detail.bno}" method="post">
+                  			<div>사용자 이름</div>
+                  			<input type="text" name="bno" value="${detail.bno}">
+                      		<textarea name="reply" rows="3" cols="100" placeholder="댓글을 입력해주세요"></textarea>
+                      		<input type="submit" value="댓글 작성" class="btn btn-primary btn-icon-split">
+		        	</form>
 		        </div>
 		        <div class="bottom">
 		            <a href="/board" class="btn" id="btnList">목록보기</a>

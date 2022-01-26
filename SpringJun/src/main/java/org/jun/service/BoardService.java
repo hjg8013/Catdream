@@ -2,8 +2,10 @@ package org.jun.service;
 
 import java.util.ArrayList;
 
+import org.jun.domain.AttachFileDTO;
 import org.jun.domain.BoardDTO;
 import org.jun.domain.Criteria;
+import org.jun.domain.ReplyDTO;
 
 public interface BoardService {
 	
@@ -18,4 +20,11 @@ public interface BoardService {
 	public int getTotalCount(Criteria cri);
 	
 	public void remove(BoardDTO bdto);
+	
+	public void replyWrite(ReplyDTO rdto);
+	
+	public ArrayList<ReplyDTO> reply(ReplyDTO rdto);
+	
+	//게시판 상세페이지에 업로드된 파일 이미지 출력
+	public ArrayList<AttachFileDTO> fileList(int bno); 
 }
