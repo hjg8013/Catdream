@@ -63,15 +63,39 @@
 	padding:20px;
 }
 .replyBox{
+	position:relative;
 	padding:20px;
 	border-bottom:1px solid #ccc;
 }
+.hbgBtn{
+	position:absolute;
+	top:20px;
+	right:20px;
+	cursor: pointer;
+}
+.hbgBtn .line{
+	background-color:rgba(0,0,0,0.35);
+	width:15px;
+	height:1px;
+	margin:5px;
+}
 
-#writeComent{
+.hbgBtn .replyMenu{
+	display:none;
+	background-color:white;
+	color:#333;
+}
+
+#modeComment{
+	display:none;
+}
+
+#writeComent,#modeComment{
 	margin: 12px 0 29px;
     padding: 16px 10px 10px 18px;
     border: 1px solid rgba(0,0,0,0.35);
 }
+
 .replyWriter{
 	font-weight:700;
 	margin-bottom:10px;

@@ -27,4 +27,11 @@ public interface BoardMapper {
 	public void replyWrite(ReplyDTO rdto);
 	
 	public ArrayList<ReplyDTO> reply(ReplyDTO rdto);
+	
+	//댓글 수정
+	public void modifyReply(ReplyDTO rdto);
+	
+	//댓글 삭제
+	public void deleteReply(ReplyDTO rdto);
+
 }

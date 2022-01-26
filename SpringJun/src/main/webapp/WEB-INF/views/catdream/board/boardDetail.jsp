@@ -11,7 +11,6 @@
 <link rel="stylesheet" type="text/css" href="../resources/css/boardDetail.css">
 <script type="text/javascript" src="//code.jquery.com/jquery-3.6.0.min.js"></script>
 <script type="text/javascript" src="../resources/js/detail.js"></script>
-<script type="text/javascript" src="../resources/js/detailUpload.js"></script>
 <link rel="icon" href="resources/img/logo.png" type="resources/img/x-icon">
 </head>
 <body>
@@ -39,9 +38,32 @@
 		        	<c:forEach items="${reply}" var="content">
 		        		<div class="replyBoxing">
 	                  		<div class="replyBox">
+	                  			<div class="hbgBtn">
+	                  				<div class="line"></div>
+	                  				<div class="line"></div>
+	                  				<div class="line"></div>
+	                  				<div class="replyMenu">
+	                  					<ul>
+	                  						<li><a href="#" id="replyMode">수정</a></li>
+	                  						<li><a href="#" id="replyDelete">삭제</a></li>
+	                  					</ul>
+	                  				</div>
+	                  			</div>
 	                  			<div class="replyWriter">사용자 이름 <span class="replyDate">${content.replydate}</span></div>
-	                  			<div>${content.reply}</div>
+	                  			<div class="replyContainer">${content.reply}</div>
 							</div>
+							<div id="modeComment">
+			        			<form action="/reply/modify/${detail.bno}" method="post">
+		                  			<div class="replyWriter">사용자 이름</div>
+		                  			<input type="hidden" name="bno" value="${detail.bno}">
+		                  			<input type="hidden" name="rno" value="${content.rno}">
+		                  			<div>
+		                      			<textarea class="replyContent" id="modeRcoment" name="reply" rows="3" cols="100" placeholder="댓글을 입력해주세요">${content.reply}</textarea>
+		                      		</div>
+		                      		<input type="submit" class="replySubmit" value="댓글 수정">
+		                      		<a href="#" class="replySubmit">취소</a>
+			        			</form>
+		      		 		</div>
 						</div>
                 	</c:forEach>
 		        </div>

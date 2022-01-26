@@ -39,8 +39,21 @@ $(document).ready(function(){
 	)
 	
 	
-
+	$(".hbgBtn").on("click",function(e){
+		e.stopPropagation();
+		$(this).children(".replyMenu").toggle();
+		
+	})
 	
+	$(document).click(function(){
+	    $('.replyMenu').hide();
+	});
+	
+	
+	$("#replyMode").on("click",function(){
+		$(this).parents('.replyBoxing').children(".replyBox").hide();
+		$(this).parents('.replyBoxing').children("#modeComment").css('display','block');
+	})
 })   //$(document).ready(function(){ 끝
 
 

@@ -67,4 +67,12 @@ public class BoardServiceImpl implements BoardService{
 	public ArrayList<AttachFileDTO> fileList(int bno){
 		return amapper.fileList(bno);
 	}
+	
+	public void modifyReply(ReplyDTO rdto) {
+		bmapper.modifyReply(rdto);
+	}
+	
+	public void deleteReply(ReplyDTO rdto) {
+		bmapper.deleteReply(rdto);
+	}
 }

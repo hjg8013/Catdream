@@ -27,4 +27,8 @@ public interface BoardService {
 	
 	//게시판 상세페이지에 업로드된 파일 이미지 출력
 	public ArrayList<AttachFileDTO> fileList(int bno); 
+	
+	public void modifyReply(ReplyDTO rdto);
+	
+	public void deleteReply(ReplyDTO rdto);
 }
