@@ -14,11 +14,12 @@
 	<div id="wrap">
 		<%@ include file="../header.jsp" %>
 		<div id="container">
-        	<h2 class="notice">글쓰기</h2>
+        	<h2 class="notice">글수정</h2>
 	        <div class="board">
-	            <form action="/board/write" method="post">
+	            <form action="/board/modify" method="post">
 	                <div class="title">
 	                    <label for="title">글 제목</label>
+	                    <input type="hidden" name="bno" value="${detail.bno}">
 	                    <div class="titleBox">
 	                        <input type="text" name="title" id="title" value="${detail.title}">
 	                    </div>

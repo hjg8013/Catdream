@@ -24,7 +24,7 @@
 	update board set cnt=cnt+1 where bno=#{bno}
 </update>
 <update id="modify">
-	update from board
+	update board
 	set title=#{title},content=#{content},regdate=now() where bno=#{bno}
 </update>
 

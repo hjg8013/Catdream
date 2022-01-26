@@ -44,10 +44,12 @@
 		        </div>
 		        <div id="writeComent">
 		        	<form action="/reply/write/${detail.bno}" method="post">
-                  			<div>사용자 이름</div>
+                  			<div class="replyWriter">사용자 이름</div>
                   			<input type="hidden" name="bno" value="${detail.bno}">
-                      		<textarea name="reply" rows="3" cols="100" placeholder="댓글을 입력해주세요"></textarea>
-                      		<input type="submit" value="댓글 작성" class="btn btn-primary btn-icon-split">
+                  			<div>
+                      			<textarea class="replyContent" name="reply" rows="3" cols="100" placeholder="댓글을 입력해주세요"></textarea>
+                      		</div>
+                      		<input type="submit" class="replySubmit" value="댓글 작성" class="btn btn-primary btn-icon-split">
 		        	</form>
 		        </div>
 		        <div class="bottom">
