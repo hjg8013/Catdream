@@ -55,6 +55,10 @@ ul,ol{
     text-align: center;
 }
 
+.board .title a{
+	color: #333;
+}
+
 #boardWrite{
     position: absolute;
     bottom: -20px;
@@ -70,7 +74,8 @@ ul,ol{
 
 .pagination{
 	display: flex;
-	
+    justify-content: center;
+    
 }
 
 .paginate_button{
