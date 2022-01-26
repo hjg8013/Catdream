@@ -4,15 +4,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>공지사항</title>
-<link rel="icon" href="resources/img/logo.png"
-	type="resources/img/x-icon">
-<link rel="stylesheet" href="/resources/css/badStyle.css">
-<link rel="stylesheet" href="/resources/css/header.css">
-<link rel="stylesheet" href="/resources/css/footer.css">
-<script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script type="text/javascript" src="../resources/js/board.js"></script>
+	<meta charset="UTF-8">
+	<title>공지사항</title>
+	<link rel="icon" href="/resources/img/logo.png" type="image/x-icon">
+	<link rel="stylesheet" href="/resources/css/badStyle.css">
+	<link rel="stylesheet" href="/resources/css/header.css">
+	<link rel="stylesheet" href="/resources/css/footer.css">
+	<script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+	<script type="text/javascript" src="../resources/js/board.js"></script>
 </head>
 <body>
 
