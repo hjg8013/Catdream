@@ -17,4 +17,10 @@ public class MemberServiceImpl implements MemberService{
 		
 		mmapper.insert(mdto);
 	}
+	
+	public MemberDTO login(MemberDTO mdto){
+		
+		
+		return mmapper.login(mdto);
+	}
 }

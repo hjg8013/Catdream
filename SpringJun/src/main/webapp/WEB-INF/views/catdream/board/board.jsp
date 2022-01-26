@@ -45,10 +45,11 @@
 						</c:forEach>
 					</tbody>
 				</table>
-
-				<div id="boardWrite">
-					<a href="/board/write">글쓰기</a>
-				</div>
+				<c:if test="${login!=null}">
+					<div id="boardWrite">
+						<a href="/board/write">글쓰기</a>
+					</div>
+				</c:if>
 				<form id="actionForm" action="/board/board" method="get">
 					<div class="search">
 						<input type="hidden" name="pageNum" value="${pageMaker.cri.pageNum}">

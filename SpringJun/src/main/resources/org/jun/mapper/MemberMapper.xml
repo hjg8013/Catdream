@@ -8,4 +8,12 @@
 		insert into member 
 		values(#{id},#{password},#{name},#{birth},#{gender},#{email},#{phone},#{jobrank});
 	</insert>
+	
+	<select id="login" resultType="org.jun.domain.MemberDTO">
+  		select * 
+		from member
+		where id=#{id}
+		and password=#{password};
+  	</select>
+	
 </mapper>

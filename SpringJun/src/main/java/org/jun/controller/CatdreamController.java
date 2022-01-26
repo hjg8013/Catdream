@@ -1,5 +1,7 @@
 package org.jun.controller;
 
+import javax.servlet.http.HttpSession;
+
 import org.jun.domain.MemberDTO;
 import org.jun.service.MemberService;
 import org.slf4j.Logger;
@@ -29,8 +31,27 @@ public class CatdreamController {
 	
 	@RequestMapping(value = "/login", method = RequestMethod.GET)  // 웹브라우저를 분석해주는 역할
 	public String login() {
-	   logger.info("login 실행됨."); // console 역할
-    return "catdream/login";
+	   logger.info("get-login 실행됨."); // console 역할
+	   return "catdream/login";
+	}
+	
+	@RequestMapping(value = "/login", method = RequestMethod.POST)  // 웹브라우저를 분석해주는 역할
+	public String login(MemberDTO mdto,HttpSession session) {
+	   logger.info("post-login 실행됨."); // console 역할
+	   
+	   MemberDTO login= mservice.login(mdto);
+	   logger.info("MemberDTO안의 데이터 출력"+login);
+	   
+		session.setAttribute("login", login); //로그아웃이나 웹브라우저를 닫지않는이상 데이터가 사라지지 않는다
+
+		if(session.getAttribute("login")!=null) {
+			//main페이지로 이동
+			return "redirect:/catdream";
+			
+		}else { //session영역에 login이라는 변수에 값이 없으면(null)
+			//다시 로그인 할 수 있게 로그인 페이지로 이동
+			return "redirect:/login";
+		}
 	}
 	   
 	@RequestMapping(value = "/member", method = RequestMethod.GET)  // 웹브라우저를 분석해주는 역할	
