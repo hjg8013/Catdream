@@ -60,6 +60,14 @@
   color: red;
 }
 
+
+#writeComent{
+	margin: 12px 0 29px;
+    padding: 16px 10px 10px 18px;
+    border: 2px solid black;
+}
+
+
 .bottom{
   text-align: right;
   padding: 10px;

@@ -42,10 +42,10 @@
 						</div>
                 	</c:forEach>
 		        </div>
-		        <div class="replyInput" method="post">
+		        <div id="writeComent">
 		        	<form action="/reply/write/${detail.bno}" method="post">
                   			<div>사용자 이름</div>
-                  			<input type="text" name="bno" value="${detail.bno}">
+                  			<input type="hidden" name="bno" value="${detail.bno}">
                       		<textarea name="reply" rows="3" cols="100" placeholder="댓글을 입력해주세요"></textarea>
                       		<input type="submit" value="댓글 작성" class="btn btn-primary btn-icon-split">
 		        	</form>

@@ -1,5 +1,5 @@
 @charset "UTF-8";
-//786678322
+
 #footer{
     padding-top: 50px;
     padding-bottom: 50px;
@@ -155,7 +155,7 @@
     color: #FFFEFF;
     font-size: 14px;
 }
-k
+
 .footerSns ul{
     display: flex;
 }
