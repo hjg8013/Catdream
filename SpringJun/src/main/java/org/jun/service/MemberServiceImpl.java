@@ -12,6 +12,9 @@ public class MemberServiceImpl implements MemberService{
 	private MemberMapper mmapper;
 	
 	public void insert(MemberDTO mdto) {
+		
+		mdto.setbirthyymmdd(mdto.getYy(),mdto.getMm(),mdto.getDd());
+		
 		mmapper.insert(mdto);
 	}
 }
