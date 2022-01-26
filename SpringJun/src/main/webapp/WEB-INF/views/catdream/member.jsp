@@ -7,22 +7,27 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="resources/css/member.css">
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+	<script type="text/javascript" src="./resources/js/member.js"></script>
     <title>회원가입</title>
 </head>
 <body>
     <div id="memberWrap">
         <div class="memberIn">
-            <h2 class="memberTitle">회원가입</h2>
+        <a href="/catdream">
+            <h2 class="memberTitle">Cat Dream</h2>
+        </a>
             <form action="/member" method="post">
             
             <ul>
-             	<li class="memberBox1">
-                    <h3>
-                        <label for="">직급</label>
-                    </h3>
-                    <input type="text" name="jobrand" class="inputText1" id="userJobrand">
+             	<li class="memberBox0">
+                    <!-- 
+                    	<h3>
+                        	<label for="">직급</label>
+                    	</h3>
+                     -->
+                    <input type="hidden" name="jobrand" class="inputText1" id="userJobrand">
                 </li>
-                <!-- hidden -->
                 <li class="memberBox1">
                     <h3>
                         <label for="">아이디</label>
@@ -51,8 +56,8 @@
                     <h3>
                         <label for="">생년월일</label>
                     </h3>
-                    <input name="yy" type="text" class="inputText2" id="" placeholder="년(4자)">
-                    <select name="mm" class="inputText3" id="" >
+                    <input name="yy" type="text" class="inputText2" id="userYy" placeholder="년(4자)">
+                    <select name="mm" class="inputText3" id="userMm" >
                         <option value="none">월</option>
                         <option value="01">1월</option>
                         <option value="02">2월</option>
@@ -67,7 +72,7 @@
                         <option value="11">11월</option>
                         <option value="12">12월</option>
                     </select>
-                    <input name="dd" type="text"  class="inputText2" id=""  placeholder="일">
+                    <input name="dd" type="text"  class="inputText2" id="userDd"  placeholder="일">
                     
                     
                 </li>
@@ -75,7 +80,7 @@
                     <h3>
                         <label for="">성별</label>
                     </h3>
-                    <select name="gender" class="inputText1" id="">
+                    <select name="gender" class="inputText1" id="userGender">
                         <option value="none" selected>성별</option>
                         <option value="M">남자</option>
                         <option value="F">여자</option>
@@ -86,7 +91,7 @@
                     <h3>
                         <label for="" placeholder="선택입력">본인 확인 이메일</label><span>(선택)</span>
                     </h3>
-                    <input name="email" type="text" class="inputText1" id="">
+                    <input name="email" type="text" class="inputText1" id="userEmail">
                 </li>
                 <li class="memberBox8">
                     <h3>
@@ -99,7 +104,7 @@
                         <option value="224">기니 +224</option>
                     </select>
                     <div class="number">
-                        <input name="phone" type="text" class="inputText4" id="" placeholder="전화번호 입력">
+                        <input name="phone" type="text" class="inputText4" id="userPhone" placeholder="전화번호 입력">
                         <a href="">
                             <div class="numberButton">인증번호 받기</div>
                         </a>
