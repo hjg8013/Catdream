@@ -59,7 +59,13 @@
 .sred{
   color: red;
 }
-
+.replyBoxing{
+	padding:20px;
+}
+.replyBox{
+	padding:20px;
+	border-bottom:1px solid #ccc;
+}
 
 #writeComent{
 	margin: 12px 0 29px;
