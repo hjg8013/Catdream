@@ -71,6 +71,7 @@ ul,ol{
 .pagination{
 	display: flex;
     justify-content: center;
+    
 }
 
 .paginate_button{
