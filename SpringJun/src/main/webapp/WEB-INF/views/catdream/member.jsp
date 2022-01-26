@@ -13,18 +13,27 @@
     <div id="memberWrap">
         <div class="memberIn">
             <h2 class="memberTitle">회원가입</h2>
+            <form action="/member" method="post">
+            
             <ul>
+             	<li class="memberBox1">
+                    <h3>
+                        <label for="">직급</label>
+                    </h3>
+                    <input type="text" name="jobrand" class="inputText1" id="userJobrand">
+                </li>
+                <!-- hidden -->
                 <li class="memberBox1">
                     <h3>
                         <label for="">아이디</label>
                     </h3>
-                    <input type="text" class="inputText1" id="userId">
+                    <input type="text" name="id" class="inputText1" id="userId">
                 </li>
                 <li class="memberBox2">
                     <h3>
                         <label for="" >비밀번호</label>
                     </h3>
-                    <input type="password" class="inputText1" id="userPw">
+                    <input type="password" name="password" class="inputText1" id="userPw">
                 </li>
                 <li class="memberBox3">
                     <h3>
@@ -34,10 +43,16 @@
                 </li>
                 <li class="memberBox4">
                     <h3>
+                        <label for="">이름</label>
+                    </h3>
+                    <input type="name" class="inputText1" id="userName">
+                </li>
+                <li class="memberBox5">
+                    <h3>
                         <label for="">생년월일</label>
                     </h3>
-                    <input type="text" class="inputText2" id="" placeholder="년(4자)">
-                    <select name="" class="inputText3" id="" >
+                    <input name="yy" type="text" class="inputText2" id="" placeholder="년(4자)">
+                    <select name="mm" class="inputText3" id="" >
                         <option value="none">월</option>
                         <option value="01">1월</option>
                         <option value="02">2월</option>
@@ -52,26 +67,28 @@
                         <option value="11">11월</option>
                         <option value="12">12월</option>
                     </select>
-                    <input type="text"  class="inputText2" id=""  placeholder="일">
+                    <input name="dd" type="text"  class="inputText2" id=""  placeholder="일">
+                    
+                    
                 </li>
-                <li class="memberBox5">
+                <li class="memberBox6">
                     <h3>
                         <label for="">성별</label>
                     </h3>
-                    <select name="" class="inputText1" id="">
+                    <select name="gender" class="inputText1" id="">
                         <option value="none" selected>성별</option>
                         <option value="M">남자</option>
                         <option value="F">여자</option>
                         <option value="U">선택 안함</option>
                     </select>
                 </li>
-                <li class="memberBox6">
+                <li class="memberBox7">
                     <h3>
                         <label for="" placeholder="선택입력">본인 확인 이메일</label><span>(선택)</span>
                     </h3>
-                    <input type="text" class="inputText1" id="">
+                    <input name="email" type="text" class="inputText1" id="">
                 </li>
-                <li class="memberBox7">
+                <li class="memberBox8">
                     <h3>
                         <label for="">휴대전화</label>
                     </h3>
@@ -82,17 +99,20 @@
                         <option value="224">기니 +224</option>
                     </select>
                     <div class="number">
-                        <input type="text" class="inputText4" id="" placeholder="전화번호 입력">
+                        <input name="phone" type="text" class="inputText4" id="" placeholder="전화번호 입력">
                         <a href="">
                             <div class="numberButton">인증번호 받기</div>
                         </a>
                     </div>
                     <input type="text" class="inputText1" id="" placeholder="인증번호 입력하세요">
                 </li>
-                <li class="memberBox8">
-                    <a href=""><div class="memberButton">가입하기</div></a>
-                </li>
+
                 <li class="memberBox9">
+                	<input type="submit" class="memberButton" value="가입하기">
+                    <!-- <a href=""><div class="memberButton">가입하기</div></a> -->
+                </li>
+            </form>
+                <li class="memberBox10">
                 <!-- 레이블에 밖에 a태그가 있어서 레이블이 a 태그를 가린다 -->
                     <a href=""><label for="">이용약관</label></a>
                     <a href=""><label for="">개인정보처리방침</label></a>
