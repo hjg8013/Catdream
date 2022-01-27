@@ -37,6 +37,7 @@ a{
 .center{
   padding: 5px 15px;
   border-bottom: 1px solid #333;
+  min-height:400px;
 }
 
 .regdate{

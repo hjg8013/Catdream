@@ -9,6 +9,7 @@
 <link rel="stylesheet" type="text/css" href="../resources/css/write.css">
 <script type="text/javascript" src="//code.jquery.com/jquery-3.6.0.min.js"></script>
 <script type="text/javascript" src="../resources/js/detail.js"></script>
+<script type="text/javascript" src="../resources/js/uploadAjax.js"></script>
 <title>글수정</title>
 <link rel="icon" href="resources/img/logo.png" type="resources/img/x-icon">
 </head>
@@ -36,14 +37,14 @@
 	                <div>
 	                    <input type="file" name="uploadFile" multiple>
 	                </div>
+                    <div id="uploadResult">
+						<ul></ul>
+					</div>
 	                <div class="bottom">
 	                    <input type="submit" class="btn" id="btnList" value="완료">
 	                </div>
 	            </form>
-               		<div id="uploadResult">
-						<ul></ul>
-					</div>
-	        </div>
+	        </div> <!-- board end -->
     	</div>
 		<%@ include file="../footer.jsp" %>
 	</div>
