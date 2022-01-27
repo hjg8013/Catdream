@@ -57,7 +57,7 @@
 							<li><a href="/login">로그인</a></li>
 						</c:if>
 						<c:if test="${login!=null}">
-							<li><a href="/catdream">로그아웃</a></li>
+							<li><a href="/logout">로그아웃</a></li>
 						</c:if>
 	                    <li><a href="">고객센터</a></li>
                     </ul>

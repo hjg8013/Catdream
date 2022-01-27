@@ -53,6 +53,13 @@ public class CatdreamController {
 			return "redirect:/login";
 		}
 	}
+	
+	@RequestMapping(value = "/logout", method = RequestMethod.GET)  // 웹브라우저를 분석해주는 역할
+	public String logout(HttpSession session) {
+	   logger.info("get-logout 실행됨."); // console 역할
+	   session.invalidate();
+	   return "redirect:/catdream";
+	}
 	   
 	@RequestMapping(value = "/member", method = RequestMethod.GET)  // 웹브라우저를 분석해주는 역할	
 	public String member() {
