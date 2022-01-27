@@ -7,6 +7,8 @@
 <link rel="stylesheet" type="text/css" href="../resources/css/footer.css">
 <link rel="stylesheet" type="text/css" href="../resources/css/header.css">
 <link rel="stylesheet" type="text/css" href="../resources/css/write.css">
+<script type="text/javascript" src="//code.jquery.com/jquery-3.6.0.min.js"></script>
+<script type="text/javascript" src="../resources/js/detail.js"></script>
 <title>글수정</title>
 <link rel="icon" href="resources/img/logo.png" type="resources/img/x-icon">
 </head>
@@ -38,6 +40,9 @@
 	                    <input type="submit" class="btn" id="btnList" value="완료">
 	                </div>
 	            </form>
+               		<div id="uploadResult">
+						<ul></ul>
+					</div>
 	        </div>
     	</div>
 		<%@ include file="../footer.jsp" %>

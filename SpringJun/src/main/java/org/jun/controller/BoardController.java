@@ -49,7 +49,7 @@ public class BoardController {
 	public String writePost(BoardDTO bdto) {
 		
 		bservice.write(bdto);
-		
+		System.out.println(bdto);
 		return "redirect:/board/board";
 	}
 	

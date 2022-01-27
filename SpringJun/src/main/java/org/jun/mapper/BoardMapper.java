@@ -33,5 +33,4 @@ public interface BoardMapper {
 	
 	//댓글 삭제
 	public void deleteReply(ReplyDTO rdto);
-
 }

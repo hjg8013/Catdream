@@ -9,12 +9,12 @@
 	values(#{writer},#{title},#{content})
 </insert>
    <!-- board테이블에 Insert하기전에 bno값을 미리 만들어놓고 insert해야함. -->
-<insert id="insertSelectKey">
- <selectKey keyProperty="bno" order="BEFORE" resultType="int">
-  select max(bno)+1 bno from board
- </selectKey>
-  insert into board(bno,title,content, writer)
-    values(#{bno},#{title},#{content},#{writer})
+<insert id="insertSelectKey"> 
+     <selectKey keyProperty="bno" order="BEFORE" resultType="int">
+	 	select IFNULL(max(bno),0)+1 bno from board
+	 </selectKey>
+ 		insert into board(bno,title,content, writer)
+		values(#{bno},#{title},#{content},#{writer}) 
 </insert>
 <select id="detail" resultType="org.jun.domain.BoardDTO">
 	select * from board
