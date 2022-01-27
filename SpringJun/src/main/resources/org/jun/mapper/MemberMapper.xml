@@ -6,7 +6,7 @@
 	<!-- 하기전에 입력을 안한 값이있으면 자동으로 넣어줘야한다 -->
 	<insert id="insert">
 		insert into member 
-		values(#{id},#{password},#{name},#{birth},#{gender},#{email},#{phone},#{jobrank});
+		values(#{id},#{password},#{name},#{birth},#{gender},#{email},#{phone},'고객');
 	</insert>
 	
 	<select id="login" resultType="org.jun.domain.MemberDTO">

@@ -70,9 +70,10 @@ public class CatdreamController {
 	@RequestMapping(value = "/member", method = RequestMethod.POST)  // 웹브라우저를 분석해주는 역할	
 	public String member(MemberDTO mdto) {
 		logger.info("post-member 실행됨."); // console 역할
-		mservice.insert(mdto);
 		
-		return "catdream/member";
+		mservice.insert(mdto);			
+
+		return "redirect:/catdream";
 	}
 	   
 	

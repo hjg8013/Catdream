@@ -53,15 +53,15 @@
                     <h3>
                         <label for="">이름</label>
                     </h3>
-                    <input type="name" class="inputText1" id="userName">
+                    <input name="name" type="text" class="inputText1" id="userName">
                     <h4></h4>
                 </li>
                 <li class="memberBox5">
                     <h3>
                         <label for="">생년월일</label>
                     </h3>
-                    <input name="yy" type="text" class="inputText2" id="userYy" placeholder="년(4자)">
-                    <select name="mm" class="inputText3" id="userMm" >
+                    <input type="text" class="inputText2" id="userYy" placeholder="년(4자)">
+                    <select class="inputText3" id="userMm" >
                         <option value="none">월</option>
                         <option value="01">1월</option>
                         <option value="02">2월</option>
@@ -76,10 +76,10 @@
                         <option value="11">11월</option>
                         <option value="12">12월</option>
                     </select>
-                    <input name="dd" type="text"  class="inputText2" id="userDd"  placeholder="일">
+                    <input type="text"  class="inputText2" id="userDd"  placeholder="일">
                     <h4></h4>
                     
-                    
+                    <input name="birth" class="inputText1" type="hidden" id="userBirth">
                 </li>
                 <li class="memberBox6">
                     <h3>
@@ -112,16 +112,16 @@
                     </select>
                     <div class="number">
                         <input name="phone" type="text" class="inputText4" id="userPhone" placeholder="전화번호 입력">
-                        <h4></h4>
                         <a href="">
                             <div class="numberButton">인증번호 받기</div>
                         </a>
                     </div>
+                    <h4></h4>
                     <input type="text" class="inputText1" id="" placeholder="인증번호 입력하세요">
                 </li>
 
                 <li class="memberBox9">
-                	<input type="submit" class="memberButton" value="가입하기">
+                	<input type="submit" class="memberButton" value="가입하기" disabled>
                     <!-- <a href=""><div class="memberButton">가입하기</div></a> -->
                 </li>
             </form>
