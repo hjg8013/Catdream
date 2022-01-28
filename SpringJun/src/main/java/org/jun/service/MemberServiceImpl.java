@@ -1,5 +1,7 @@
 package org.jun.service;
 
+import java.util.ArrayList;
+
 import org.jun.domain.MemberDTO;
 import org.jun.mapper.MemberMapper;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,5 +20,9 @@ public class MemberServiceImpl implements MemberService{
 	public MemberDTO login(MemberDTO mdto){
 
 		return mmapper.login(mdto);
+	}
+	
+	public ArrayList<String> getId() {
+		return mmapper.getId();
 	}
 }

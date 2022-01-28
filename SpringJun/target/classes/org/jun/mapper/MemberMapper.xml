@@ -15,5 +15,10 @@
 		where id=#{id}
 		and password=#{password};
   	</select>
+  	
+  	<select id="getId" resultType="string">
+  		select id
+		from member;
+  	</select>
 	
 </mapper>

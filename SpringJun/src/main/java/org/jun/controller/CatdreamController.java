@@ -7,7 +7,9 @@ import org.jun.service.MemberService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
@@ -28,13 +30,7 @@ public class CatdreamController {
 		logger.info("catdream 실행됨."); // console 역할
 		return "catdream/subindex";
 	}
-	
-	@RequestMapping(value = "/login", method = RequestMethod.GET)  // 웹브라우저를 분석해주는 역할
-	public String login() {
-	   logger.info("get-login 실행됨."); // console 역할
-	   return "catdream/login";
-	}
-	
+
 	@RequestMapping(value = "/login", method = RequestMethod.POST)  // 웹브라우저를 분석해주는 역할
 	public String login(MemberDTO mdto,HttpSession session) {
 	   logger.info("post-login 실행됨."); // console 역할
@@ -60,17 +56,22 @@ public class CatdreamController {
 	   session.invalidate();
 	   return "redirect:/catdream";
 	}
-	   
+	
+	//,produces={MediaType.APPLICATION_JSON_UTF8_VALUE}
 	@RequestMapping(value = "/member", method = RequestMethod.GET)  // 웹브라우저를 분석해주는 역할	
 	public String member() {
 		logger.info("get-member 실행됨."); // console 역할
+		//logger.info("id의 값은? = ");
 		return "catdream/member";
 	}
 	
 	@RequestMapping(value = "/member", method = RequestMethod.POST)  // 웹브라우저를 분석해주는 역할	
 	public String member(MemberDTO mdto) {
 		logger.info("post-member 실행됨."); // console 역할
-		
+
+		//if(mdto.getId()==mservice.getId()) {
+		//	//여기서 비교는 가능한데 원하는 방법은아니다
+		//}
 		mservice.insert(mdto);			
 
 		return "redirect:/catdream";
