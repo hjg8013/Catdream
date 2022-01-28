@@ -55,13 +55,15 @@ public class CatdreamController {
 	   logger.info("get-logout 실행됨."); // console 역할
 	   session.invalidate();
 	   return "redirect:/catdream";
+	   
+	   
 	}
 	
 	//,produces={MediaType.APPLICATION_JSON_UTF8_VALUE}
 	@RequestMapping(value = "/member", method = RequestMethod.GET)  // 웹브라우저를 분석해주는 역할	
 	public String member() {
 		logger.info("get-member 실행됨."); // console 역할
-		//logger.info("id의 값은? = ");
+		//logger.info("mservice.getId()를 실행함."+mservice.getId()); //아이디의 값을 잘 가져온다
 		return "catdream/member";
 	}
 	
