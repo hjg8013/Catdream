@@ -37,6 +37,8 @@ public class BoardController {
 		return "catdream/board/board";
 	}
 	
+	
+	
 	//글쓰기 화면으로
 	@GetMapping("write")
 	public String write() {
