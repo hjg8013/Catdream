@@ -7,6 +7,7 @@ public class ReplyDTO {
 	private String reply;
 	private String replyer;
 	private String replydate;
+	private String memberId;
 	
 	public int getRno() {
 		return rno;
@@ -38,12 +39,19 @@ public class ReplyDTO {
 	public void setReplydate(String replydate) {
 		this.replydate = replydate;
 	}
-	
+	public String getMemberId() {
+		return memberId;
+	}
+	public void setMemberId(String memberId) {
+		this.memberId = memberId;
+	}
 	@Override
 	public String toString() {
 		return "ReplyDTO [rno=" + rno + ", bno=" + bno + ", reply=" + reply + ", replyer=" + replyer + ", replydate="
-				+ replydate + "]";
+				+ replydate + ", memberId=" + memberId + "]";
 	}
+	
+
     
 	
 }

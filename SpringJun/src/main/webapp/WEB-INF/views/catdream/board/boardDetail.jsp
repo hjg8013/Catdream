@@ -23,7 +23,7 @@
 		        <div class="top">
 		        	<div class="col-sm-12 mb-3 mb-sm-0" id="bno">${detail.bno}</div>
 		            <h3 class="title">${detail.title}</h3>
-		            <span class="writer">${detail.writer}</span>
+		            <span class="writer">${detail.writer}(${detail.memberId})</span>
 		        </div>
 		        <div class="center">
 		            <p class="regdate">Posted at ${detail.regdate}</p>
@@ -42,8 +42,8 @@
 	                  				<div class="line"></div>
 	                  				<div class="line"></div>
 	                  				<div class="line"></div>
-	                  				<c:set var="replyer1" value="${content.replyer}"/>
-	                  				<c:if test="${login.name eq replyer1}">
+	                  				<c:set var="memberId" value="${content.memberId}"/>
+	                  				<c:if test="${login.id eq memberId}">
 	                  					<div class="replyMenu">
 	                  						<ul>
 	                  							<li><a href="javascript:;" class="replyMode">수정</a></li>
@@ -56,7 +56,7 @@
 	                  						</ul>
                   						</div>
 	                  				</c:if>
-	                  				<c:if test="${login.name ne replyer1}">
+	                  				<c:if test="${login.id ne memberId}">
 	               						<div class="replyMenu">
 		                  					<ul>
 		                  						<li><a href="#">신고</a></li>
@@ -82,11 +82,13 @@
 						</div>
                 	</c:forEach>
 		        </div>
+		        <!-- 새로운 댓글 작성 -->
 		        <div id="writeComent">
 		        	<form action="/reply/write/${detail.bno}" method="post">
                   			<div class="replyWriter">${login.name}</div>
                   			<input type="hidden" name="replyer" value="${login.name}">
                   			<input type="hidden" name="bno" value="${detail.bno}">
+           			        <input type="hidden" name="memberId" value="${login.id}">
                   			<div>
                       			<textarea class="replyContent" name="reply" rows="3" cols="100" placeholder="댓글을 입력해주세요"></textarea>
                       		</div>
@@ -95,8 +97,8 @@
 		        </div>
 		        <div class="bottom">
 		            <a href="/board/board" class="btn" id="btnList">목록보기</a>
-		            <c:set var="writer1" value="${detail.writer}"/>
-		            <c:if test="${login.name eq writer1}">
+		            <c:set var="memberId" value="${detail.memberId}"/>
+		            <c:if test="${login.id eq memberId}">
 			            <a href="/board/modify?bno=${detail.bno}" class="btn" id="btnWrite">글 수정</a>
 			            <a href="/board/remove?bno=${detail.bno}" class="btn" id="btnDelete">글 삭제</a>
 		            </c:if>
