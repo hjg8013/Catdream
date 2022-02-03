@@ -30,7 +30,8 @@ title varchar(50) not null,
 content text,
 writer varchar(15),
 regdate datetime default now(),
-cnt int default 0
+cnt int default 0,
+memberId varchar(15)
 );
 
 select * from board;

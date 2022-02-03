@@ -11,6 +11,7 @@ public class BoardDTO {
 	private String writer;
 	private String regdate;
 	private int cnt;
+	private int memberId;
 	
 	private ArrayList<AttachFileDTO> attachList;
 	
@@ -57,12 +58,19 @@ public class BoardDTO {
 	public void setAttachList(ArrayList<AttachFileDTO> attachList) {
 		this.attachList = attachList;
 	}
-	
+	public int getMemberId() {
+		return memberId;
+	}
+	public void setMemberId(int memberId) {
+		this.memberId = memberId;
+	}
 	@Override
 	public String toString() {
 		return "BoardDTO [bno=" + bno + ", title=" + title + ", content=" + content + ", writer=" + writer
-				+ ", regdate=" + regdate + ", cnt=" + cnt + ", attachList=" + attachList + "]";
+				+ ", regdate=" + regdate + ", cnt=" + cnt + ", memberId=" + memberId + ", attachList=" + attachList
+				+ "]";
 	}
+	
 
 	
 }
