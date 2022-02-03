@@ -24,6 +24,7 @@ public class CatdreamController {
 		logger.info("catdream 실행됨."); // console 역할
 		return "catdream/index";
 	}
+	
 	// 주석 시험
 	@RequestMapping(value = "/subcatdream", method = RequestMethod.GET)  // 웹브라우저를 분석해주는 역할
 	public String subcatdream() {
