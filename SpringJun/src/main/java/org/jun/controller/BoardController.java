@@ -27,7 +27,7 @@ public class BoardController {
 	@Autowired
 	private BoardService bservice;
 	
-	//게시판 목록 리스트
+	//게시판 목록 리스트 
 	@GetMapping("board")
 	public String list(Criteria cri,Model model) {
 		System.out.println("tablelist" + bservice.list(cri));
