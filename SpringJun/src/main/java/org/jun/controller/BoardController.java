@@ -39,7 +39,7 @@ public class BoardController {
 	
 	
 	
-	//글쓰기 화면으로
+	//글쓰기 화면으로 
 	@GetMapping("write")
 	public String write() {
 		System.out.println("board/write");
