@@ -31,14 +31,8 @@ public class CatdreamController {
 		return "catdream/subindex";
 	}
 
-	@RequestMapping(value = "/login", method = RequestMethod.GET)  // 웹브라우저를 분석해주는 역할
-	public String login() {
-		logger.info("catdream 실행됨."); // console 역할
-		return "catdream/login";
-	}
-	
 	@RequestMapping(value = "/login", method = RequestMethod.POST)  // 웹브라우저를 분석해주는 역할
-	public String loginPost(MemberDTO mdto,HttpSession session) {
+	public String login(MemberDTO mdto,HttpSession session) {
 	   logger.info("post-login 실행됨."); // console 역할
 	   
 	   MemberDTO login= mservice.login(mdto);
@@ -52,7 +46,7 @@ public class CatdreamController {
 			
 		}else { //session영역에 login이라는 변수에 값이 없으면(null)
 			//다시 로그인 할 수 있게 로그인 페이지로 이동
-			return "redirect:/catdream/login";
+			return "redirect:/login";
 		}
 	}
 	
