@@ -51,7 +51,8 @@ create table attach(
     uploadpath varchar(100),
     filename varchar(100),
     image int,
-	bno int
+	bno int,
+	memberId varchar(15)
 );
 
 

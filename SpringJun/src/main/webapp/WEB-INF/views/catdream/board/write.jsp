@@ -22,6 +22,7 @@
 	        <div class="board">
 	            <form role="form" action="/board/write" method="post">
 	            	<input type="hidden" name="writer" value="${login.name}">
+	            	<input type="hidden" name="memberId" value="${login.id}">
 	                <div class="title">
 	                    <label for="title">글 제목</label>
 	                    <div class="titleBox">

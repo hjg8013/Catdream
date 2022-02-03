@@ -23,7 +23,7 @@
 		        <div class="top">
 		        	<div class="col-sm-12 mb-3 mb-sm-0" id="bno">${detail.bno}</div>
 		            <h3 class="title">${detail.title}</h3>
-		            <span class="writer">${detail.writer}</span>
+		            <span class="writer">${detail.writer}(${detail.memberId})</span>
 		        </div>
 		        <div class="center">
 		            <p class="regdate">Posted at ${detail.regdate}</p>
@@ -42,8 +42,8 @@
 	                  				<div class="line"></div>
 	                  				<div class="line"></div>
 	                  				<div class="line"></div>
-	                  				<c:set var="replyer1" value="${content.replyer}"/>
-	                  				<c:if test="${login.name eq replyer1}">
+	                  				<c:set var="replyerId" value="${content.memberId}"/>
+	                  				<c:if test="${login.id eq replyerId}">
 	                  					<div class="replyMenu">
 	                  						<ul>
 	                  							<li><a href="javascript:;" class="replyMode">수정</a></li>
@@ -56,7 +56,7 @@
 	                  						</ul>
                   						</div>
 	                  				</c:if>
-	                  				<c:if test="${login.name ne replyer1}">
+	                  				<c:if test="${login.id ne replyerId}">
 	               						<div class="replyMenu">
 		                  					<ul>
 		                  						<li><a href="#">신고</a></li>
@@ -64,7 +64,7 @@
 	                  					</div>
                   					</c:if>
 	                  			</div>
-	                  			<div class="replyWriter">${content.replyer}<span class="replyDate">${content.replydate}</span></div>
+	                  			<div class="replyWriter">${content.replyer}(${content.memberId})<span class="replyDate">${content.replydate}</span></div>
 	                  			<div class="replyContainer">${content.reply}</div>
 							</div> <!-- replyBox -->
 							<div class="modeComment">
@@ -85,6 +85,7 @@
 		        <div id="writeComent">
 		        	<form action="/reply/write/${detail.bno}" method="post">
                   			<div class="replyWriter">${login.name}</div>
+                  			<input type="hidden" name="memberId" value="${login.id}">
                   			<input type="hidden" name="replyer" value="${login.name}">
                   			<input type="hidden" name="bno" value="${detail.bno}">
                   			<div>
@@ -95,8 +96,8 @@
 		        </div>
 		        <div class="bottom">
 		            <a href="/board/board" class="btn" id="btnList">목록보기</a>
-		            <c:set var="writer1" value="${detail.writer}"/>
-		            <c:if test="${login.name eq writer1}">
+		            <c:set var="boardId" value="${detail.memberId}"/>
+		            <c:if test="${login.id eq boardId}">
 			            <a href="/board/modify?bno=${detail.bno}" class="btn" id="btnWrite">글 수정</a>
 			            <a href="/board/remove?bno=${detail.bno}" class="btn" id="btnDelete">글 삭제</a>
 		            </c:if>
