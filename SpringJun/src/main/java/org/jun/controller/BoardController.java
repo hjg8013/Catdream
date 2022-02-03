@@ -38,7 +38,7 @@ public class BoardController {
 	}
 	
 	
-	
+	//test
 	//글쓰기 화면으로
 	@GetMapping("write")
 	public String write() {
