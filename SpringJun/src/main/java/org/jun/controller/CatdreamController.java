@@ -32,7 +32,6 @@ public class CatdreamController {
 		return "catdream/subindex";
 	}
 
-	// 주석 시험
 	@RequestMapping(value = "/login", method = RequestMethod.GET)  // 웹브라우저를 분석해주는 역할
 	public String login() {
 		logger.info("login 실행됨."); // console 역할
