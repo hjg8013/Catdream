@@ -5,16 +5,16 @@
 <mapper namespace="org.jun.mapper.BoardMapper">
 
 <insert id="write">
-	insert into board(writer,title,content)
-	values(#{writer},#{title},#{content})
+	insert into board(writer,title,content,memberId)
+	values(#{writer},#{title},#{content},#{memberId})
 </insert>
    <!-- board테이블에 Insert하기전에 bno값을 미리 만들어놓고 insert해야함. -->
 <insert id="insertSelectKey"> 
      <selectKey keyProperty="bno" order="BEFORE" resultType="int">
 	 	select IFNULL(max(bno),0)+1 bno from board
 	 </selectKey>
- 		insert into board(bno,title,content, writer)
-		values(#{bno},#{title},#{content},#{writer}) 
+ 		insert into board(bno,title,content, writer,memberId)
+		values(#{bno},#{title},#{content},#{writer},#{memberId}) 
 </insert>
 <select id="detail" resultType="org.jun.domain.BoardDTO">
 	select * from board
@@ -98,8 +98,8 @@
 	delete from board where bno=#{bno}
 </delete>
 <insert id="replyWrite">
-	insert into reply(reply,replyer,bno)
-	values(#{reply},#{replyer},#{bno})
+	insert into reply(reply,replyer,bno,memberId)
+	values(#{reply},#{replyer},#{bno},#{memberId})
 </insert>
 <select id="reply" resultType="org.jun.domain.ReplyDTO">
 	select * from reply where bno=#{bno}

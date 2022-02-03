@@ -11,7 +11,7 @@ public class BoardDTO {
 	private String writer;
 	private String regdate;
 	private int cnt;
-	private int memberId;
+	private String memberId;
 	
 	private ArrayList<AttachFileDTO> attachList;
 	
@@ -58,10 +58,10 @@ public class BoardDTO {
 	public void setAttachList(ArrayList<AttachFileDTO> attachList) {
 		this.attachList = attachList;
 	}
-	public int getMemberId() {
+	public String getMemberId() {
 		return memberId;
 	}
-	public void setMemberId(int memberId) {
+	public void setMemberId(String memberId) {
 		this.memberId = memberId;
 	}
 	@Override
