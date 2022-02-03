@@ -44,7 +44,7 @@ public class CatdreamController {
 	   
 	   MemberDTO login= mservice.login(mdto);
 	   logger.info("MemberDTO안의 데이터 출력"+login);
-	   
+	    
 		session.setAttribute("login", login); //로그아웃이나 웹브라우저를 닫지않는이상 데이터가 사라지지 않는다
 
 		if(session.getAttribute("login")!=null) {
@@ -55,7 +55,7 @@ public class CatdreamController {
 			//다시 로그인 할 수 있게 로그인 페이지로 이동
 			return "redirect:/login";
 		}
-	}
+	} 
 	
 	@RequestMapping(value = "/logout", method = RequestMethod.GET)  // 웹브라우저를 분석해주는 역할
 	public String logout(HttpSession session) {
