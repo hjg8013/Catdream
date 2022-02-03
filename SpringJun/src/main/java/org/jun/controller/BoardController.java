@@ -90,7 +90,6 @@ public class BoardController {
 	@GetMapping("remove")
 	public String remove(BoardDTO bdto,Model model) {
 		bservice.remove(bdto);
-	
 		return "redirect:/board/board";
 	}
 	
