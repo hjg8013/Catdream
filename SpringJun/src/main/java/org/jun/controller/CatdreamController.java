@@ -44,7 +44,7 @@ public class CatdreamController {
 	   
 	   MemberDTO login= mservice.login(mdto);
 	   logger.info("MemberDTO안의 데이터 출력"+login);
-	   
+	    
 		session.setAttribute("login", login); //로그아웃이나 웹브라우저를 닫지않는이상 데이터가 사라지지 않는다
 
 		if(session.getAttribute("login")!=null) {
