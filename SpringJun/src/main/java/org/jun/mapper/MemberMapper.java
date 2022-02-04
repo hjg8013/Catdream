@@ -11,4 +11,6 @@ public interface MemberMapper {
 	public MemberDTO login(MemberDTO mdto);
 	
 	public ArrayList<String> getId();
+	
+	public int idChk(MemberDTO mdto);
 }

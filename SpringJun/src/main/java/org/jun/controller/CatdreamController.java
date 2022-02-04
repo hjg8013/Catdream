@@ -1,5 +1,7 @@
 package org.jun.controller;
 
+import java.util.ArrayList;
+
 import javax.servlet.http.HttpSession;
 
 import org.jun.domain.MemberDTO;
@@ -10,8 +12,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
 public class CatdreamController {
@@ -65,19 +69,42 @@ public class CatdreamController {
 	   
 	   
 	}
+	//아이디 중복 체크
+	@ResponseBody
+	@RequestMapping(value = "/idChk", method = RequestMethod.POST)  // 웹브라우저를 분석해주는 역할	
+	public int idChk(MemberDTO mdto) {
+		logger.info("idChk 실행됨 mdto=."+mdto); // console 역할
+		int result = mservice.idChk(mdto);
+		logger.info("result 결과는" +result); // console 역할
+		return result;
+	}
 	
-	//,produces={MediaType.APPLICATION_JSON_UTF8_VALUE}
 	@RequestMapping(value = "/member", method = RequestMethod.GET)  // 웹브라우저를 분석해주는 역할	
 	public String member() {
 		logger.info("get-member 실행됨."); // console 역할
-		//logger.info("mservice.getId()를 실행함."+mservice.getId()); //아이디의 값을 잘 가져온다
+		logger.info("mservice.getId()를 실행함."+mservice.getId()); //아이디의 값을 잘 가져온다
+
 		return "catdream/member";
 	}
 	
 	@RequestMapping(value = "/member", method = RequestMethod.POST)  // 웹브라우저를 분석해주는 역할	
 	public String member(MemberDTO mdto) {
 		logger.info("post-member 실행됨."); // console 역할
-
+		
+		//아이디 중복확인
+		int result = mservice.idChk(mdto);
+		try {
+			if(result == 1) {
+				//입력된 아이디가 존재한다면 -> 다시 회원가입 페이지로 돌아가기
+				return "catdream/member";
+			}else if(result == 0) {
+				//service.register(vo); 존재하지 않는다면 -> register??
+			}
+		} catch(Exception e){
+			throw new RuntimeException();
+		}
+		
+		
 		//if(mdto.getId()==mservice.getId()) {
 		//	//여기서 비교는 가능한데 원하는 방법은아니다
 		//}

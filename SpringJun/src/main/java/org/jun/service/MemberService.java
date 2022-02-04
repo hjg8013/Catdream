@@ -10,4 +10,6 @@ public interface MemberService {
 	public MemberDTO login(MemberDTO mdto);
 	
 	public ArrayList<String> getId();
+	
+	public int idChk(MemberDTO mdto);
 }
