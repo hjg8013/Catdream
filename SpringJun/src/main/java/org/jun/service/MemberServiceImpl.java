@@ -25,4 +25,8 @@ public class MemberServiceImpl implements MemberService{
 	public ArrayList<String> getId() {
 		return mmapper.getId();
 	}
+	
+	public int idChk(MemberDTO mdto) {
+		return mmapper.idChk(mdto);
+	}
 }

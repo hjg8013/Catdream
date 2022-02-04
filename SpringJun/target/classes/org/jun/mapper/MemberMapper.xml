@@ -20,5 +20,11 @@
   		select id
 		from member;
   	</select>
+  	
+  	<select id="idChk" resultType="int">
+  		select count(*)
+		from member
+		where id= #{id};
+  	</select>
 	
 </mapper>

@@ -3,6 +3,7 @@
  */
 	var boolarr = [false,false,false,false,false,false,false];
 	var booltrue = false;
+	var idbool = [false,false];
 	
 $(document).ready(function(){
 	var userId = document.querySelector("#userId");
@@ -36,44 +37,10 @@ $(document).ready(function(){
 	userEmail.onchange = chaeckEmail;
 	userPhone.onchange = chaeckPhone;
 	
-//	add(userId.value,function(remove){
-//		console.log("어떤결과인가?"+userId.value);
-//	})
-//	
-//	$.getJSON("/member.json",
-//			function(data){ //controller에 있는 fileList를 통해 얻어진 select결과를  data에 저장한후,
-//				console.log("어떤결과인가?"+data);
-//				var str="실행이 되기는하는걸까?";
-//				
-//				
-//				
-//				$(".memberBox1 h4").html(str);
-//
-//			})
 
 	
 })
-//function add(id,callback){
-//		console.log("id......."+id);
-//		﻿
-//		$.ajax({
-//		//url:"/controller/replies/new",
-//		url:"/member",
-//		type:"get",
-//		data:JSON.stringify(id), // JSON.stringfy : 자바스크립트의 값을 JASON 문자열로 변환
-//        contentType:"application/json; charset=utf-8",
-//        success:function(result){
-//           //callback함수선언
-//        	if(callback)
-//        		//만약 콜백함수가 있으면
-//        		callback(result);
-//        	
-//        },   // 통신이 정상적으로 성공했으면
-//        error:function(){
-//           
-//        }      // 통신이 비정상적으로 처리가 되어 error가 있으면
-//     })
-//}
+
 //모든 조건을 충족했는지 확인하는 함수
 function boolarrcheck(){
 	console.log("boolarrcheck실행");
@@ -99,28 +66,68 @@ function boolarrcheck(){
 	if(booltrue){
 		//실행
 		$(".memberButton").prop('disabled', false);
-		console.log("정상실행");
+		//console.log("정상실행");
 	}else{
 		//종료
 		$(".memberButton").prop('disabled', true);
-		console.log("비정상");
+		//console.log("비정상");
 	}
 }
 //아이디 정규식 확인
 function checkId(){
 	//console.log(userId.value);
 	//console.log(isId(userId.value));
+	/*
+	1.type은 get이나 post 같은 http method를 나타낸다.
+	2.url는 데이터를 받아올 페이지다.
+	3.data는 요청시에 함께 보낼 파라미터들이다.  데이터베이스 DTO의 이름 : html에 작성되어있는 id.val
+	4.dataType은 받아올 데이터의 형식인데,      success가 작동된다  result 값을 data로 가져온다
+	5.success는 성공시에 수행할 핸들러를 받는다.
+	6.error는 실패시에 수행할 핸들러를 받는다.
+	 * */
+
+	$.ajax({
+        type:"post",
+        url: "/idChk",
+        data: {'id':$("#userId").val()},
+        dataType: "json",
+        success : function(data) {
+        	if(data == 1){
+        		//alert("중복된 아이디입니다.");
+        		idbool[0] = false;
+        		//console.log("중복된아이디0"+idbool[0]);
+        		return false;
+        	}else if(data == 0 ){
+        		//alert("사용가능한 아이디입니다.");
+        		idbool[0] = true;
+        		//console.log("사용가능한 아이디0"+idbool[0]);
+        	}
+        }
+		, error : function() {
+			alert('서버 통신 실패');
+		}
+    });
+	
 	if(isId(userId.value)){
 		//아이디의 규칙을 지켰을때
 		var str = "";
-		boolarr[0] = true;
-		boolarrcheck();
+		idbool[1] = true;
+		//console.log("규칙을지킨아이디1"+idbool[1]);
 	}else{
 		//아이디의 규칙을 실패했을때
 		var str="영문자로 시작하는 영문자 또는 숫자 7~20자";
-		boolarr[0] = false;
-		boolarrcheck();
+		idbool[1] = false;
+		//console.log("규칙을안지킨아이디1"+idbool[1]);
+
 	}
+	//아이디의 규칙을 지키고 데이터베이스에 중복이 안되었을때
+	if(idbool[0] == true && idbool[1] == true){
+		boolarr[0] = true;	
+		boolarrcheck();
+	}else{
+		boolarr[0] = false;	
+	}
+	//오류창을 띄운다
 	$(".memberBox1 h4").html(str);
 }
 
