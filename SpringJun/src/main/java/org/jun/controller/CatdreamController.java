@@ -82,7 +82,7 @@ public class CatdreamController {
 	@RequestMapping(value = "/member", method = RequestMethod.GET)  // 웹브라우저를 분석해주는 역할	
 	public String member() {
 		logger.info("get-member 실행됨."); // console 역할
-		logger.info("mservice.getId()를 실행함."+mservice.getId()); //아이디의 값을 잘 가져온다
+		//logger.info("mservice.getId()를 실행함."+mservice.getId()); //아이디의 값을 잘 가져온다
 
 		return "catdream/member";
 	}
