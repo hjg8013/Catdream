@@ -17,6 +17,7 @@ $(document).ready(function(){
 	var userGender = document.querySelector("#userGender");
 	var userEmail = document.querySelector("#userEmail");
 	var userPhone = document.querySelector("#userPhone");
+	//버튼추가
 	
 	console.log(boolarr[0]);
 	console.log(boolarr[1]);
@@ -37,9 +38,25 @@ $(document).ready(function(){
 	userEmail.onchange = chaeckEmail;
 	userPhone.onchange = chaeckPhone;
 	
+	//버튼을 클릭했다면
 
 	
 })
+
+//회원가입에 추가해야할 세부사항
+//일단 버튼을 클릭하고 모두 true면 실행 flase면 틀린 제일위에꺼로 focus()를 가게만들어야한다
+//작성해야하는곳에서 작성하지않고 버튼을 클릭하면 해당위치로 커서가 옴겨지게 해야한다 .focus()
+//비밀번호랑 비밀번호 재확인 두개가 동시에 작동해야하나?
+//이메일은 선택이기때문에 확인에서 뺴야한다
+//이메일을 작성한다음 비우면 오류메시지가 계속보이는 문제가있다
+
+//인증번호 받기 -> 랜덤으로 번호를 받아와야한다
+//랜덤번호가 인증번호가 맞으면 통과 안맞으면 불합격 
+//회원가입이 완료되었다는 창을 만들어서 완료를 알리는것도 좋다
+
+//로그인에 페이지에 추가해야할것들
+//아이디찾기 비밀번호찾기 패아스북아이디로그인(예외) 비회원 주문조회(주문자명,주문번호)
+
 
 //모든 조건을 충족했는지 확인하는 함수
 function boolarrcheck(){
@@ -63,6 +80,8 @@ function boolarrcheck(){
 			booltrue=true;			
 		}
 	}
+	
+	//버튼을 활성화실키고 비활성화 시키는곳
 	if(booltrue){
 		//실행
 		$(".memberButton").prop('disabled', false);
