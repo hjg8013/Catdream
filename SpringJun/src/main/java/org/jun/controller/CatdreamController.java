@@ -35,13 +35,15 @@ public class CatdreamController {
 		logger.info("catdream 실행됨."); // console 역할
 		return "catdream/subindex";
 	}
-
+	
+	//로그인 창
 	@RequestMapping(value = "/login", method = RequestMethod.GET)  // 웹브라우저를 분석해주는 역할
 	public String login() {
 		logger.info("login 실행됨."); // console 역할
 		return "catdream/login";
 	}
-
+	
+	//로그인 성공
 	@RequestMapping(value = "/login", method = RequestMethod.POST)  // 웹브라우저를 분석해주는 역할
 	public String login(MemberDTO mdto,HttpSession session) {
 	   logger.info("post-login 실행됨."); // console 역할
@@ -61,13 +63,12 @@ public class CatdreamController {
 		}
 	} 
 	
+	//로그아웃
 	@RequestMapping(value = "/logout", method = RequestMethod.GET)  // 웹브라우저를 분석해주는 역할
 	public String logout(HttpSession session) {
 	   logger.info("get-logout 실행됨."); // console 역할
 	   session.invalidate();
 	   return "redirect:/catdream";
-	   
-	   
 	}
 	//아이디 중복 체크
 	@ResponseBody

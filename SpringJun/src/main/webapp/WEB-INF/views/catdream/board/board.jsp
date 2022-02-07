@@ -36,12 +36,9 @@
 					<tbody>
 						<c:forEach items="${list}" var="board">
 							<tr>
-								<td class="gong">
-									<a href="/board/boardDetail?bno=${board.bno}">${board.bno}</a>
-								</td>
-								<td class="title">
-									<a href="/board/boardDetail?bno=${board.bno}">${board.title}</a>
-								</td>
+								<td class="gong">${board.bno}</td>
+								<td class="title"><a
+									href="/board/boardDetail?bno=${board.bno}">${board.title}</a></td>
 								<td class="user">${board.writer}(${board.memberId})</td>
 								<td class="date">${board.regdate}</td>
 								<td class="check">${board.cnt}</td>

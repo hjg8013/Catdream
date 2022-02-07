@@ -17,7 +17,7 @@
         <a href="/catdream">
             <h2 class="memberTitle">Cat Dream</h2>
         </a>
-            <form action="/member" method="post">
+            <form action="/member" method="post" onsubmit="return boolarrcheck();">
             
             <ul>
              	<li class="memberBox0">
@@ -121,7 +121,7 @@
                 </li>
 
                 <li class="memberBox9">
-                	<input type="submit" class="memberButton" value="가입하기" disabled>
+                	<input type="submit" class="memberButton" value="가입하기">
                     <!-- <a href=""><div class="memberButton">가입하기</div></a> -->
                 </li>
             </form>
