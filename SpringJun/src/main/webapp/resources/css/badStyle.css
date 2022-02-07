@@ -55,7 +55,7 @@ ul,ol{
     text-align: center;
 }
 
-.board .title a{
+.board .title a,.board .gong a{
 	color: #333;
 }
 
