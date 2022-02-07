@@ -5,7 +5,7 @@
 	var booltrue = false;
 	var idbool = [false,false];
 	var birthbool = [false,false,false];
-	
+	var str="";
 $(document).ready(function(){
 	var userId = document.querySelector("#userId");
 	var userPw = document.querySelector("#userPw");
@@ -32,9 +32,9 @@ $(document).ready(function(){
 	userPw.onchange = checkPw;
 	userPwCheck.onchange = checkPwCheck;
 	userName.onchange = checkName;
-	userYy.onchange = chaeckBirth;
-	userMm.onchange = chaeckBirth;
-	userDd.onchange = chaeckBirth;
+	userYy.onchange = chaeckYy;
+	userMm.onchange = chaeckMm;
+	userDd.onchange = chaeckDd;
 	userGender.onchange = chaeckGender;
 	userEmail.onchange = chaeckEmail;
 	userPhone.onchange = chaeckPhone;
@@ -45,13 +45,8 @@ $(document).ready(function(){
 })
 
 //회원가입에 추가해야할 세부사항
-//일단 버튼을 클릭하고 모두 true면 실행 flase면 틀린 제일위에꺼로 focus()를 가게만들어야한다
-//작성해야하는곳에서 작성하지않고 버튼을 클릭하면 해당위치로 커서가 옴겨지게 해야한다 .focus()
-//비밀번호랑 비밀번호 재확인 두개가 동시에 작동해야하나?
-//이메일은 선택이기때문에 확인에서 뺴야한다
-//이메일을 작성한다음 비우면 오류메시지가 계속보이는 문제가있다
 
-//생년월일을 입력안하고 넘어갈수가있다 생년월일을 입력안하면 오류가뜬다 
+//생년월일 숫자만 입력할수있게 정규식을 작성해야한다
 //아이디 저장 쿠키를 사용해서 저장한다
 
 //인증번호 받기 -> 랜덤으로 번호를 받아와야한다
@@ -70,7 +65,7 @@ function boolarrcheck(){
 	console.log("비밀번호확인"+boolarr[2]); //비밀번호 확인
 	console.log("이름"+boolarr[3]); //이름
 	console.log("성별"+boolarr[4]); //성별
-	console.log("이메일"+boolarr[5]); //이메일
+	console.log("생년월일"+boolarr[5]); //생년월일
 	console.log("휴대폰"+boolarr[6]); //휴대폰
 	
 	if(boolarr[0] == false){
@@ -173,12 +168,12 @@ function checkId(){
 	
 	if(isId(userId.value)){
 		//아이디의 규칙을 지켰을때
-		var str = "";
+		str = "";
 		idbool[1] = true;
 		console.log("규칙을지킨아이디1"+idbool[1]);
 	}else{
 		//아이디의 규칙을 실패했을때
-		var str="영문자로 시작하는 영문자 또는 숫자 7~20자";
+		str="영문자로 시작하는 영문자 또는 숫자 7~20자";
 		//userId.focus(); 커서 안움직이게 하는것도 좋은가?
 		idbool[1] = false;
 		console.log("규칙을안지킨아이디1"+idbool[1]);
@@ -200,12 +195,12 @@ function checkPw(){
 	console.log(isPw(userPw.value));
 	if(isPw(userPw.value)){
 		//비밀번호의 규칙을 지켰을때
-		var str = "";
+		str = "";
 		boolarr[1] = true;
 		//boolarrcheck();
 	}else{
 		//비밀번호의 규칙을 실패했을때
-		var str="숫자, 특문 각 1회 이상, 영문은 2개 이상 사용하여 8자리 이상";
+		str="숫자, 특문 각 1회 이상, 영문은 2개 이상 사용하여 8자리 이상";
 		boolarr[1] = false;
 		//boolarrcheck();
 	}
@@ -218,12 +213,12 @@ function checkPwCheck(){
 	console.log(userPwCheck.value);
 	if(userPw.value==userPwCheck.value){
 		//비밀번호가 같습니다
-		var str = "";
+		str = "";
 		boolarr[2] = true;
 		//boolarrcheck();
 	}else{
 		//비밀번호의 규칙을 실패했을때
-		var str="비밀번호가 같지 않습니다";
+		str="비밀번호가 같지 않습니다";
 		boolarr[2] = false;
 		//boolarrcheck();
 	}
@@ -234,12 +229,12 @@ function checkPwCheck(){
 function checkName(){
 	if(userName.value!=""){
 		//이름을 적었다면
-		var str = "";
+		str = "";
 		boolarr[3] = true;
 		//boolarrcheck();
 	}else{
 		//이름이 비어있다면
-		var str = "이름을 적지 않았습니다";
+		str = "이름을 적지 않았습니다";
 		boolarr[3] = false;
 		//boolarrcheck();
 	}
@@ -248,34 +243,76 @@ function checkName(){
 
 //날짜를 입력하지 않았을때 4자리인지 검사해야한다
 function chaeckYy(){
+	console.log("년도의 길이"+userYy.value.length);
 	if(userYy.value!=""){
 		//년도를 입력했다면
-		
+		 if(!isYy(userYy.value)){
+			 str ="숫자를 입력하지 않았거나 자릿수가 4자리가 아닙니다."
+		 }else{
+			 str = "";
+			 birthbool[0] = true;
+			 chaeckBirth();			 
+		 }
 	}else{
 		//년도를 입력하지 않았다면
+		str ="년도를 입력하지 않았습니다"
 	}
+	console.log(userYy.value);
+	console.log(str);
+	$(".memberBox5 h4").html(str);
 }
-
-
-
+//날짜를 입력하지 않았을때
+function chaeckMm(){
+	if(userMm.value!=""){
+		//월을 입력했다면
+		str = "";
+		birthbool[1] = true;
+		chaeckBirth();
+	}else{
+		//월을 입력하지 않았다면
+		str ="월을 입력하지 않았습니다"
+	}
+	console.log(userMm.value);
+	console.log(str);
+	$(".memberBox5 h4").html(str);
+}
+//날짜를 입력하지 않았을때
+function chaeckDd(){
+	if(userDd.value!=""){
+		//일을 입력했다면
+		str = "";
+		birthbool[2] = true;
+		chaeckBirth();
+	}else{
+		//일을 입력하지 않았다면
+		str ="일을 입력하지 않았습니다"
+	}
+	console.log(userDd.value);
+	console.log(str);
+	$(".memberBox5 h4").html(str);
+}
 
 
 //날짜를 입력
 function chaeckBirth(){
 	if(birthbool[0] == true&&birthbool[1] == true &&birthbool[2] == true){
 		userBirth.value = userYy.value+userMm.value+userDd.value;		
+		console.log("생년월일"+userBirth.value);
+		boolarr[5] = true;
+	}else{
+		boolarr[5] = false;
 	}
 }
 // 성별을 확인
 function chaeckGender(){
 	if(userGender.value != "none"){
 		//성별을 선택했을때
-		var str = "";
+		str = "";
 		boolarr[4] = true;
 		//boolarrcheck();
 	}else{
 		//성별을 선택을 안했을때
-		var str="성별을 선택해주세요";
+		str="성별을 선택해주세요";
 		boolarr[4] = false;
 		//boolarrcheck();
 	}
@@ -283,29 +320,28 @@ function chaeckGender(){
 }
 //이메일 확인
 function chaeckEmail(){
-	if(isEmail(userEmail.value)){
+	if(isEmail(userEmail.value) || userEmail.value==""){
 		//이메일을 정상
-		var str = "";
-		boolarr[5] = true;
+		str = "";
 		//boolarrcheck();
 	}else{
 		//이메일의 형식이 아닐때
-		var str="정상적인 이메일의 형식이 아닙니다";
-		boolarr[5] = false;
+		str="정상적인 이메일의 형식이 아닙니다";
 		//boolarrcheck();
 	}
+	
 	$(".memberBox7 h4").html(str);
 }
 //휴대폰 확인
 function chaeckPhone(){
 	if(isPhone(userPhone.value)){
 		//휴대폰 정상
-		var str = "";
+		str = "";
 		boolarr[6] = true;
 		//boolarrcheck();
 	}else{
 		//휴대폰 형식이 아닐때
-		var str="정상적인 휴대폰번호가 아닙니다";
+		str="정상적인 휴대폰번호가 아닙니다";
 		boolarr[6] = false;
 		//boolarrcheck();
 	}
@@ -334,6 +370,11 @@ function isEmail(asValue){
 //휴대폰 정규식
 function isPhone(asValue){
 	var regExp = /^01([0|1|6|7|8|9])-?([0-9]{3,4})-?([0-9]{4})$/;
+	return regExp.test(asValue);
+}
+//년도 정규식
+function isYy(asValue){
+	var regExp =/^\d{4}$/;
 	return regExp.test(asValue);
 }
 
