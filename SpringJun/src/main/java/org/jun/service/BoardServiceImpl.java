@@ -57,6 +57,12 @@ public class BoardServiceImpl implements BoardService{
 	public void remove(BoardDTO bdto) {
 		bmapper.remove(bdto);
 	}
+	
+	// 게시물 선택삭제
+	public void ajaxRemove(String remove) {
+		bmapper.ajaxRemove(remove);
+	}
+	
 	public void replyWrite(ReplyDTO rdto) {
 		bmapper.replyWrite(rdto);
 	}

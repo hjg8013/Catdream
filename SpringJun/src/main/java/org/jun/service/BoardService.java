@@ -21,6 +21,9 @@ public interface BoardService {
 	
 	public void remove(BoardDTO bdto);
 	
+	// 게시물 선택삭제
+	public void ajaxRemove(String remove);
+	
 	public void replyWrite(ReplyDTO rdto);
 	
 	public ArrayList<ReplyDTO> reply(ReplyDTO rdto);

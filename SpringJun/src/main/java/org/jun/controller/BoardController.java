@@ -2,6 +2,8 @@ package org.jun.controller;
 
 import java.util.ArrayList;
 
+import javax.servlet.http.HttpServletRequest;
+
 import org.jun.domain.AttachFileDTO;
 import org.jun.domain.BoardDTO;
 import org.jun.domain.Criteria;
@@ -87,9 +89,21 @@ public class BoardController {
 		return "redirect:/board/boardDetail";
 	}
 	
+	// 게시물 삭제
 	@GetMapping("remove")
 	public String remove(BoardDTO bdto,Model model) {
 		bservice.remove(bdto);
+		return "redirect:/board/board";
+	}
+	
+	// 게시물 선택 삭제
+	@PostMapping("remove")
+	public String ajaxRemove(HttpServletRequest request) {
+		String[] ajaxMsg = request.getParameterValues("valueArr");
+		int size = ajaxMsg.length;
+		for(int i=0; i<size; i++) {
+			bservice.ajaxRemove(ajaxMsg[i]);
+		}
 		return "redirect:/board/board";
 	}
 	
