@@ -41,7 +41,8 @@ create table reply(
     bno int,
     reply varchar(1000) not null,
     replyer varchar(15),
-    replydate datetime default now()
+    replydate datetime default now(),
+    memberId varchar(15)
 );
 
 select * from reply;
