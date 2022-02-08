@@ -76,7 +76,7 @@
                         <option value="11">11월</option>
                         <option value="12">12월</option>
                     </select>
-                    <input type="text"  class="inputText2" id="userDd"  placeholder="일">
+                    <input type="text"  class="inputText2" id="userDd"  placeholder="일(2자)">
                     <h4></h4>
                     
                     <input name="birth" class="inputText1" type="hidden" id="userBirth">
@@ -126,11 +126,7 @@
                 </li>
             </form>
                 <li class="memberBox10">
-                <!-- 레이블에 밖에 a태그가 있어서 레이블이 a 태그를 가린다 -->
-                    <a href=""><label for="">이용약관</label></a>
-                    <a href=""><label for="">개인정보처리방침</label></a>
-                    <a href=""><label for="">책임의 한계와 법적고지</label></a>
-                    <a href=""><label for="">회원정보 고객센터</label></a>
+                    <label for=""><a href="">이용약관</a></label><label for="" id="point"><a href="">개인정보처리방침</a></label><label for=""><a href="">책임의 한계와 법적고지</a></label><label for=""><a href="">회원정보 고객센터</a></label>
                 </li>
             </ul>
         </div>

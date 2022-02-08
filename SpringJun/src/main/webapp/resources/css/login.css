@@ -12,13 +12,9 @@ a{
     text-decoration: none;
 }
 
-img{
-    vertical-align: top;
-    border: 0;
-}
 
 #loginWrap{
-    width: 1200px;
+    width: 100%;
     margin: 0 auto;
 }
 
@@ -28,8 +24,18 @@ img{
     
 }
 
+h1{
+	color: #f38281;
+    font-size: 40px;
+    line-height: 40px;
+    text-align: center;
+    padding: 50px 30px 30px 30px;
+    margin-bottom: 5px;
+}
+
 .loginBox1{
-    padding: 40px 40px;
+	background-color: #FEFAEC;
+    padding: 40px 60px;
     border: 1px solid #aaa;
 }
 
@@ -41,6 +47,7 @@ img{
 }
 .loginUser{
     display: flex;
+    justify-content: space-between;
     margin-bottom: 20px;
 }
 .loginL{
@@ -48,51 +55,52 @@ img{
     margin-bottom: 15px;
 }
 .inputText1{
+	border: solid 1px #dadada;
     width: 300px;
     height: 30px;
 }
 .loginLUp, .noneMemberOrderLUp{
     margin-bottom: 10px;
 }
+.loginLUp input,.loginLDown input,.noneMemberOrderLUp input,.noneMemberOrderLDown input{
+	padding-left: 5px;
+	box-sizing: border-box;
+}
 .loginButton{
-    background-color: #aaa;
+	border: none;
+	border-radius: 3px;
+    background-color: #f38281;
     width: 150px;
-    height: 80px;
+    height: 74px;
     text-align: center;
-    line-height: 80px;
+    line-height: 74px;
     font-size: 16px;
     color: #fff;
+    font-weight: bold;
 }
 
 .loginBox2{
     display: flex;
+    justify-content: space-between;
     margin-bottom: 30px;
 }
 .loginMember{
     
 }
-.memberButton{
+.memberButton,.idButton,.pwButton{
     width: 140px;
     height: 40px;
-    background-color: #aaa;
+    background-color: #f38281;
     font-size: 16px;
     text-align: center;
     line-height: 40px;
     color: #fff;
     margin-right: 20px;
+    font-weight: bold;
 }
-.idButton{
-    margin-right: 20px;
-}
-.idButton,.pwButton{
-    width: 140px;
-    height: 40px;
-    background-color: #fff;
-    border: 1px solid #333;
-    font-size: 16px;
-    text-align: center;
-    line-height: 40px;
-    color: #333;
+
+.pwButton{
+	margin-right: 0;
 }
 
 
@@ -108,31 +116,34 @@ img{
 }
 .facebookButton{
     width: 300px;
-    height: 30px;
-    font-size: 16px;
-    text-align: center;
-    line-height: 30px;
-    background-color: dodgerblue;
-    border: 1px solid #333;
-    color: #fff;
+    height: 35px;
+
+    background-image: url("../img/login_sns_facebook_wide.gif");
+    background-repeat:no-repeat;
+    background-size: cover;
+    background-position: center;
+    text-indent: -999999999999999px;
 }
 
 .noneUser{
     display: flex;
+	justify-content: space-between;
     margin-bottom: 10px;
 }
 .noneMemberOrderL{
     margin-right: 10px;
 }
-.noneMemberOrderR{
-    background-color: #fff;
-    border: 1px solid #333;
+.noneMemberOrderR .checkButton{
+	border: none;
+	border-radius: 3px;
+    background-color: #f38281;
     width: 150px;
-    height: 80px;
+    height: 74px;
     text-align: center;
-    line-height: 80px;
+    line-height: 74px;
     font-size: 16px;
-    color: #333;
+    color: #fff;
+    font-weight: bold;
 }
 .cautions{
     color: #333;
