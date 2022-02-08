@@ -26,6 +26,7 @@
 				<table class="board"> 
 					<thead>
 						<tr>
+							<th style="background-color:#fafafa;"><input id="allCheck" type="checkbox" name="allCheck"/></th>
 							<th class="mainNum">게시판 번호</th>
 							<th class="mainTitle">제목</th>
 							<th class="mainUser">작성자</th>
@@ -36,6 +37,16 @@
 					<tbody>
 						<c:forEach items="${list}" var="board">
 							<tr>
+								<c:choose>
+									<c:when test="${login.id eq board.memberId}">
+										<td class="checkbox"><input name="RowCheck" type="checkbox" value="${board.bno}"/></td>
+									</c:when>
+									<c:otherwise>
+										<td class="checkbox"><input name="RowCheck" type="checkbox" value="${board.bno}" disabled/></td>
+									</c:otherwise>
+								</c:choose>
+								
+								
 								<td class="gong"><a href="/board/boardDetail?bno=${board.bno}">${board.bno}</a></td>
 								<td class="title"><a href="/board/boardDetail?bno=${board.bno}">${board.title}</a></td>
 								<td class="user">${board.writer}(${board.memberId})</td>
@@ -50,6 +61,7 @@
 						<a href="/board/write">글쓰기</a>
 					</div>
 				</c:if>
+						<input type="button" value="선택삭제" onclick="deleteValue();">
 				<form id="actionForm" action="/board/board" method="get">
 					<div class="search">
 						<input type="hidden" name="pageNum" value="${pageMaker.cri.pageNum}">

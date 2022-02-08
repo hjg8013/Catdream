@@ -97,6 +97,13 @@
 <delete id="remove">
 	delete from board where bno=#{bno}
 </delete>
+
+<delete id="ajaxRemove">
+	delete from board where bno=#{bno}
+</delete>
+
+
+
 <insert id="replyWrite">
 	insert into reply(reply,replyer,bno,memberId)
 	values(#{reply},#{replyer},#{bno},#{memberId})

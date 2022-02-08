@@ -23,6 +23,9 @@ public interface BoardMapper {
 	
 	public void remove(BoardDTO bdto);
 	
+	// 게시물 선택삭제
+	public void ajaxRemove(String remove);
+	
 	//댓글 쓰기
 	public void replyWrite(ReplyDTO rdto);
 	
