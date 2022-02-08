@@ -46,15 +46,14 @@ $(document).ready(function(){
 
 //회원가입에 추가해야할 세부사항
 
-//생년월일 숫자만 입력할수있게 정규식을 작성해야한다
-//아이디 저장 쿠키를 사용해서 저장한다
-
 //인증번호 받기 -> 랜덤으로 번호를 받아와야한다
 //랜덤번호가 인증번호가 맞으면 통과 안맞으면 불합격 
 //회원가입이 완료되었다는 창을 만들어서 완료를 알리는것도 좋다
 
 //로그인에 페이지에 추가해야할것들
 //아이디찾기 비밀번호찾기 패아스북아이디로그인(예외) 비회원 주문조회(주문자명,주문번호)
+
+//아이디 저장 쿠키를 사용해서 저장한다
 
 
 //모든 조건을 충족했는지 확인하는 함수
@@ -265,6 +264,7 @@ function chaeckYy(){
 function chaeckMm(){
 	if(userMm.value!=""){
 		//월을 입력했다면
+
 		str = "";
 		birthbool[1] = true;
 		chaeckBirth();
@@ -280,12 +280,16 @@ function chaeckMm(){
 function chaeckDd(){
 	if(userDd.value!=""){
 		//일을 입력했다면
-		str = "";
-		birthbool[2] = true;
-		chaeckBirth();
+		if(!isDd(userDd.value)){
+			str="일(2자)을 입력하지 않았습니다.";
+		}else{
+			str = "";
+			birthbool[2] = true;
+			chaeckBirth();			
+		}
 	}else{
 		//일을 입력하지 않았다면
-		str ="일을 입력하지 않았습니다"
+		str ="일(2자)을 입력하지 않았습니다"
 	}
 	console.log(userDd.value);
 	console.log(str);
@@ -301,6 +305,9 @@ function chaeckBirth(){
 		boolarr[5] = true;
 	}else{
 		boolarr[5] = false;
+	}
+	if(userBirth.value.length != 8){
+		str = "생년월일을 전부 입력하지 않았습니다";
 	}
 }
 // 성별을 확인
@@ -377,5 +384,11 @@ function isYy(asValue){
 	var regExp =/^\d{4}$/;
 	return regExp.test(asValue);
 }
+//일 정규식
+function isDd(asValue){
+	var regExp =/^(0[1-9]|[12][0-9]|3[0-1])$/;
+	return regExp.test(asValue);
+}
+
 
 

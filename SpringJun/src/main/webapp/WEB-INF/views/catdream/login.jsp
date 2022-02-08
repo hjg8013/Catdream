@@ -12,8 +12,9 @@
 <body>
     <div id="loginWrap">
         <div class="loginIn">
-            <h1>로그인</h1>
-
+        <a href="/catdream">
+            <h1>Cat Dream</h1>
+		</a>
             <div class="loginBox1">
                 <h2 class="loginTitle">회원 로그인</h2>
                 <form action="login" method="post" >
