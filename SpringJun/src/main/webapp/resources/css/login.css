@@ -46,9 +46,10 @@ h1{
     margin-bottom: 10px;
 }
 .loginUser{
+	position: relative;
     display: flex;
     justify-content: space-between;
-    margin-bottom: 20px;
+    margin-bottom: 0px;
 }
 .loginL{
     margin-right: 10px;
@@ -78,7 +79,17 @@ h1{
     color: #fff;
     font-weight: bold;
 }
-
+.idSave{
+	position:absolute;
+	left: 10px;
+    bottom: -20px;
+}
+.idSave label{
+	font-size: 12px;
+}
+.idSave label input{
+	margin-right: 10px;
+}
 .loginBox2{
     display: flex;
     justify-content: flex-end;
@@ -87,11 +98,26 @@ h1{
 .loginMember{
     
 }
+
+.loginBox2 div::after{
+	display: inline-block;
+	content: "";
+	clear: both;
+	width: 1px;
+	height: 10px;
+	background-color: #aaa;
+	margin: 1px 10px 0px 5px;
+	
+}
+
+.loginBox2 div:last-child::after{
+	display: none;
+}
+
 .memberButton a,.idButton a,.pwButton a{
+	display: inline-block; 
     font-size: 12px;
-    text-align: center;
     color: #333;
-    margin-right: 20px;
     font-weight: bold;
 }
 
