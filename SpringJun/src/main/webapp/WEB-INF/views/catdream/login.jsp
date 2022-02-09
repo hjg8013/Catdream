@@ -30,23 +30,21 @@
                     <div class="loginR">
                         <input type="submit" class="loginButton" value="로그인">
                     </div>
+	                <div>
+	                	<label><input name="idSave" type="checkbox" value="idSave">아이디 저장</label>
+	                </div>
                 </div>
                 </form>
+
                 <div class="loginBox2">
                     <div class="loginMember">
-                        <a href="/member">
-                            <div class="memberButton">회원가입</div>
-                        </a>
+                            <label class="memberButton"><a href="/member">회원가입</a></label>
                     </div>
                     <div class="idSearch">
-                        <a href="">
-                            <div class="idButton">아이디 찾기</div>
-                        </a>
+                            <label class="idButton"><a href="">아이디 찾기</a></label>
                     </div>
                     <div class="pwSearch">
-                        <a href="">
-                            <div class="pwButton">비밀번호 찾기</div>
-                        </a>
+                            <label class="pwButton"><a href="">비밀번호 찾기</a></label>
                     </div>
                 </div>
                 <div class="facebookLogin">
