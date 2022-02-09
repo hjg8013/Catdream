@@ -59,6 +59,21 @@ ul,ol{
 	color: #333;
 }
 
+.chooseBtn{
+	position: absolute;
+    bottom: -20px;
+    left: 10px;
+	background-color: #fff;
+	color: #333;
+	border: 1px solid #aaa;
+	padding: 5px 10px;
+}
+
+.none{
+	display: none;
+}
+
+
 #boardWrite{
     position: absolute;
     bottom: -20px;
