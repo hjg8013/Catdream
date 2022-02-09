@@ -42,7 +42,7 @@
 										<td class="checkbox"><input name="RowCheck" type="checkbox" value="${board.bno}"/></td>
 									</c:when>
 									<c:otherwise>
-										<td class="checkbox"><input name="RowCheck" type="checkbox" value="${board.bno}" disabled/></td>
+										<td class="checkbox"><input name="notRowCheck" type="checkbox" value="${board.bno}" disabled/></td>
 									</c:otherwise>
 								</c:choose>
 								
