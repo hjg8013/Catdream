@@ -16,13 +16,49 @@ $(document).ready(function(){
 	
 	var hjwObj = document.getElementsByName("RowCheck");
 	var rowCnt = hjwObj.length;
+	var hjw_listArr = $(hjwObj); 
+
+
+	if(hjw_listArr.length == 0){
+		console.log("RowCheck의 갯수가 0이면 전체선택 비활성화");
+		$("#allCheck").attr("disabled", true);
+	}else{
+		console.log("RowCheck의 개수가 1개이상임 전체선택 활성");
+	}
+	
 
 	$("input[name='allCheck']").click(function() {
-		var hjw_listArr = $(hjwObj); 
 		for (let i = 0; i < hjw_listArr.length; i++) {
 			hjw_listArr[i].checked = this.checked;
 		}
 	});
+	
+	$("input[name='allCheck']").change(function(){
+		if($(this).prop("checked")){
+			$(".chooseBtn").removeClass("none");
+		}else{
+			$(".chooseBtn").addClass("none");
+		}
+		
+	});
+	
+
+	$(hjwObj).change(function(){
+		var boolnone = false;
+		for (let i = 0; i < hjw_listArr.length; i++) {
+			if($(hjwObj)[i].checked == true){
+				boolnone= true;					
+			}
+		}
+		if(boolnone){
+			$(".chooseBtn").removeClass("none");				
+		}else{
+			$(".chooseBtn").addClass("none");
+		}
+		
+	});
+	
+
 	$(hjwObj).click(function() {
 		if ($(hjwObj.checked).length == rowCnt) {
 			$("input[name='allCheck']")[0].checked = true;
@@ -30,6 +66,8 @@ $(document).ready(function(){
 			$("input[name='allCheck']")[0].checked = false;
 		}
 	});
+	
+
 })
 
 
