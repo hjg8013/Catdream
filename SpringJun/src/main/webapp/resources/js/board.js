@@ -22,7 +22,6 @@ $(document).ready(function(){
 		for (let i = 0; i < hjw_listArr.length; i++) {
 			hjw_listArr[i].checked = this.checked;
 		}
-
 	});
 	$(hjwObj).click(function() {
 		if ($(hjwObj.checked).length == rowCnt) {
