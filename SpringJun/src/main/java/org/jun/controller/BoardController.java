@@ -62,7 +62,6 @@ public class BoardController {
 	@GetMapping("boardDetail")
 	public String detail(BoardDTO bdto,ReplyDTO rdto,Model model) {
 		model.addAttribute("detail", bservice.detail(bdto));
-		System.out.println(bservice.reply(rdto));
 		model.addAttribute("reply", bservice.reply(rdto));
 		return "catdream/board/boardDetail";
 	}

@@ -58,27 +58,19 @@ public class BoardServiceImpl implements BoardService{
 		bmapper.remove(bdto);
 	}
 	
+	//댓글 리스트 가져오기
+	public ArrayList<ReplyDTO> reply(ReplyDTO rdto){
+		return bmapper.reply(rdto);
+	}
+		
 	// 게시물 선택삭제
 	public void ajaxRemove(String remove) {
 		bmapper.ajaxRemove(remove);
 	}
 	
-	public void replyWrite(ReplyDTO rdto) {
-		bmapper.replyWrite(rdto);
-	}
-	public ArrayList<ReplyDTO> reply(ReplyDTO rdto) {
-		return bmapper.reply(rdto);
-	}
-	
+
 	public ArrayList<AttachFileDTO> fileList(int bno){
 		return amapper.fileList(bno);
 	}
 	
-	public void modifyReply(ReplyDTO rdto) {
-		bmapper.modifyReply(rdto);
-	}
-	
-	public void deleteReply(ReplyDTO rdto) {
-		bmapper.deleteReply(rdto);
-	}
 }

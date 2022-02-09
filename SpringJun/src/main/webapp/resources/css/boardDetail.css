@@ -62,13 +62,15 @@ a{
 .sred{
   color: red;
 }
+
 .replyBoxing{
-	padding:20px;
+
 }
 .replyBox{
 	position:relative;
 	padding:20px;
 	border-bottom:1px solid #ccc;
+	box-sizing: border-box;
 }
 .hbgBtn{
 	position:absolute;
@@ -92,6 +94,17 @@ a{
 	background-color:white;
 	color:#333;
 	box-shadow: 0px 0px 2px #000;
+}
+
+.hbgBtn input{
+	outline:none;
+	cursor:pointer;
+	background-color:transparent;
+	border:none;
+}
+
+.hbgBtn input:hover{
+	color:red;
 }
 
 .menuBtn{
