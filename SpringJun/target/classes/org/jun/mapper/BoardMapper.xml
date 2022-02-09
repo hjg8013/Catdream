@@ -103,20 +103,8 @@
 </delete>
 
 
-
-<insert id="replyWrite">
-	insert into reply(reply,replyer,bno,memberId)
-	values(#{reply},#{replyer},#{bno},#{memberId})
-</insert>
 <select id="reply" resultType="org.jun.domain.ReplyDTO">
-	select * from reply where bno=#{bno}
+	select * from reply
+	where bno=#{bno}
 </select>
-<update id="modifyReply">
-	update reply
-	set reply=#{reply} where rno=#{rno}
-</update>
-<delete id="deleteReply">
-	delete from reply
-	where rno=#{rno}
-</delete>
 </mapper>

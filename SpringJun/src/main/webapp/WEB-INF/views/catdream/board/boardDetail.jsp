@@ -46,13 +46,8 @@
 	                  				<c:if test="${login.id eq memberId}">
 	                  					<div class="replyMenu">
 	                  						<ul>
-	                  							<li><a href="javascript:;" class="replyMode">수정</a></li>
-	                  							<li>
-	                  								<form action="/reply/delete/${detail.bno}" method="get" name="fr1">
-	                  									<input type="hidden" name="rno" value="${content.rno}">
-	                  									<input type="submit" class="menuBtn" value="삭제" id="replyDelete">
-	                  								</form>
-	                  							</li>
+	                  							<li><input type="button" class="replyMode" value="수정"></li>
+	                  							<li><input type="button" class="replyDelete" value="삭제"></li>
 	                  						</ul>
                   						</div>
 	                  				</c:if>
@@ -71,12 +66,12 @@
 			        			<form action="/reply/modify/${detail.bno}" method="post">
 		                  			<div class="replyWriter">${login.name}</div>
 		                  			<input type="hidden" name="bno" value="${detail.bno}">
-		                  			<input type="hidden" name="rno" value="${content.rno}">
+		                  			<input type="hidden" name="rno" class="rno" value="${content.rno}">
 		                  			<div>
 		                      			<textarea class="replyContent" id="modeRcoment" name="reply" rows="3" cols="100" placeholder="댓글을 입력해주세요">${content.reply}</textarea>
 		                      		</div>
-		                      		<input type="submit" class="replySubmit" value="댓글 수정">
-		                      		<a href="/board/boardDetail?bno=${detail.bno}" class="replySubmit" id="cancel">취소</a>
+		                      		<input type="button" class="replySubmit reModify" value="댓글 수정">
+		                      		<input type="button" class="replySubmit cancel" value="취소">
 			        			</form>
 		      		 		</div>
 						</div>
@@ -84,15 +79,15 @@
 		        </div>
 		        <!-- 새로운 댓글 작성 -->
 		        <div id="writeComent">
-		        	<form action="/reply/write/${detail.bno}" method="post">
+		        	<form action="/reply/new" method="post">
                   			<div class="replyWriter">${login.name}</div>
                   			<input type="hidden" name="replyer" value="${login.name}">
                   			<input type="hidden" name="bno" value="${detail.bno}">
            			        <input type="hidden" name="memberId" value="${login.id}">
                   			<div>
-                      			<textarea class="replyContent" name="reply" rows="3" cols="100" placeholder="댓글을 입력해주세요"></textarea>
+                      			<textarea class="replyContent" name="reply" rows="3" cols="100" placeholder="댓글을 입력해주세요" id="replyWrite"></textarea>
                       		</div>
-                      		<input type="submit" class="replySubmit" value="댓글 작성" class="btn btn-primary btn-icon-split">
+                      		<input type="button" class="replySubmit" value="댓글 작성" class="btn btn-primary btn-icon-split" id="rewrite">
 		        	</form>
 		        </div>
 		        <div class="bottom">

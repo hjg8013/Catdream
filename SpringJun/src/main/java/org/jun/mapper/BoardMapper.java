@@ -26,14 +26,7 @@ public interface BoardMapper {
 	// 게시물 선택삭제
 	public void ajaxRemove(String remove);
 	
-	//댓글 쓰기
-	public void replyWrite(ReplyDTO rdto);
-	
+	//댓글 리스트 가져오기
 	public ArrayList<ReplyDTO> reply(ReplyDTO rdto);
-	
-	//댓글 수정
-	public void modifyReply(ReplyDTO rdto);
-	
-	//댓글 삭제
-	public void deleteReply(ReplyDTO rdto);
+
 }

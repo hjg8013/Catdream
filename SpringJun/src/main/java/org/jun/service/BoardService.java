@@ -24,14 +24,9 @@ public interface BoardService {
 	// 게시물 선택삭제
 	public void ajaxRemove(String remove);
 	
-	public void replyWrite(ReplyDTO rdto);
-	
-	public ArrayList<ReplyDTO> reply(ReplyDTO rdto);
-	
 	//게시판 상세페이지에 업로드된 파일 이미지 출력
-	public ArrayList<AttachFileDTO> fileList(int bno); 
+	public ArrayList<AttachFileDTO> fileList(int bno);
 	
-	public void modifyReply(ReplyDTO rdto);
-	
-	public void deleteReply(ReplyDTO rdto);
+	//댓글 리스트 가져오기
+	public ArrayList<ReplyDTO> reply(ReplyDTO rdto);
 }

@@ -1,44 +1,53 @@
 package org.jun.controller;
 
-import org.jun.domain.BoardDTO;
 import org.jun.domain.ReplyDTO;
-import org.jun.service.BoardService;
+import org.jun.service.ReplyService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
-@Controller
-@RequestMapping("reply")
+@RestController
+@RequestMapping("replies")
 public class ReplyController {
 	
 	@Autowired
-	private BoardService bservice;
+	private ReplyService rservice;
 	
-	@PostMapping("write/{bno}")
-	public String detail(BoardDTO bdto,ReplyDTO rdto,Model model,@PathVariable int bno) {
-		model.addAttribute("detail", bservice.detail(bdto));
-		bservice.replyWrite(rdto);
+	@PostMapping(value="new",consumes="application/json",produces={MediaType.TEXT_PLAIN_VALUE})
+	public ResponseEntity<String> create(@RequestBody ReplyDTO rdto){
+		System.out.println("ReplyDTO="+rdto);
+
+		int result = rservice.write(rdto);
 		
-		return "redirect:/board/boardDetail?bno="+bno;
+		return result==1? new ResponseEntity<>("success",HttpStatus.OK)					 
+					    : new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);		
+		
 	}
 	
-	@PostMapping("modify/{bno}")
-	public String modify(BoardDTO bdto,ReplyDTO rdto,Model model,@PathVariable int bno) {
+	@PutMapping(value="update",consumes="application/json",produces={MediaType.TEXT_PLAIN_VALUE})
+	public ResponseEntity<String> update(@RequestBody ReplyDTO rdto){
+
+		System.out.println("rdto"+rdto);
 		
-		bservice.modifyReply(rdto);
-		
-		return "redirect:/board/boardDetail?bno="+bno;
+		return rservice.update(rdto)==1? new ResponseEntity<>("success",HttpStatus.OK)					
+			    						: new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
 	}
 	
-	@GetMapping("delete/{bno}")
-	public String modify(BoardDTO bdto,ReplyDTO rdto,@PathVariable int bno) {
+	
+	@DeleteMapping(value="remove",consumes="application/json",produces={MediaType.TEXT_PLAIN_VALUE})
+	public ResponseEntity<String> remove(@RequestBody ReplyDTO rdto){
+
+		System.out.println("rdto"+rdto);
 		
-		bservice.deleteReply(rdto);
-		
-		return "redirect:/board/boardDetail?bno="+bno;
+		return rservice.remove(rdto)==1? new ResponseEntity<>("success",HttpStatus.OK)					
+			    						: new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
 	}
+
 }
