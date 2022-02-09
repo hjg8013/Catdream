@@ -52,13 +52,15 @@
                 </nav> <!--.pc_gnb-->
                 <div class="hUtil">
                     <ul>
-                    	<c:if test="${login == null}">
-	                        <li class="point"><a href="/member">회원가입</a></li>
-							<li><a href="/login">로그인</a></li>
-						</c:if>
-						<c:if test="${login!=null}">
-							<li><a href="/logout">로그아웃</a></li>
-						</c:if>
+                    	<c:choose>                 	
+	                    	<c:when test="${login == null}">
+		                        <li class="point"><a href="/member">회원가입</a></li>
+								<li><a href="/login">로그인</a></li>
+							</c:when>
+							<c:otherwise>
+								<li><a href="/logout">로그아웃</a></li>
+							</c:otherwise>
+	                    </c:choose>
 	                    <li><a href="">고객센터</a></li>
                     </ul>
                 </div> <!--.pc_util-->
