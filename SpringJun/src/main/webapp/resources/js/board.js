@@ -14,11 +14,14 @@ $(document).ready(function(){
 		actionForm.find("input[name='pageNum']").val("1")
 	})
 	
+	// 선택체크 상자 선언
 	var hjwObj = document.getElementsByName("RowCheck");
+	// 선택체크 상자 길이 선언
 	var rowCnt = hjwObj.length;
+	// 선택체크상자 배열 선언
 	var hjw_listArr = $(hjwObj); 
 
-
+	// 전체 체크상자 활성 비활성
 	if(hjw_listArr.length == 0){
 		console.log("RowCheck의 갯수가 0이면 전체선택 비활성화");
 		$("#allCheck").attr("disabled", true);
@@ -26,13 +29,23 @@ $(document).ready(function(){
 		console.log("RowCheck의 개수가 1개이상임 전체선택 활성");
 	}
 	
-
+	// 전체선택상자 활성화
+	$(hjwObj).click(function() {
+		if ($(hjwObj.checked).length == rowCnt) {
+			$("input[name='allCheck']")[0].checked = true;
+		} else {
+			$("input[name='allCheck']")[0].checked = false;
+		}
+	});
+	
+	// 전체 체크상자 클릭했을때 모두 선택
 	$("input[name='allCheck']").click(function() {
 		for (let i = 0; i < hjw_listArr.length; i++) {
 			hjw_listArr[i].checked = this.checked;
 		}
 	});
 	
+	// 전체 체크상자 바꿨을때 선택삭제 상자 활성 비활성
 	$("input[name='allCheck']").change(function(){
 		if($(this).prop("checked")){
 			$(".chooseBtn").removeClass("none");
@@ -42,8 +55,9 @@ $(document).ready(function(){
 		
 	});
 	
-
+	// 선택상자 바꿨을때 선택삭제 상자 활성 비활성
 	$(hjwObj).change(function(){
+		// 활성화 구분하기위한 선언
 		var boolnone = false;
 		for (let i = 0; i < hjw_listArr.length; i++) {
 			if($(hjwObj)[i].checked == true){
@@ -58,20 +72,12 @@ $(document).ready(function(){
 		
 	});
 	
-
-	$(hjwObj).click(function() {
-		if ($(hjwObj.checked).length == rowCnt) {
-			$("input[name='allCheck']")[0].checked = true;
-		} else {
-			$("input[name='allCheck']")[0].checked = false;
-		}
-	});
 	
 
 })
 
 
-
+// 삭제 함수 선언
 function deleteValue() {
 	var url = "remove"; // Controller로 보내고자 하는 URL (.dh부분은 자신이 설정한 값으로 변경해야됨)
 	var valueArr = new Array();
