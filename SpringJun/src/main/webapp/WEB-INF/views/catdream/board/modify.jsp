@@ -7,9 +7,12 @@
 <link rel="stylesheet" type="text/css" href="../resources/css/footer.css">
 <link rel="stylesheet" type="text/css" href="../resources/css/header.css">
 <link rel="stylesheet" type="text/css" href="../resources/css/write.css">
+<link rel="stylesheet" type="text/css" href="../resources/css/summernote-lite.css">
 <script type="text/javascript" src="//code.jquery.com/jquery-3.6.0.min.js"></script>
+<script type="text/javascript" src="../resources/js/summernote-lite.js"></script>
+<script type="text/javascript" src="../resources/js/summernote-ko-KR.js"></script>
 <script type="text/javascript" src="../resources/js/detail.js"></script>
-<script type="text/javascript" src="../resources/js/uploadAjax.js"></script>
+<script type="text/javascript" src="../resources/js/write.js"></script>
 <title>글수정</title>
 <link rel="icon" href="resources/img/logo.png" type="resources/img/x-icon">
 </head>
@@ -31,15 +34,9 @@
 	                <div class="content">
 	                    <label for="content">글 내용</label>
 	                    <div class="contentBox">
-	                        <textarea name="content" id="content" cols="75" rows="20">${detail.content}</textarea>
+	                        <textarea name="content" id="summernote">${detail.content}</textarea>
 	                    </div>
 	                </div>
-	                <div>
-	                    <input type="file" name="uploadFile" multiple>
-	                </div>
-                    <div id="uploadResult">
-						<ul></ul>
-					</div>
 	                <div class="bottom">
 	                    <input type="submit" class="btn" id="btnList" value="완료">
 	                </div>
