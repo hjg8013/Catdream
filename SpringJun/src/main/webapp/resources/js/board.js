@@ -9,11 +9,11 @@ $(document).ready(function(){
 		actionForm.find("input[name='pageNum']").val($(this).attr("href"));
 		actionForm.submit();
 	})
-	
+
 	$(".AS").on("click",function(){
-		actionForm.find("input[name='pageNum']").val("1")
+		actionForm.find("input[name='pageNum']").val("1");
 	})
-	
+
 	// 선택체크 상자 선언
 	var hjwObj = document.getElementsByName("RowCheck");
 	// 선택체크 상자 길이 선언
