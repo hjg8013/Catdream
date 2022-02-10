@@ -8,6 +8,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="resources/img/logo.png" type="image/x-icon">
     <link rel="stylesheet" href="resources/css/login.css">
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+	<script type="text/javascript" src="./resources/js/login.js"></script>
     <title>로그인</title>
 </head>
 <body>
@@ -18,7 +20,7 @@
 		</a>
             <div class="loginBox1">
                 <h2 class="loginTitle">회원 로그인</h2>
-                <form action="login" method="post" >
+                <form action="login" method="post" onsubmit="return loginProcess()" >
                 <div class="loginUser">
                     <div class="loginL">
                         <div class="loginLUp">
@@ -32,7 +34,7 @@
                         <input type="submit" class="loginButton" value="로그인">
                     </div>
 	                <div class="idSave">
-	                	<label><input name="idSave" type="checkbox" value="idSave">아이디 저장</label>
+	                	<label><input name="idSave" type="checkbox" id="idSave" value="idSave">아이디 저장</label>
 	                </div>
                 </div>
                 </form>
