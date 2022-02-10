@@ -22,37 +22,23 @@
 /* 메인페이지 본문1 */
 .main1{
     position: relative;
-    width: 100%;
-    margin-bottom: 100px;
+    width: 1200px;
+    margin: 0 auto 100px auto;
     overflow: hidden;
 }
-.main1Slide img{
-    width: 100%;
-    height: auto;
+
+.main1Slide .slides{
+	display: flex;
 }
-.main1Pager ul{
-    display: flex;
-    justify-content: center;
-    position: absolute;
-    bottom: 10px;
-    left: 50%;
-    margin-left: -35px;
+
+
+.main1Slide .slides li img{
+	width: 1200px;
 }
-.main1Pager li{
-    padding: 0 3px;
-}
-.main1Pager li a{
-    display: block;
-    width: 10px;
-    height: 10px;
-    background-color: #aaa;
-    border-radius: 50%;
-    text-indent: -9999px;
-    opacity: 0.5;
-}
-.main1Pager .active a{
-    opacity: 1;
-}
+
+
+
+
 /* 메인페이지 본문2 */
 .main2{
     width: 1200px;

@@ -11,6 +11,10 @@
     <link rel="stylesheet" href="resources/css/header.css">
     <link rel="stylesheet" href="resources/css/footer.css">
     <link rel="stylesheet" href="resources/css/containerStyle.css">
+    <link rel="stylesheet" href="resources/css/jquery.bxslider.css">
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+	<script type="text/javascript" src="../resources/js/mainJs.js"></script>
+	<script type="text/javascript" src="../resources/js/jquery.bxslider.js"></script>
 </head>
 <body>
     <div id="wrap">
@@ -19,15 +23,23 @@
             <div class="containerIn">
                 <!-- .main1 -->
                 <section class="main1">
-                    <div class="main1Slide"><a href="#"><img src="resources/img/mainSlide01.jpg" alt="이벤트정보"></a></div>
-                    <div class="main1Pager">
-                        <ul>
-                            <li class="active"><a href="#">1</a></li>
-                            <li><a href="#">2</a></li>
-                            <li><a href="#">3</a></li>
-                            <li><a href="#">4</a></li>
-                        </ul>
+                    <div class="main1Slide">
+                    	<ul class="slides">
+                    		<li>
+                    			<a href="#"><img src="resources/img/mainSlide01.jpg" alt="이벤트정보"></a>
+                    		</li>
+                    		<li>
+                    			<a href="#"><img src="resources/img/mainSlide01.jpg" alt="이벤트정보"></a>
+                    		</li>
+                    		<li>
+                    			<a href="#"><img src="resources/img/mainSlide01.jpg" alt="이벤트정보"></a>
+                    		</li>
+                    		<li>
+                    			<a href="#"><img src="resources/img/mainSlide01.jpg" alt="이벤트정보"></a>
+                    		</li>
+                    	</ul>
                     </div>
+
                 </section>
                 <!-- .main2 -->
                 <section class="main2">
