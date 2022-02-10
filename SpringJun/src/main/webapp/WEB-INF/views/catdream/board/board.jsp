@@ -76,11 +76,11 @@
 						<input type="hidden" name="pageNum" value="${pageMaker.cri.pageNum}">
 						<input type="hidden" name="amount" value="${pageMaker.cri.amount}">
 						<select class="selectBox" name="search">
-							<option value="T">제목</option>
-							<option value="C">내용</option>
-							<option value="W">작성자</option>
-							<option value="TC">제목 + 내용</option>
-							<option value="TCW">제목 + 내용 + 작성자</option>
+							<option value="T" <c:out value="${pageMaker.cri.search eq 'T'?'selected' : ''}"/>>제목</option>
+							<option value="C" <c:out value="${pageMaker.cri.search eq 'C'?'selected' : ''}"/>>내용</option>
+							<option value="W" <c:out value="${pageMaker.cri.search eq 'W'?'selected' : ''}"/>>작성자</option>
+							<option value="TC" <c:out value="${pageMaker.cri.search eq 'TC'?'selected' : ''}"/>>제목 + 내용</option>
+							<option value="TCW" <c:out value="${pageMaker.cri.search eq 'TCW'?'selected' : ''}"/>>제목 + 내용 + 작성자</option>
 						</select>
 						<input class="textBox" type="text" name="keyword" value="${pageMaker.cri.keyword}">
 						<input class="AS" type="submit" value="검색">
