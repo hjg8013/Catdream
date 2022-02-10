@@ -18,7 +18,7 @@ $(document).ready(function(){
 	var userGender = document.querySelector("#userGender");
 	var userEmail = document.querySelector("#userEmail");
 	var userPhone = document.querySelector("#userPhone");
-	//버튼추가
+	
 	
 	console.log(boolarr[0]);
 	console.log(boolarr[1]);
@@ -28,6 +28,7 @@ $(document).ready(function(){
 	console.log(boolarr[5]);
 	console.log(boolarr[6]);
 	
+	//회원가입의 조건확인
 	userId.onchange = checkId;
 	userPw.onchange = checkPw;
 	userPwCheck.onchange = checkPwCheck;
@@ -39,10 +40,24 @@ $(document).ready(function(){
 	userEmail.onchange = chaeckEmail;
 	userPhone.onchange = chaeckPhone;
 	
-	//버튼을 클릭했다면
+	$(".emailButton").click(function(){
+		//이메일 인증번호 전송
+		var email = userEmail.value; //입력한 이메일
 
-	
+		$.ajax({
+			type:"GET",
+			url:"emailCheck?email=" + email
+			
+		});
+	});
 })
+
+
+
+
+
+
+
 
 //회원가입에 추가해야할 세부사항
 
@@ -67,6 +82,7 @@ function boolarrcheck(){
 	console.log("생년월일"+boolarr[5]); //생년월일
 	console.log("휴대폰"+boolarr[6]); //휴대폰
 	
+	//조건이 실패했을때 해당위치로 포커스를 이동한다
 	if(boolarr[0] == false){
 		userId.focus();
 	}else if(boolarr[1] == false){
@@ -83,18 +99,6 @@ function boolarrcheck(){
 		userPhone.focus();
 	}
 	
-	
-	
-//	userId.focus();
-//	userPw.focus();
-//	userPwCheck.focus();
-//	userName.focus();
-//	userYy.focus();
-//	userMm.focus();
-//	userDd.focus();
-//	userGender.focus();
-//	userEmail.focus();
-//	userPhone.focus();
 	
 	var count =0;
 	for(var i=0;i<boolarr.length;i++){

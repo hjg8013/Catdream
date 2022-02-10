@@ -62,7 +62,7 @@ h4{
 	border: solid 1px #dadada;
     width: 250px;
     height: 40px;
-    margin-right: 10px;
+    margin: 0px;
 }
 input, select{
     margin-bottom: 10px;
@@ -72,7 +72,28 @@ input, select{
 .number{
     display: flex;
 }
-.numberButton{
+#emailCheckInputBoxFalse{
+	background-color: #ebebe4;
+	margin-right: 10px;
+	margin-bottom: 10px;
+}
+#emailCheckInputBoxTrue{
+	background-color: #fff;
+	margin-right: 10px;
+	margin-bottom: 10px;
+}
+#phoneCheckInputBoxFalse{
+	background-color: #ebebe4;
+	margin-right: 10px;
+	margin-bottom: 10px;
+}
+#phoneCheckInputBoxTrue{
+	background-color: #fff;
+	margin-right: 10px;
+	margin-bottom: 10px;
+}
+
+.emailButton, .phoneButton{
     background-color: #f38281;
     width: 135px;
     height: 40px;
