@@ -99,6 +99,12 @@
                         <label for="" placeholder="선택입력">본인 확인 이메일</label><span>(선택)</span>
                     </h3>
                     <input name="email" type="text" class="inputText1" id="userEmail">
+                    <div class="number">
+                    	<div id="emailCheckInputBoxFalse">
+	                        <input name="emailCk" type="text" class="inputText4" id="userEmailCk" placeholder="인증번호 입력하세요" disabled="disabled">
+                    	</div>
+                        <div class="emailButton">인증번호 받기</div>
+                    </div>
                     <h4></h4>
                 </li>
                 <li class="memberBox8">
@@ -112,10 +118,10 @@
                         <option value="224">기니 +224</option>
                     </select>
                     <div class="number">
-                        <input name="phone" type="text" class="inputText4" id="userPhone" placeholder="전화번호 입력">
-                        <a href="">
-                            <div class="numberButton">인증번호 받기</div>
-                        </a>
+                    	<div id="phoneCheckInputBoxFalse">
+	                        <input name="phone" type="text" class="inputText4" id="userPhone" placeholder="전화번호 입력하세요"  disabled="disabled">                    	
+                    	</div>
+                        <div class="phoneButton">인증번호 받기</div>
                     </div>
                     <h4></h4>
                     <input type="text" class="inputText1" id="" placeholder="인증번호 입력하세요">
