@@ -23,7 +23,7 @@
         	<div class="term"><hr></div>
         	
 	        <div class="board">
-	            <form role="form" action="/board/write" method="post">
+	            <form role="form" action="/board/write" method="post" id="writeForm">
 	            	<input type="hidden" name="writer" value="${login.name}">
 	            	<input type="hidden" name="memberId" value="${login.id}">
 	                <div class="title">

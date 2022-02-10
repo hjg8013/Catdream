@@ -4,6 +4,26 @@
 
 
 $(document).ready(function () {
+	
+	var code;
+    $("#btnList").click(function(e){
+    	
+    	code = $("#title").val();
+
+       if(code == "") {
+
+          alert("제목은 필수입니다.");
+
+          $("#title").focus();
+
+          return false;
+       } else{
+    	   return true;
+       }
+       
+   })
+       
+    
     $('#summernote').summernote({
       height: 500,                 
       minHeight: 500,            
@@ -27,4 +47,6 @@ $(document).ready(function () {
       fontSizes: ['8', '9', '10', '11', '12', '14', '16', '18', '20', '22', '24', '28', '30', '36',
         '50', '72']
     });
+    
+    
  });
