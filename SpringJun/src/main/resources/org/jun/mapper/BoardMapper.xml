@@ -11,7 +11,7 @@
    <!-- board테이블에 Insert하기전에 bno값을 미리 만들어놓고 insert해야함. -->
 <insert id="insertSelectKey"> 
      <selectKey keyProperty="bno" order="BEFORE" resultType="int">
-	 	select IFNULL(max(bno),0)+1 bno from board
+	 	select IFNULL(max(bno),0)+1 bno from board;
 	 </selectKey>
  		insert into board(bno,title,content, writer,memberId)
 		values(#{bno},#{title},#{content},#{writer},#{memberId}) 
@@ -57,10 +57,11 @@
 			or writer like concat('%',#{keyword},'%')
 		</otherwise>
 	</choose>
-	) as boardList
+	) as boardList 
 	
 	   <![CDATA[
 		where rownum > (#{pageNum}-1)*#{amount} and rownum <= #{pageNum}*#{amount}
+		order by regdate desc;
 		]]>
 
 </select>

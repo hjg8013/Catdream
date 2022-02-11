@@ -122,6 +122,11 @@ $(document).ready(function(){
 				location.reload();
 		});
 	})
+	
+	//댓글 작성 버튼을 클릭하면 비회원일시
+	$("#rewrite2").on("click",function(){
+		alert("로그인 해주세요!!!");
+	})
 
 	
 	//햄버거버튼
