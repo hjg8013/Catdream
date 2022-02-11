@@ -11,7 +11,7 @@
 <link rel="stylesheet" type="text/css" href="../resources/css/boardDetail.css">
 <script type="text/javascript" src="//code.jquery.com/jquery-3.6.0.min.js"></script>
 <script type="text/javascript" src="../resources/js/detail.js"></script>
-<link rel="icon" href="resources/img/logo.png" type="resources/img/x-icon">
+<link rel="icon" href="/resources/img/logo.png" type="resources/img/x-icon">
 </head>
 <body>
 	<div id="wrap">
@@ -87,7 +87,14 @@
                   			<div>
                       			<textarea class="replyContent" name="reply" rows="3" cols="100" placeholder="댓글을 입력해주세요" id="replyWrite"></textarea>
                       		</div>
-                      		<input type="button" class="replySubmit" value="댓글 작성" class="btn btn-primary btn-icon-split" id="rewrite">
+                      		<c:choose>
+	                      		<c:when test="${login!=null}">
+		                      		<input type="button" class="replySubmit" value="댓글 작성" class="btn btn-primary btn-icon-split" id="rewrite">
+	                 			</c:when>
+	                 			<c:otherwise>
+		                      		<input type="button" class="replySubmit" value="댓글 작성" class="btn btn-primary btn-icon-split" id="rewrite2">
+	                 			</c:otherwise>
+                      		</c:choose>
 		        	</form>
 		        </div>
 		        <div class="bottom">
