@@ -137,7 +137,7 @@ public class CatdreamController {
         logger.info("인증번호 :" + checkNum);
         
         /* 이메일 보내기 */
-        String setFrom = "??@naver.com";  	// root-context.xml에 삽입한 자신의 이메일 계정의 이메일 주소 이메일 주소로 입력해야한다
+        String setFrom = "hjg8012@naver.com";  	// root-context.xml에 삽입한 자신의 이메일 계정의 이메일 주소 이메일 주소로 입력해야한다
         String toMail = email;				// 수신받을 이메일 이다
         String title = "회원가입 인증 이메일 입니다.";// 자신이 보낼 이메일 제목을 작성
         //자신이 보낼 이메일 내용
@@ -165,8 +165,14 @@ public class CatdreamController {
         //인증번호를 String 형으로 바꿔 저장
         String num = Integer.toString(checkNum);
         return num;
-        
-        
+    }
+    
+    //아이디 찾기
+    @RequestMapping(value="/idSearch", method=RequestMethod.GET)
+    public String idSearch() {
+    	logger.info("idSearch 아이디찾기 실행");
+    	
+    	return "catdream/idSearch";
     }
 	
 	
