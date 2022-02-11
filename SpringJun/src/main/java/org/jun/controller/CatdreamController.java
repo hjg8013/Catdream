@@ -125,7 +125,7 @@ public class CatdreamController {
 	//이메일 인증
     @ResponseBody
     @RequestMapping(value="/emailCheck", method=RequestMethod.GET)
-    public void emailCheckGET(String email) throws Exception{
+    public String emailCheckGET(String email) throws Exception{
         
         //뷰(View)로부터 넘어온 데이터 확인
         logger.info("이메일 데이터 전송 확인");
@@ -137,7 +137,7 @@ public class CatdreamController {
         logger.info("인증번호 :" + checkNum);
         
         /* 이메일 보내기 */
-        String setFrom = "???@naver.com";  	// root-context.xml에 삽입한 자신의 이메일 계정의 이메일 주소 이메일 주소로 입력해야한다
+        String setFrom = "??@naver.com";  	// root-context.xml에 삽입한 자신의 이메일 계정의 이메일 주소 이메일 주소로 입력해야한다
         String toMail = email;				// 수신받을 이메일 이다
         String title = "회원가입 인증 이메일 입니다.";// 자신이 보낼 이메일 제목을 작성
         //자신이 보낼 이메일 내용
@@ -147,19 +147,25 @@ public class CatdreamController {
                 "인증 번호는 " + checkNum + "입니다." + 
                 "<br>" + 
                 "해당 인증번호를 인증번호 확인란에 기입하여 주세요.";
-//        try {
-//            
-//            MimeMessage message = mailSender.createMimeMessage();
-//            MimeMessageHelper helper = new MimeMessageHelper(message, true, "utf-8");
-//            helper.setFrom(setFrom);
-//            helper.setTo(toMail);
-//            helper.setSubject(title);
-//            helper.setText(content,true);
-//            mailSender.send(message);
-//            
-//        }catch(Exception e) {
-//            e.printStackTrace();
-//        }
+        //이메일을 보내주는 
+        try {
+            
+            MimeMessage message = mailSender.createMimeMessage();
+            MimeMessageHelper helper = new MimeMessageHelper(message, true, "utf-8");
+            helper.setFrom(setFrom);
+            helper.setTo(toMail);
+            helper.setSubject(title);
+            helper.setText(content,true);
+            mailSender.send(message);
+            
+        }catch(Exception e) {
+            e.printStackTrace();
+        }
+        
+        //인증번호를 String 형으로 바꿔 저장
+        String num = Integer.toString(checkNum);
+        return num;
+        
         
     }
 	

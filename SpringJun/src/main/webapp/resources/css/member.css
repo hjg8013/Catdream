@@ -93,6 +93,12 @@ input, select{
 	margin-bottom: 10px;
 }
 
+.correct{
+    color : green;
+}
+.incorrect{
+    color : red;
+}
 .emailButton, .phoneButton{
     background-color: #f38281;
     width: 135px;
