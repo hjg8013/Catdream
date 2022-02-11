@@ -96,16 +96,16 @@
                 </li>
                 <li class="memberBox7">
                     <h3>
-                        <label for="" placeholder="선택입력">본인 확인 이메일</label><span>(선택)</span>
+                        <label for="" placeholder="선택입력">본인 확인 이메일</label>
                     </h3>
                     <input name="email" type="text" class="inputText1" id="userEmail">
                     <div class="number">
-                    	<div id="emailCheckInputBoxFalse">
-	                        <input name="emailCk" type="text" class="inputText4" id="userEmailCk" placeholder="인증번호 입력하세요" disabled="disabled">
+                    	<div class="emailCheckInputBox" id="emailCheckInputBoxFalse">
+	                        <input name="emailCheckInput" type="text" class="inputText4" id="userEmailCheckInput" placeholder="인증번호 입력하세요" disabled="disabled">
                     	</div>
                         <div class="emailButton">인증번호 받기</div>
                     </div>
-                    <h4></h4>
+                    <h4 class="ErrorMsg"></h4>
                 </li>
                 <li class="memberBox8">
                     <h3>
@@ -119,12 +119,12 @@
                     </select>
                     <div class="number">
                     	<div id="phoneCheckInputBoxFalse">
-	                        <input name="phone" type="text" class="inputText4" id="userPhone" placeholder="전화번호 입력하세요"  disabled="disabled">                    	
+	                        <input name="phone" type="text" class="inputText4" id="userPhone" placeholder="전화번호 입력하세요">                    	
                     	</div>
                         <div class="phoneButton">인증번호 받기</div>
                     </div>
                     <h4></h4>
-                    <input type="text" class="inputText1" id="" placeholder="인증번호 입력하세요">
+                    <input type="text" class="inputText1" id="" placeholder="인증번호 입력하세요" disabled="disabled">
                 </li>
 
                 <li class="memberBox9">

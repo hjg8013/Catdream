@@ -13,6 +13,7 @@ $(document).ready(function(){
 
     
 })
+//로그인 실패시 나오는 문구가없다
 function loginProcess(){ 
 	var id = $("#userId").val();
 	var pwd = $("#userPw").val();
