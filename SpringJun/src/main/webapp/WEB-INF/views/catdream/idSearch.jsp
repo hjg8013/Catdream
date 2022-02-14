@@ -5,13 +5,16 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-	<link rel="stylesheet" href="resources/css/email.css">
+		<link rel="stylesheet" href="resources/css/email.css">
     	<script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 		<script type="text/javascript" src="./resources/js/email.js"></script>
 		<script type="text/javascript" src="./resources/js/idSearch.js"></script>
 </head>
 <body>
 	<div>
+		<a href="/catdream">
+            <h1 class="">Cat Dream</h2>
+        </a>
 		<div>
 			<h1>아이디 찾기</h1>
 		</div>

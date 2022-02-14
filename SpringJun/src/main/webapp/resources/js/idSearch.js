@@ -8,7 +8,12 @@ $(document).ready(function(){
 	
 	console.log("idSearch실행Email");
 	Email(); //실행오류 리턴으로 값을 가져오면 제일좋다
-	console.log("Email();"+Email());
+	
+	// 이메일이 정상적으로 들어왔다면
+	console.log(($(".ErrorMsg").class) == "correct");
+	
+	
+	
 });
 
 //addJavascript('./resources/js/test.js');

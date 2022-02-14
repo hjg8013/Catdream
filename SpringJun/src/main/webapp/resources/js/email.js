@@ -53,15 +53,12 @@ function Email(){
 			//인증번호가 일치할 경우
 			ErrorMsg.html("인증번호가 일치합니다.");
 			ErrorMsg.attr("class","correct");
-			return true;
 		}else{
 			//인증번호가 일치하지 않을 경우
 			ErrorMsg.html("인증번호를 다시 확인해주세요.");
 			ErrorMsg.attr("class","incorrect");
-			return false;
 		}
 	});//#userEmailCheckInput.blur
-	return false;
 }
 
 //이메일 확인
