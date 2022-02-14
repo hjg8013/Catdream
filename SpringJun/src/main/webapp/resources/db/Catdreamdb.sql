@@ -27,7 +27,7 @@ select * from member;
 create table board(
 bno int primary key auto_increment,
 title varchar(50) not null,
-content text,
+content longtext,
 writer varchar(15),
 regdate datetime default now(),
 cnt int default 0,
@@ -57,3 +57,22 @@ create table attach(
 
 
 select * from attach;
+
+create table catdream(
+	pno int primary key auto_increment,
+    pimage longtext,
+    pname varchar(100),
+    pcontent longtext,
+    pprice varchar(100),
+    pdate datetime default now(),
+    pbrand varchar(20),
+    pstar int,
+    pstarno int,
+    puuid varchar(50),
+    puploadpath varchar(100)
+);
+
+    
+select * from catdream;
+
+drop table catdream;

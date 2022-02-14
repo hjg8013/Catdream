@@ -6,7 +6,11 @@ import java.util.Random;
 import javax.mail.internet.MimeMessage;
 import javax.servlet.http.HttpSession;
 
+import org.jun.domain.Criteria;
 import org.jun.domain.MemberDTO;
+import org.jun.domain.PageDTO;
+import org.jun.domain.ProductDTO;
+import org.jun.service.ProductService;
 import org.jun.service.MemberService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -15,7 +19,10 @@ import org.springframework.http.MediaType;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.mail.javamail.MimeMessageHelper;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -26,11 +33,12 @@ public class CatdreamController {
 	private static final Logger logger = LoggerFactory.getLogger(CatdreamController.class);
 	@Autowired
 	private MemberService mservice;
+	@Autowired
+	private ProductService pservice;
 	
 	//JavaMailSender 객체 타입인 mailSender를 선언 이유는 이메일 보낼때 사용하기 때문에
 	@Autowired
     private JavaMailSender mailSender;
-	
 	@RequestMapping(value = "/catdream", method = RequestMethod.GET)  // 웹브라우저를 분석해주는 역할
 	public String catdream() {
 		logger.info("catdream 실행됨."); // console 역할
@@ -38,11 +46,14 @@ public class CatdreamController {
 	}
 	
 	// 주석 시험
-	@RequestMapping(value = "/subcatdream", method = RequestMethod.GET)  // 웹브라우저를 분석해주는 역할
+	@GetMapping("/subcatdream")
 	public String subcatdream() {
 		logger.info("catdream 실행됨."); // console 역할
+
 		return "catdream/subindex";
 	}
+	
+
 	
 	//로그인 창
 	@RequestMapping(value = "/login", method = RequestMethod.GET)  // 웹브라우저를 분석해주는 역할
