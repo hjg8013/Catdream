@@ -31,35 +31,35 @@
                 </li>
                 <li class="memberBox1">
                     <h3>
-                        <label for="">아이디</label>
+                        <label for="">아이디(필수)</label>
                     </h3>
                     <input type="text" name="id" class="inputText1" id="userId">
                     <h4></h4>
                 </li>
                 <li class="memberBox2">
                     <h3>
-                        <label for="" >비밀번호</label>
+                        <label for="" >비밀번호(필수)</label>
                     </h3>
                     <input type="password" name="password" class="inputText1" id="userPw">
                     <h4></h4>
                 </li>
                 <li class="memberBox3">
                     <h3>
-                        <label for="">비밀번호 재확인</label>
+                        <label for="">비밀번호 재확인(필수)</label>
                     </h3>
                     <input type="password" class="inputText1" id="userPwCheck">
                     <h4></h4>
                 </li>
                 <li class="memberBox4">
                     <h3>
-                        <label for="">이름</label>
+                        <label for="">이름(필수)</label>
                     </h3>
                     <input name="name" type="text" class="inputText1" id="userName">
                     <h4></h4>
                 </li>
                 <li class="memberBox5">
                     <h3>
-                        <label for="">생년월일</label>
+                        <label for="">생년월일(필수)</label>
                     </h3>
                     <input type="text" class="inputText2" id="userYy" placeholder="년(4자)">
                     <select class="inputText3" id="userMm" >
@@ -84,7 +84,7 @@
                 </li>
                 <li class="memberBox6">
                     <h3>
-                        <label for="">성별</label>
+                        <label for="">성별(필수)</label>
                     </h3>
                     <select name="gender" class="inputText1" id="userGender">
                         <option value="none" selected>성별</option>
@@ -96,7 +96,7 @@
                 </li>
                 <li class="memberBox7">
                     <h3>
-                        <label for="" placeholder="선택입력">본인 확인 이메일</label>
+                        <label for="" placeholder="선택입력">본인 확인 이메일(필수)</label>
                     </h3>
                     <input name="email" type="text" class="inputText1" id="userEmail">
                     <div class="number">
@@ -109,7 +109,7 @@
                 </li>
                 <li class="memberBox8">
                     <h3>
-                        <label for="">휴대전화</label>
+                        <label for="">휴대전화(번호만)</label>
                     </h3>
                     <select name="" class="inputText1" id="">
                         <option value="82" selected>대한민국 +82</option>
