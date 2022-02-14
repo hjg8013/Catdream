@@ -1,11 +1,10 @@
 package org.jun.domain;
 
-import java.util.ArrayList;
 
 public class ProductDTO {
-	private int pno; 
-	private String pimage; 
-	private String pname; 
+	private int pno;
+	private String pname;
+	private boolean pimage;
 	private String pcontent;
 	private String pprice;
 	private String pdate;
@@ -13,10 +12,7 @@ public class ProductDTO {
 	private int pstar;
 	private int pstarno;
 	private String puuid;
-	private String puploadpath; 
-	
-
-	
+	private String puploadpath;
 	
 	public int getPno() {
 		return pno;
@@ -24,17 +20,17 @@ public class ProductDTO {
 	public void setPno(int pno) {
 		this.pno = pno;
 	}
-	public String getPimage() {
-		return pimage;
-	}
-	public void setPimage(String pimage) {
-		this.pimage = pimage;
-	}
 	public String getPname() {
 		return pname;
 	}
 	public void setPname(String pname) {
 		this.pname = pname;
+	}
+	public boolean isPimage() {
+		return pimage;
+	}
+	public void setPimage(boolean pimage) {
+		this.pimage = pimage;
 	}
 	public String getPcontent() {
 		return pcontent;
@@ -72,14 +68,29 @@ public class ProductDTO {
 	public void setPstarno(int pstarno) {
 		this.pstarno = pstarno;
 	}
+	public String getPuuid() {
+		return puuid;
+	}
+	public void setPuuid(String puuid) {
+		this.puuid = puuid;
+	}
+	public String getPuploadpath() {
+		return puploadpath;
+	}
+	public void setPuploadpath(String puploadpath) {
+		this.puploadpath = puploadpath;
+	}
 	
-
 	@Override
 	public String toString() {
-		return "CatdreamDTO [pno=" + pno + ", pimage=" + pimage + ", pname=" + pname + ", pcontent=" + pcontent
+		return "ProductDTO [pno=" + pno + ", pname=" + pname + ", pimage=" + pimage + ", pcontent=" + pcontent
 				+ ", pprice=" + pprice + ", pdate=" + pdate + ", pbrand=" + pbrand + ", pstar=" + pstar + ", pstarno="
-				+ pstarno + ", attachList=" +  "]";
-	}
+				+ pstarno + ", puuid=" + puuid + ", puploadpath=" + puploadpath + "]";
+	} 
+	
+
+	
+	
 	
 	
 }
