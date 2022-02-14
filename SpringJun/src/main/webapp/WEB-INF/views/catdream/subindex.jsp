@@ -7,9 +7,9 @@
 <link rel="stylesheet" type="text/css" href="resources/css/header.css">
 <link rel="stylesheet" type="text/css" href="resources/css/footer.css">
 <link rel="stylesheet" type="text/css" href="resources/css/subStyle.css">
+<link rel="icon" href="resources/img/logo.png" type="image/x-icon">
 <meta charset="UTF-8">
 <title>기능별사료</title>
-<link rel="icon" href="resources/img/logo.png" type="image/x-icon">
 </head>
 <body>
 <div id="wrap">

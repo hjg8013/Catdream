@@ -34,7 +34,9 @@ cnt int default 0,
 memberId varchar(15)
 );
 
-select * from board;
+select * from board order by regdate desc;
+
+	 	select * from board order by regdate desc;
 
 create table reply(
 	rno int primary key auto_increment,
@@ -58,10 +60,11 @@ create table attach(
 
 select * from attach;
 
-create table catdream(
+create table product(
 	pno int primary key auto_increment,
     pimage longtext,
     pname varchar(100),
+	pimage int,
     pcontent longtext,
     pprice varchar(100),
     pdate datetime default now(),
@@ -72,7 +75,9 @@ create table catdream(
     puploadpath varchar(100)
 );
 
-    
-select * from catdream;
 
-drop table catdream;
+
+    
+select * from product;
+
+drop table product;

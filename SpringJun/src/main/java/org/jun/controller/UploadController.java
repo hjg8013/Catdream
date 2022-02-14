@@ -28,42 +28,7 @@ import net.coobird.thumbnailator.Thumbnailator;
 
 @Controller
 public class UploadController {
-	
-	@GetMapping("upload")
-	public void uploadForm() {
-		System.out.println("파일 업로드 화면");
-	}
-	
-	@GetMapping("uploadAjax")
-	public void uploadAjaxForm() {
-		System.out.println("ajax이용한 업로드");
-	}
-	
-	@PostMapping("uploadAction")
-	public void uploadAction(MultipartFile[] uploadFile) {
-		
-		//파일 업로드할 경로지정
-		String uploadFolder="C:\\upload";
-		
-		for(MultipartFile multipartFile : uploadFile) {
-		System.out.println("MultipartFile = "+multipartFile.getOriginalFilename()); //파일이름
-		System.out.println("MultipartFile = "+multipartFile.getContentType());		//jpg? png?
-		System.out.println("MultipartFile = "+multipartFile.getSize());			//파일 용량
-			
-			//서버에 올리거나 빼는 출력클래스
-			File saveFile = new File(uploadFolder,multipartFile.getOriginalFilename());
-			
-			try {
-				multipartFile.transferTo(saveFile);
-			} catch (Exception e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-		} //for문 끝
-		
-	}
-	
-	
+
 	// 년/월/일 폴더의 생성
 	private String getFolder() {
 		
