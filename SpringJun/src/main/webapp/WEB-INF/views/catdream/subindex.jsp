@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -152,7 +153,50 @@
                         </li>
                     </ul>
                 </div> <!--.main-->
+                
+				<form id="actionForm" action="/subcatdream" method="get">
+					<div class="search">
+						<input type="hidden" name="pageNum" value="${pageMaker.cri.pageNum}">
+						<input type="hidden" name="amount" value="${pageMaker.cri.amount}">
+						<select class="selectBox" name="search">
+							<option value="T" <c:out value="${pageMaker.cri.search eq 'T'?'selected' : ''}"/>>제목</option>
+							<option value="C" <c:out value="${pageMaker.cri.search eq 'C'?'selected' : ''}"/>>내용</option>
+							<option value="W" <c:out value="${pageMaker.cri.search eq 'W'?'selected' : ''}"/>>작성자</option>
+							<option value="TC" <c:out value="${pageMaker.cri.search eq 'TC'?'selected' : ''}"/>>제목 + 내용</option>
+							<option value="TCW" <c:out value="${pageMaker.cri.search eq 'TCW'?'selected' : ''}"/>>제목 + 내용 + 작성자</option>
+						</select>
+						<input class="textBox" type="text" name="keyword" value="${pageMaker.cri.keyword}">
+						<input class="AS" type="submit" value="검색">
 
+
+					</div>
+
+					<div class="mainPager">
+						<ul class="pagination">
+							<c:if test="${pageMaker.prev}">
+								<!-- jsp문법 ja문법을 html처럼 사용 -->
+								<li class="paginate_button"><a href="${pageMaker.startPage-1}"
+									aria-controls="dataTable" data-dt-idx="0" tabindex="0">이전</a></li>
+							</c:if>
+
+							<c:forEach var="num" begin="${pageMaker.startPage}"
+								end="${pageMaker.endPage}">
+								<li class="paginate_button"><a href="${num}">${num}</a></li>
+							</c:forEach>
+
+							<c:if test="${pageMaker.next}">
+								<li class="paginate_button" id="dataTable_next">
+									<a href="${pageMaker.endPage+1}" aria-controls="dataTable"
+									data-dt-idx="7" tabindex="0" class="page-link">다음</a>
+								</li>
+							</c:if>
+						</ul>
+					</div> 
+
+
+				</form>
+                
+<!--
                 <div class="mainPager">
                     <ul>
                         <li class="on"><a href="#">1</a></li>
@@ -166,7 +210,7 @@
                         <li><a href="#">9</a></li>
                         <li><a href="#">10</a></li>
                     </ul>
-                </div> <!--.mainPager-->
+                </div> .mainPager-->
                 
             </div> <!--.row2-->
 
