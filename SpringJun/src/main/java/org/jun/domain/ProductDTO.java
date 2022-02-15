@@ -4,6 +4,7 @@ package org.jun.domain;
 public class ProductDTO {
 	private int pno;
 	private String pname;
+	private String pimgName;
 	private boolean pimage;
 	private String pcontent;
 	private String pprice;
@@ -13,7 +14,6 @@ public class ProductDTO {
 	private int pstarno;
 	private String puuid;
 	private String puploadpath;
-	
 	public int getPno() {
 		return pno;
 	}
@@ -25,6 +25,12 @@ public class ProductDTO {
 	}
 	public void setPname(String pname) {
 		this.pname = pname;
+	}
+	public String getPimgName() {
+		return pimgName;
+	}
+	public void setPimgName(String pimgName) {
+		this.pimgName = pimgName;
 	}
 	public boolean isPimage() {
 		return pimage;
@@ -80,15 +86,15 @@ public class ProductDTO {
 	public void setPuploadpath(String puploadpath) {
 		this.puploadpath = puploadpath;
 	}
-	
 	@Override
 	public String toString() {
-		return "ProductDTO [pno=" + pno + ", pname=" + pname + ", pimage=" + pimage + ", pcontent=" + pcontent
-				+ ", pprice=" + pprice + ", pdate=" + pdate + ", pbrand=" + pbrand + ", pstar=" + pstar + ", pstarno="
-				+ pstarno + ", puuid=" + puuid + ", puploadpath=" + puploadpath + "]";
-	} 
+		return "ProductDTO [pno=" + pno + ", pname=" + pname + ", pimgName=" + pimgName + ", pimage=" + pimage
+				+ ", pcontent=" + pcontent + ", pprice=" + pprice + ", pdate=" + pdate + ", pbrand=" + pbrand
+				+ ", pstar=" + pstar + ", pstarno=" + pstarno + ", puuid=" + puuid + ", puploadpath=" + puploadpath
+				+ "]";
+	}
 	
-
+	
 	
 	
 	
