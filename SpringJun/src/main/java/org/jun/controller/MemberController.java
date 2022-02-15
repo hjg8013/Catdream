@@ -121,7 +121,7 @@ public class MemberController {
 	        //인증번호 생성 111111 ~ 999999
 	        Random random = new Random();
 	        int checkNum = random.nextInt(888888)+111111;
-	        logger.info("인증번호 :" + checkNum);
+	        logger.info("인증번호 : " + checkNum);
 	        
 	        /* 이메일 보내기 */
 	        String setFrom = "hjg8012@naver.com";  	// root-context.xml에 삽입한 자신의 이메일 계정의 이메일 주소 이메일 주소로 입력해야한다
@@ -177,6 +177,13 @@ public class MemberController {
 	    	return "catdream/idSearchShow";
 	    }
 	
-	
+	    
+	    //비밀번호 찾기
+	    @RequestMapping(value="/idInput", method=RequestMethod.GET)
+	    public String idInput() {
+	    	logger.info("idInput 비밀번호찾기 실행");
+	    	
+	    	return "catdream/idInput";
+	    }
 	
 }

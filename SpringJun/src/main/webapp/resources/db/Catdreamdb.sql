@@ -18,7 +18,7 @@ create table member(
     phone varchar(15) not null,  -- 휴대폰 번호
     jobrank varchar(5) -- 직급
 );
-
+-- 생성일자 추가해야하고 성별은 남자M 여자F 선택안함U 인데 남자로 저장되어있다
 insert into member(id,password,name,birth,gender,email,phone,jobrank)
 values('hjg8013','123456','황준호','1997-12-15','남자','hjg8012@naver.com','01029128013','관리자');
 
