@@ -1,5 +1,6 @@
 package org.jun.controller;
 
+import java.util.ArrayList;
 import java.util.Random;
 
 import javax.mail.internet.MimeMessage;
@@ -13,9 +14,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.mail.javamail.MimeMessageHelper;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 @Controller
 public class MemberController {
@@ -159,6 +162,29 @@ public class MemberController {
 	    	return "catdream/idSearch";
 	    }
 		
+	    
+	    //아이디 찾기 버튼클릭
+	    @RequestMapping(value="/idSearch", method=RequestMethod.POST)
+	    public String idSearch(MemberDTO mdto,Model model) {
+	    	logger.info("idSearch 아이디찾기 버튼클릭");
+	    	
+	    	logger.info("idSearch 실행됨 mdto=."+mdto);
+	    	
+	    	ArrayList<String> ids = mservice.idSearch(mdto);
+	    	model.addAttribute("ids",mservice.idSearch(mdto));
+	    	logger.info("idSearch 실행됨 id=."+ids);
+	    	
+	    	return "redirect:/idSearchShow";
+	    }
+	    
+	  //아이디 찾기 버튼클릭
+	    @RequestMapping(value="/idSearchShow", method=RequestMethod.GET)
+	    public String idSearchShow() {
+	    	logger.info("idSearchShow 아이디찾기 결과창");
+	    	
+	    	
+	    	return "catdream/idSearchShow";
+	    }
 	
 	
 	
