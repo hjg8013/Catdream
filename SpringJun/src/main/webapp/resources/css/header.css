@@ -224,6 +224,7 @@ legend{
     background-color: transparent;
     padding: 0 30px 0 30px;
     border: hidden;
+    box-sizing: unset !important;
 }
 
 .hsText:focus{

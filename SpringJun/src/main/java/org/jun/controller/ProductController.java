@@ -10,6 +10,8 @@ import java.util.Date;
 import java.util.UUID;
 
 import org.jun.domain.AttachFileDTO;
+import org.jun.domain.Criteria;
+import org.jun.domain.PageDTO;
 import org.jun.domain.ProductDTO;
 import org.jun.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,6 +22,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.util.FileCopyUtils;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -216,4 +219,9 @@ public class ProductController {
 	      return new ResponseEntity<Resource>(resource,header,HttpStatus.OK);
 	   }
 
+	
+	@GetMapping("detail")
+	public String detail() {
+		return "catdream/product/detail";
+	}
 }
