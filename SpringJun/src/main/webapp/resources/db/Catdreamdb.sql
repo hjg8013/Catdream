@@ -62,9 +62,9 @@ select * from attach;
 
 create table product(
 	pno int primary key auto_increment,
-    pimage longtext,
     pname varchar(100),
 	pimage int,
+    pimgName varchar(100),
     pcontent longtext,
     pprice varchar(100),
     pdate datetime default now(),
