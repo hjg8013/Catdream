@@ -11,9 +11,7 @@
 		<h1>아이디 찾기 결과</h1>
 	</div>
 	<div>
-		<c:forEach items="${ids}" var="id">
-			<input type="text" value="${id.id}">
-		</c:forEach>
+			<input type="text" value="${ids}">
 	</div>
 </body>
 </html>

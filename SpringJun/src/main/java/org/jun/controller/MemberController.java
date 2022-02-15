@@ -174,15 +174,6 @@ public class MemberController {
 	    	model.addAttribute("ids",mservice.idSearch(mdto));
 	    	logger.info("idSearch 실행됨 id=."+ids);
 	    	
-	    	return "redirect:/idSearchShow";
-	    }
-	    
-	  //아이디 찾기 버튼클릭
-	    @RequestMapping(value="/idSearchShow", method=RequestMethod.GET)
-	    public String idSearchShow() {
-	    	logger.info("idSearchShow 아이디찾기 결과창");
-	    	
-	    	
 	    	return "catdream/idSearchShow";
 	    }
 	
