@@ -21,7 +21,7 @@
 		<div id="container">
         	<h2 class="notice">공지사항 글쓰기</h2>
         	<div class="term"><hr></div>
-        	
+        	 
 	        <div class="board">
 	            <form role="form" action="/board/write" method="post" id="writeForm">
 	            	<input type="hidden" name="writer" value="${login.name}">
