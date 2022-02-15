@@ -9,7 +9,7 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.UUID;
 
-import org.jun.domain.AttachFileDTO;
+
 import org.jun.domain.ProductDTO;
 import org.jun.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
