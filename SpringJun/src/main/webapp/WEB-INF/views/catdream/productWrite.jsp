@@ -6,6 +6,7 @@
 <meta charset="UTF-8">
 <link rel="stylesheet" type="text/css" href="../resources/css/footer.css">
 <link rel="stylesheet" type="text/css" href="../resources/css/header.css">
+<link rel="stylesheet" type="text/css" href="../resources/css/products/productWrite.css">
 <link rel="icon" href="/resources/img/logo.png" type="image/x-icon">
 <script type="text/javascript" src="//code.jquery.com/jquery-3.6.0.min.js"></script>
 	<script type="text/javascript" src="../resources/js/productAjax.js"></script>
@@ -30,15 +31,17 @@
 	            	 <div id="pimage">
 	            	 	<label>상품 이미지</label>
 	            	 	<ul></ul>
+	            	 	<input type="file" name="uploadFile" value="파일변경">
 	            	 </div>
 	            	 
 	            	 <div id="pprice">
-	            	 	<label>상품 가격</label>
-	            	 	<ul></ul>
+	            	 	<label for="pprice">상품 가격</label>
+	            	 	<div>
+			            	<input type="text" name="pprice">
+	            	 	</div>
 	            	 </div>
 	            	 
 	            	 <div id="pbutton">
-	            	 	<input type="file" name="uploadFile" value="파일변경">
 	                 	<input type="submit" class="pbtn" value="등록">
 	                 </div>
 	            </form>

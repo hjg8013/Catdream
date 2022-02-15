@@ -8,7 +8,7 @@
 <link rel="stylesheet" type="text/css" href="../resources/css/header.css">
 <link rel="stylesheet" type="text/css" href="../resources/css/write.css">
 <link rel="stylesheet" type="text/css" href="../resources/css/summernote-lite.css">
-<link rel="icon" href="resources/img/logo.png" type="resources/img/x-icon">
+<link rel="icon" href="/resources/img/logo.png" type="resources/img/x-icon">
 <script type="text/javascript" src="//code.jquery.com/jquery-3.6.0.min.js"></script>
 <script type="text/javascript" src="../resources/js/summernote-lite.js"></script>
 <script type="text/javascript" src="../resources/js/summernote-ko-KR.js"></script>
