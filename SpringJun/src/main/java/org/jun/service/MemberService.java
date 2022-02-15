@@ -12,4 +12,6 @@ public interface MemberService {
 	public ArrayList<String> getId();
 	
 	public int idChk(MemberDTO mdto);
+	
+	public ArrayList<String> idSearch(MemberDTO mdto);
 }

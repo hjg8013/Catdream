@@ -15,24 +15,29 @@
 		<a href="/catdream">
             <h1 class="">Cat Dream</h2>
         </a>
-		<div>
-			<h1>아이디 찾기</h1>
-		</div>
-		<div>
-			<h2>이름</h2>
-			<input name="name" type="text" class="inputText1" id="userName" placeholder="이름">
-		</div>
-		<div class="emailBox">
-			<h2>이메일</h2>
-			<input name="email" type="text" class="inputText1" id="userEmail">
-			<div class="emailCheckBox">
-				<div class="emailCheckInputBox" id="emailCheckInputBoxFalse">
-		        	<input name="emailCheckInput" type="text" class="inputText1" id="userEmailCheckInput" placeholder="인증번호 입력하세요" disabled="disabled">
-	            </div>
-	            <div class="emailButton">인증번호 받기</div>
+        <form action="/idSearch" method="post">
+			<div>
+				<h2>아이디 찾기</h1>
 			</div>
-	        <span class="ErrorMsg"></span>
-		</div>
+			<div>
+				<h2>이름</h2>
+				<input name="name" type="text" class="inputText1" id="userName" placeholder="이름">
+			</div>
+			<div class="emailBox">
+				<h2>이메일</h2>
+				<input name="email" type="text" class="inputText1" id="userEmail">
+				<div class="emailCheckBox">
+					<div class="emailCheckInputBox" id="emailCheckInputBoxFalse">
+			        	<input name="emailCheckInput" type="text" class="inputText1" id="userEmailCheckInput" placeholder="인증번호 입력하세요" disabled="disabled">
+		            </div>
+		            <div class="emailButton">인증번호 받기</div>
+				</div>
+		        <span class="ErrorMsg"></span>
+			</div>
+			<div>
+				<input type="submit" value="아이디찾기">
+			</div>
+		</form>
 	</div>
 </body>
 </html>

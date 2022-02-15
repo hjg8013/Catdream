@@ -27,4 +27,9 @@
 		where id= #{id};
   	</select>
 	
+	<select id="idSearch" resultType="string">
+  		select id
+		from member
+		where name= #{name} and email= #{email};
+  	</select>
 </mapper>
