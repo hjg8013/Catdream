@@ -23,7 +23,7 @@
 	            	 <div class="pname">
 	            	 	<label for="pname">상품 이름</label>
 	            	 	<div>
-			            	<input type="text" name="panme">
+			            	<input type="text" name="pname">
 	            	 	</div>
 	            	 </div>
 	            	 
