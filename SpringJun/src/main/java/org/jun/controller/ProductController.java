@@ -49,9 +49,11 @@ public class ProductController {
 	 
 	@PostMapping("productWrite")
 	public String productWritePost(ProductDTO pdto) {
+		System.out.println("실행완료");
 		
 		pservice.productWrite(pdto);
-		System.out.println();
+		System.out.println("실행완료");
+		System.out.println(pdto);
 		return "redirect:/subcatdream";
 	}
 	
@@ -117,7 +119,7 @@ public class ProductController {
 		//모델을 포함관계로
 		ProductDTO productdto= new ProductDTO();
 				
-		productdto.setPname(uploadFileName);
+		productdto.setPimgName(uploadFileName);
 		//uuid에 중복이 되지않는 문자열을 만드는 클래스 메서드를 대입
 		UUID uuid = UUID.randomUUID();
 		//uuid를 string으로 변환해서 모델에 저장
@@ -161,11 +163,11 @@ public class ProductController {
 	
 	//업로드한 파일타입이 이미지일 때 웹브라우저에 이미지를 띄우기 위해서
 	@GetMapping("display")
-	public ResponseEntity<byte[]> getFile(String pname) { //getFile()은 문자열로 파일의 경로가 포함된 fileName을 매개변수로 받고
+	public ResponseEntity<byte[]> getFile(String pimgName) { //getFile()은 문자열로 파일의 경로가 포함된 fileName을 매개변수로 받고
 		                                                     //byte[](이진수)로 전송
-		System.out.println("url주소를 통한 상품명="+pname);
+		System.out.println("url주소를 통한 상품명="+pimgName);
 		
-		File file = new File("C:\\upload\\" +pname);
+		File file = new File("C:\\upload\\" +pimgName);
 		
 		System.out.println("file"+ file);
 		
@@ -196,10 +198,10 @@ public class ProductController {
 	// 웹브라우저가 이 파일은 다운로드해야하는 파일이라는 것을 인지할 수 있도록 변환이 되어야합니다.
 	// 그러기위해서는 APPLICATION_OCTET_STREAM_VALUE 타입으로 변환데이터 타입을 선언합니다.
 	@GetMapping(value="download",produces = MediaType.APPLICATION_OCTET_STREAM_VALUE)
-	   public ResponseEntity<Resource> downloadFile(String pname) {
-	      System.out.println("download pname = " + pname);
+	   public ResponseEntity<Resource> downloadFile(String pimgName) {
+	      System.out.println("download pname = " + pimgName);
 	      
-	      Resource resource = new FileSystemResource("C:\\upload\\" + pname);
+	      Resource resource = new FileSystemResource("C:\\upload\\" + pimgName);
 	      
 	      System.out.println("download resource = " + resource);
 	      
@@ -208,7 +210,7 @@ public class ProductController {
 	      HttpHeaders header = new HttpHeaders();
 	      
 	      try {
-	         header.add("Content-Disposition", "attachment; pname = " + new String(resourceName.getBytes("UTF-8"),"ISO-8859-1"));
+	         header.add("Content-Disposition", "attachment; pimgName = " + new String(resourceName.getBytes("UTF-8"),"ISO-8859-1"));
 	      } catch (IOException e) {
 	         // TODO Auto-generated catch block
 	         e.printStackTrace();

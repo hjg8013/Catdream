@@ -4,7 +4,8 @@
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="org.jun.mapper.ProductMapper">
 	<insert id="productWrite">
-
+		insert into product(pname,pimage,pimgName,puuid,puploadpath,pprice)
+		values(#{pname},#{pimage},#{pimgName},#{puuid},#{puploadpath},#{pprice});
 	</insert>
 
 

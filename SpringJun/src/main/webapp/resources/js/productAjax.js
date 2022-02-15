@@ -22,10 +22,10 @@ $(document).ready(function(){
    }
    
    
-   var formObj = $("form[role='form']")
+   var formObj = $("#productForm")
    // 글쓰기 버튼을 클릭하면
    $("input[type='submit']").on("click",function(e){
-      e.preventDefault();
+      
       var str="";
       // li태그에 있는 data선택자를 이용하여 input태그의 value값으로 세팅
       $("#pimage ul li").each(function(i,obj){
@@ -39,14 +39,15 @@ $(document).ready(function(){
           * $("span").data("age") => 13 data함수 괄호안에 매개변수가 하나면 getter data-type같이 속성에서 가져옴
           * $
           * */
-         str+="<input type='text' name='pname' value='"+$(obj).data("pname")+"'>"
+         str+="<input type='text' name='pimgName' value='"+$(obj).data("pimgname")+"'>"
          str+="<input type='text' name='puuid' value='"+$(obj).data("puuid")+"'>"
          str+="<input type='text' name='puploadpath' value='"+$(obj).data("puploadpath")+"'>"
          str+="<input type='text' name='pimage' value='"+$(obj).data("pimage")+"'>"
+         alert($(obj).data("pimgname")+$(obj).data("puuid")+$(obj).data("puploadpath")+$(obj).data("pimage"))
       })
-    
-      formObj.append(str).submit();// html은 덮어쓰기가 되는 것이니 append 사용
-      
+      //formObj.append(str);
+      formObj.append(str);// html은 덮어쓰기가 되는 것이니 append 사용
+      alert("aaaa")
    })
    
    
@@ -56,7 +57,7 @@ $(document).ready(function(){
       var formData = new FormData();
       var inputFile = $("input[name='uploadFile']");
       var files = inputFile[0].files;
-   
+     
       
       for(var i=0;i<files.length;i++){
          //console.log("aaaa");
@@ -65,9 +66,9 @@ $(document).ready(function(){
             return false;
          }
          formData.append("uploadFile",files[i]);
+         console.log(files[i])
          
       }
-      
       //ajax를 이용해서.......
       //formData 자체를 데이터로 전송하고 formData를 데이터로 전송할 때에는
       //processData,contentType는 false로해야함
@@ -79,7 +80,8 @@ $(document).ready(function(){
          contentType:false,
          success:function(result){ //사용자가 선택한 파일을 원하는 경로에 성공적으로 업로드 한 후
             // showUploadedFile함수 호출
-            showUploadedFile(result);
+        	 showUploadedFile(result);
+      
          }
       })//$.ajax 끝
    })
@@ -92,21 +94,21 @@ function showUploadedFile(uploadResultArr){
    $(uploadResultArr).each(function(i,obj){ //each jquery의 반복문
       console.log(obj);
       
-      var fileCallPath = encodeURIComponent(obj.puploadpath + "/" + obj.puuid + "_" + obj.pname)
-      var fileCallPath2 = encodeURIComponent(obj.puploadpath + "/s_" + obj.puuid + "_" + obj.pname)
+      var fileCallPath = encodeURIComponent(obj.puploadpath + "/" + obj.puuid + "_" + obj.pimgName)
+      var fileCallPath2 = encodeURIComponent(obj.puploadpath + "/s_" + obj.puuid + "_" + obj.pimgName)
       if(!obj.pimage){
          //사용자가 업로드 한 파일의 타입이 이미지가 아니면(excel문서파일,ppt파일),
          console.log("이미지 파일 아님");
-         str+="<li data-path='" + obj.puploadpath + "' data-puuid='" + obj.puuid + "' data-pname='" + obj.pname + "' data-type='" + obj.pimage + "'>"
-         str+="<a href='/product/download?pname="+ fileCallPath +"'>"+obj.pname+"</a></li>"
+         str+="<li data-puploadpath='" + obj.puploadpath + "' data-puuid='" + obj.puuid + "' data-pimgName='" + obj.pimgName + "' data-pimage='" + obj.pimage + "'>"
+         str+="<a href='/product/download?pimgName="+ fileCallPath +"'>"+obj.pimgName+"</a></li>"
       }else{
          //var fileCallPath = encodeURIComponent(obj.uploadPath + "/" + obj.uuid + "_" + obj.fileName)
          // 사용자가 업로드 한 파일의 타입이 이미지이면 (.jpg,.png,.gif)
          // img태그를 사용해서 웹브라우저 이미지 출력
          console.log(fileCallPath);
          console.log(fileCallPath2);
-         str+="<li data-path='" + obj.puploadpath + "' data-puuid='" + obj.puuid + "' data-pname='" + obj.pname + "' data-type='" + obj.pimage + "'>"
-         str+="<img src='/product/display?pname=" + fileCallPath2 + "'></li>"
+         str+="<li data-puploadpath='" + obj.puploadpath + "' data-puuid='" + obj.puuid + "' data-pimgName='" + obj.pimgName + "' data-pimage='" + obj.pimage + "'>"
+         str+="<img src='/product/display?pimgName=" + fileCallPath2 + "'></li>"
       }
     })
     

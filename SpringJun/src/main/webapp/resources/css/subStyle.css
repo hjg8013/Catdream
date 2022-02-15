@@ -1,29 +1,4 @@
 @charset "UTF-8";
-*{
-    padding: 0;
-    margin: 0;
-}
-
-body{
-    font-size: 13px;
-    font-family: 'Noto Sans KR', sans-serif;
-    line-height: 20px;
-    color: #333;
-}
-
-ul, ol{
-    list-style: none;
-}
-
-a{
-    text-decoration: none;
-}
-
-img{
-    vertical-align: top;
-    border: 0;
-}
-
 .row1{
     position: relative;
     width: 1200px;
@@ -124,11 +99,10 @@ img{
     content: "";
     display: inline-block;
     vertical-align: top;
-    width: 1px;
+    width: 0.5px;
     height: 10px;
     background-color: #777;
     margin: 5px 10px 0 10px;
-
 }
 
 .mainUtil ul li a{
