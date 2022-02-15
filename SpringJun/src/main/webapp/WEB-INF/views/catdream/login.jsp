@@ -47,7 +47,7 @@
                             <label class="idButton"><a href="/idSearch">아이디 찾기</a></label>
                     </div>
                     <div class="pwSearch">
-                            <label class="pwButton"><a href="">비밀번호 찾기</a></label>
+                            <label class="pwButton"><a href="/idInput">비밀번호 찾기</a></label>
                     </div>
                 </div>
                 <div class="facebookLogin">
