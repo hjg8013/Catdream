@@ -19,7 +19,7 @@
         	<div class="term"><hr></div>
         	
 	        <div class="product">
-	            <form role="form" action="/product/productWrite" method="post">
+	            <form id="productForm" role="form" action="/product/productWrite" method="post">
 	            	 <div class="pname">
 	            	 	<label for="pname">상품 이름</label>
 	            	 	<div>
