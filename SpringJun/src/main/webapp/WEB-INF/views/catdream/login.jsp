@@ -44,7 +44,7 @@
                             <label class="memberButton"><a href="/member">회원가입</a></label>
                     </div>
                     <div class="idSearch">
-                            <label class="idButton"><a href="/idSearch">아이디 찾기</a></label>
+                            <label class="idButton"><a href="/infoSearch">아이디 찾기</a></label>
                     </div>
                     <div class="pwSearch">
                             <label class="pwButton"><a href="/idInput">비밀번호 찾기</a></label>
