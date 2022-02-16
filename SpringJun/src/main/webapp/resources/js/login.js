@@ -15,6 +15,7 @@ $(document).ready(function(){
 })
 //로그인 실패시 나오는 문구가없다
 function loginProcess(){ 
+
 	var id = $("#userId").val();
 	var pwd = $("#userPw").val();
 	var idChk = $("#idSave").is(":checked"); // 체크박스가 체크되었는지를 담아준다. ( true/false 로 담긴다.) 
@@ -32,7 +33,25 @@ function loginProcess(){
 	}else{ // 체크가 해제 된 경우 (false) 
 		deleteCookie("Cookie_userId"); // 쿠키 정보를 지우는 이벤트를 호출한다. 
 		deleteCookie("Cookie_userPw"); 
-	} 	
+	}
+	$.ajax({
+        type:"post",
+        url: "/login",
+        data: {'id':$("#userId").val(),
+        	   'pw':$("#userId").val()},
+        dataType: "json",
+        success : function(data) {
+        	console.log(data);
+        	if(data == 1){
+        		alert("로그인이 성공했습니다");
+        	}else if(data == 0 ){
+        		alert("로그인이 실패했습니다");
+        	}
+        }
+		, error : function() {
+			alert('서버 통신 실패');
+		}
+    });
 };
 //쿠키 값을 저장하는 이벤트
 function setCookie(cookieName, value, exdays){ 

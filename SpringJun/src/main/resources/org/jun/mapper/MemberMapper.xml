@@ -21,6 +21,13 @@
 		from member;
   	</select>
   	
+  	<select id="idpwChk" resultType="int">
+  		select count(*)
+		from member
+		where id= #{id}
+		and password=#{password};
+  	</select>
+  	
   	<select id="idChk" resultType="int">
   		select count(*)
 		from member

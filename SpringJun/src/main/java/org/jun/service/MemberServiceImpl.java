@@ -26,6 +26,10 @@ public class MemberServiceImpl implements MemberService{
 		return mmapper.getId();
 	}
 	
+	public int idpwChk(MemberDTO mdto) {
+		return mmapper.idpwChk(mdto);
+	}
+	
 	public int idChk(MemberDTO mdto) {
 		return mmapper.idChk(mdto);
 	}
