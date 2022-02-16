@@ -12,7 +12,10 @@ public interface MemberMapper {
 	
 	public ArrayList<String> getId();
 	
+	public int idpwChk(MemberDTO mdto);
+	
 	public int idChk(MemberDTO mdto);
 	
 	public ArrayList<String> idSearch(MemberDTO mdto);
+	
 }

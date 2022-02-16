@@ -39,23 +39,23 @@ public class MemberController {
 		}
 		
 		//로그인 성공
+		@ResponseBody
 		@RequestMapping(value = "/login", method = RequestMethod.POST)  // 웹브라우저를 분석해주는 역할
-		public String login(MemberDTO mdto,HttpSession session) {
+		public int login(MemberDTO mdto,HttpSession session) {
 		   logger.info("post-login 실행됨."); // console 역할
 		   
-		   MemberDTO login= mservice.login(mdto);
-		   logger.info("MemberDTO안의 데이터 출력"+login);
-		    
-			session.setAttribute("login", login); //로그아웃이나 웹브라우저를 닫지않는이상 데이터가 사라지지 않는다
-
-			if(session.getAttribute("login")!=null) {
-				//main페이지로 이동
-				return "redirect:/catdream";
-				
-			}else { //session영역에 login이라는 변수에 값이 없으면(null)
-				//다시 로그인 할 수 있게 로그인 페이지로 이동
-				return "redirect:/login";
-			}
+		   int result = mservice.idpwChk(mdto);
+		   logger.info("result"+result);
+		   //아이디와 비밀번호가 있다면 1
+		   if(result == 1) {
+			   MemberDTO login= mservice.login(mdto);
+			   logger.info("MemberDTO안의 데이터 출력"+login);
+			   session.setAttribute("login", login); //로그아웃이나 웹브라우저를 닫지않는이상 데이터가 사라지지 않는다
+			   return result;
+		   }else { 
+			   
+			   return result;
+		   }
 		} 
 		
 		//로그아웃
