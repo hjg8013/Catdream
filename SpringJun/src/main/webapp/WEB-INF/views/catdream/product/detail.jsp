@@ -10,6 +10,8 @@ pageEncoding="UTF-8"%>
 <link rel="stylesheet" href="../resources/css/products/detail.css">
 <link rel="stylesheet" href="/resources/css/header.css">
 <link rel="stylesheet" href="/resources/css/footer.css">
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script type="text/javascript" src="../resources/js/products/detail.js"></script>
 </head>
 <body>
 	<div id="wrap">
@@ -32,15 +34,15 @@ pageEncoding="UTF-8"%>
         <section class="py-5 sec1">
             <div class="container px-4 px-lg-5 my-5">
                 <div class="row gx-4 gx-lg-5 align-items-center">
-                    <div class="col-md-6 imgDetail"><img class="card-img-top mb-5 mb-md-0" src="https://dummyimage.com/600x700/dee2e6/6c757d.jpg" alt="..." /></div>
+                    <div class="col-md-6 imgDetail"><img class="imgs card-img-top mb-5 mb-md-0" src="/product/display?pimgname=${detail.puploadpath}/${detail.puuid}_${detail.pimgname}" alt="..." /></div>
                     <div class="col-md-6">
-                        <div class="small mb-1">브랜드명: </div>
-                        <h1 class="display-5 fw-bolder">상품 이름</h1>
+                        <div class="small mb-1">브랜드명:${detail.pbrand} </div>
+                        <h1 class="display-5 fw-bolder">${detail.pname}</h1>
                         <div class="fs-5 mb-5">
-                            <span class="text-decoration-line-through">정가</span>
-                            <span>할인가</span>
+                            <span class="text-decoration-line-through">${detail.pprice}원</span>
+                            <span>${detail.pbargain}</span>
                         </div>
-                        <p class="lead">Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium at dolorem quidem modi. Nam sequi consequatur obcaecati excepturi alias magni, accusamus eius blanditiis delectus ipsam minima ea iste laborum vero?</p>
+                        <p class="lead">${detail.pcontent}</p>
                         <div class="d-flex">
                             <input class="form-control text-center me-3" id="inputQuantity" type="num" value="1" style="max-width: 3rem" />
                             <button class="btn btn-outline-dark flex-shrink-0" type="button">

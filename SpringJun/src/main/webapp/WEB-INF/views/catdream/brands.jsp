@@ -63,7 +63,7 @@
                     <ul>
 						<c:forEach items="${list}" var="product">
 	                        <li>
-	                            <a href="#">
+	                            <a href="/product/detail?pno=${product.pno}">
 	                                <p class="itemImg"><img class="imgs" data-id="${product.pno}" src='/product/display?pimgname=${product.puploadpath}/${product.puuid}_${product.pimgname}'></p>
 	                                <p class="itemName">${product.pname}</p>
 	                                <p class="itemPrice">${product.pprice}</p>

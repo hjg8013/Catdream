@@ -8,6 +8,7 @@ public class ProductDTO {
 	private boolean pimage;
 	private String pcontent;
 	private String pprice;
+	private String pbargain;
 	private String pdate;
 	private String pbrand;
 	private int pstar;
@@ -50,6 +51,12 @@ public class ProductDTO {
 	public void setPprice(String pprice) {
 		this.pprice = pprice;
 	}
+	public String getPbargain() {
+		return pbargain;
+	}
+	public void setPbargain(String pbargain) {
+		this.pbargain = pbargain;
+	}
 	public String getPdate() {
 		return pdate;
 	}
@@ -89,7 +96,7 @@ public class ProductDTO {
 	@Override
 	public String toString() {
 		return "ProductDTO [pno=" + pno + ", pname=" + pname + ", pimgname=" + pimgname + ", pimage=" + pimage
-				+ ", pcontent=" + pcontent + ", pprice=" + pprice + ", pdate=" + pdate + ", pbrand=" + pbrand
+				+ ", pcontent=" + pcontent + ", pprice=" + pprice + ", pbargain=" + pbargain + ", pdate=" + pdate + ", pbrand=" + pbrand
 				+ ", pstar=" + pstar + ", pstarno=" + pstarno + ", puuid=" + puuid + ", puploadpath=" + puploadpath
 				+ "]";
 	}
