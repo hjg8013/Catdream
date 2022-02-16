@@ -10,7 +10,7 @@
                 </h1>
                 <nav class="hGnb">
                     <ul>
-                        <li><a href="">브랜드별 사료</a></li>
+                        <li><a href="/brands">브랜드별 사료</a></li>
                         <li class="feed2">
                             <a href="/subcatdream" >기능별 사료</a>
 

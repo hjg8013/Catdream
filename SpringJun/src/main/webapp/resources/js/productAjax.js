@@ -30,23 +30,15 @@ $(document).ready(function(){
       // li태그에 있는 data선택자를 이용하여 input태그의 value값으로 세팅
       $("#pimage ul li").each(function(i,obj){
          console.log(obj);
-         // data선택자를 이용하여 input태그의 value값으로 셋팅
-         /*
-          * data함수
-          * <span>
-          * $("span").data("age,13") => <span data-age="13"> data함수 괄호안에 매개변수가 두개면 setter
-          * <span data-age="13">
-          * $("span").data("age") => 13 data함수 괄호안에 매개변수가 하나면 getter data-type같이 속성에서 가져옴
-          * $
-          * */
-         str+="<input type='text' name='pimgName' value='"+$(obj).data("pimgName")+"'>"
+         
+         str+="<input type='text' name='pimgname' value='"+$(obj).data("pimgname")+"'>"
          str+="<input type='text' name='puuid' value='"+$(obj).data("puuid")+"'>"
-         str+="<input type='text' name='puploadpath' value='"+$(obj).data("puploadpath")+"'>"
+         str+="<input type='text' name='puploadpath' value='"+$(obj).data("path")+"'>"
          str+="<input type='text' name='pimage' value='"+$(obj).data("pimage")+"'>"
+       
       })
-    
-      formObj.append(str).submit();// html은 덮어쓰기가 되는 것이니 append 사용
       
+      formObj.append(str).submit();// html은 덮어쓰기가 되는 것이니 append 사용
    })
    
    
@@ -59,8 +51,6 @@ $(document).ready(function(){
    
       
       for(var i=0;i<files.length;i++){
-         //console.log("aaaa");
-         //파일의 크기가 이상이면 밑에 있는거 하지마라!
          if(!checkExtension(files[i].size,files[i].name)){
             return false;
          }
@@ -92,21 +82,18 @@ function showUploadedFile(uploadResultArr){
    $(uploadResultArr).each(function(i,obj){ //each jquery의 반복문
       console.log(obj);
       
-      var fileCallPath = encodeURIComponent(obj.puploadpath + "/" + obj.puuid + "_" + obj.pimgName)
-      var fileCallPath2 = encodeURIComponent(obj.puploadpath + "/s_" + obj.puuid + "_" + obj.pimgName)
+      var fileCallPath = encodeURIComponent(obj.puploadpath + "/" + obj.puuid + "_" + obj.pimgname)
+      var fileCallPath2 = encodeURIComponent(obj.puploadpath + "/s_" + obj.puuid + "_" + obj.pimgname)
       if(!obj.pimage){
          //사용자가 업로드 한 파일의 타입이 이미지가 아니면(excel문서파일,ppt파일),
          console.log("이미지 파일 아님");
-         str+="<li data-path='" + obj.puploadpath + "' data-puuid='" + obj.puuid + "' data-pimgName='" + obj.pimgName + "' data-pimage='" + obj.pimage + "'>"
-         str+="<a href='/product/download?pimgName="+ fileCallPath +"'>"+obj.pname+"</a></li>"
+         str+="<li data-path='" + obj.puploadpath + "' data-puuid='" + obj.puuid + "' data-pimgname='" + obj.pimgname + "' data-pimage='" + obj.pimage + "' data-pcontent='" + obj.pcontent + "'>"
+         str+="<a href='/product/download?pimgname="+ fileCallPath +"'>"+obj.pname+"</a></li>"
       }else{
-         //var fileCallPath = encodeURIComponent(obj.uploadPath + "/" + obj.uuid + "_" + obj.fileName)
-         // 사용자가 업로드 한 파일의 타입이 이미지이면 (.jpg,.png,.gif)
-         // img태그를 사용해서 웹브라우저 이미지 출력
          console.log(fileCallPath);
          console.log(fileCallPath2);
-         str+="<li data-path='" + obj.puploadpath + "' data-puuid='" + obj.puuid + "' data-pimgName='" + obj.pimgName + "' data-pimage='" + obj.pimage + "'>"
-         str+="<img src='/product/display?pimgName=" + fileCallPath2 + "'></li>"
+         str+="<li data-path='" + obj.puploadpath + "' data-puuid='" + obj.puuid + "' data-pimgname='" + obj.pimgname + "' data-pimage='" + obj.pimage + "' data-pcontent='" + obj.pcontent + "'>"
+         str+="<img src='/product/display?pimgname=" + fileCallPath2 + "'></li>"
       }
     })
     

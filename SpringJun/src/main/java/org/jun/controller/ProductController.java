@@ -20,7 +20,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
-
+import org.springframework.ui.Model;
 import org.springframework.util.FileCopyUtils;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -36,9 +36,6 @@ public class ProductController {
 	
 	@Autowired
 	private ProductService pservice;
-	
-
-
 	
 	// 상품올리기
 	@GetMapping("productWrite")
@@ -118,7 +115,7 @@ public class ProductController {
 		//모델을 포함관계로
 		ProductDTO productdto= new ProductDTO();
 				
-		productdto.setPimgName(uploadFileName);
+		productdto.setPimgname(uploadFileName);
 		//uuid에 중복이 되지않는 문자열을 만드는 클래스 메서드를 대입
 		UUID uuid = UUID.randomUUID();
 		//uuid를 string으로 변환해서 모델에 저장
@@ -162,11 +159,11 @@ public class ProductController {
 	
 	//업로드한 파일타입이 이미지일 때 웹브라우저에 이미지를 띄우기 위해서
 	@GetMapping("display")
-	public ResponseEntity<byte[]> getFile(String pimgName) { //getFile()은 문자열로 파일의 경로가 포함된 fileName을 매개변수로 받고
+	public ResponseEntity<byte[]> getFile(String pimgname) { //getFile()은 문자열로 파일의 경로가 포함된 fileName을 매개변수로 받고
 		                                                     //byte[](이진수)로 전송
-		System.out.println("url주소를 통한 상품명="+pimgName);
+		System.out.println("url주소를 통한 상품명="+pimgname);
 		
-		File file = new File("C:\\upload\\" +pimgName);
+		File file = new File("C:\\upload\\" +pimgname);
 		
 		System.out.println("file"+ file);
 		
@@ -197,10 +194,10 @@ public class ProductController {
 	// 웹브라우저가 이 파일은 다운로드해야하는 파일이라는 것을 인지할 수 있도록 변환이 되어야합니다.
 	// 그러기위해서는 APPLICATION_OCTET_STREAM_VALUE 타입으로 변환데이터 타입을 선언합니다.
 	@GetMapping(value="download",produces = MediaType.APPLICATION_OCTET_STREAM_VALUE)
-	   public ResponseEntity<Resource> downloadFile(String pimgName) {
-	      System.out.println("download pname = " + pimgName);
+	   public ResponseEntity<Resource> downloadFile(String pimgname) {
+	      System.out.println("download pname = " + pimgname);
 	      
-	      Resource resource = new FileSystemResource("C:\\upload\\" + pimgName);
+	      Resource resource = new FileSystemResource("C:\\upload\\" + pimgname);
 	      
 	      System.out.println("download resource = " + resource);
 	      
@@ -219,7 +216,8 @@ public class ProductController {
 
 	
 	@GetMapping("detail")
-	public String detail() {
+	public String detail(Model model, ProductDTO pdto) {
+		model.addAttribute("detail", pservice.detail(pdto));
 		return "catdream/product/detail";
 	}
 }

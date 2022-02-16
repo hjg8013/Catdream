@@ -4,7 +4,7 @@ package org.jun.domain;
 public class ProductDTO {
 	private int pno;
 	private String pname;
-	private String pimgName;
+	private String pimgname;
 	private boolean pimage;
 	private String pcontent;
 	private String pprice;
@@ -26,11 +26,11 @@ public class ProductDTO {
 	public void setPname(String pname) {
 		this.pname = pname;
 	}
-	public String getPimgName() {
-		return pimgName;
+	public String getPimgname() {
+		return pimgname;
 	}
-	public void setPimgName(String pimgName) {
-		this.pimgName = pimgName;
+	public void setPimgname(String pimgName) {
+		this.pimgname = pimgName;
 	}
 	public boolean isPimage() {
 		return pimage;
@@ -88,7 +88,7 @@ public class ProductDTO {
 	}
 	@Override
 	public String toString() {
-		return "ProductDTO [pno=" + pno + ", pname=" + pname + ", pimgName=" + pimgName + ", pimage=" + pimage
+		return "ProductDTO [pno=" + pno + ", pname=" + pname + ", pimgname=" + pimgname + ", pimage=" + pimage
 				+ ", pcontent=" + pcontent + ", pprice=" + pprice + ", pdate=" + pdate + ", pbrand=" + pbrand
 				+ ", pstar=" + pstar + ", pstarno=" + pstarno + ", puuid=" + puuid + ", puploadpath=" + puploadpath
 				+ "]";

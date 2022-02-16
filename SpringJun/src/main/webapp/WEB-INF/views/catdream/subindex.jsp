@@ -68,7 +68,7 @@
                 <div class="main">
                     <ul>
                         <li>
-                            <a href="#">
+                            <a href="/product/detail">
                                 <p class="itemImg"><img src="resources/img/item01.jpg" alt=""></p>
                                 <p class="itemName">카나간 다이어트 노령 중성화 포 캣 1.5KG (애완 고양이 사료)</p>
                                 <p class="itemPrice">40,000원</p>
