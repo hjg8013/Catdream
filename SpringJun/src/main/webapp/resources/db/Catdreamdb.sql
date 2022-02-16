@@ -67,6 +67,7 @@ create table product(
     pimgname varchar(100),
     pcontent longtext,
     pprice varchar(100),
+    pbargain varchar(100),
     pdate datetime default now(),
     pbrand varchar(20),
     pstar int,

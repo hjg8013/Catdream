@@ -41,6 +41,12 @@
 	            	 	</div>
 	            	 </div>
 	            	 <div id="pprice">
+	            	 	<label for="pprice">할인 가격</label>
+	            	 	<div>
+			            	<input type="text" name="pbargain">
+	            	 	</div>
+	            	 </div>
+	            	 <div id="pprice">
 	            	 	<label for="pprice">상품 설명</label>
 	            	 	<div>
 			            	<input type="text" name="pcontent">
