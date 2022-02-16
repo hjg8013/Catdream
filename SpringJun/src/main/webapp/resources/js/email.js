@@ -1,5 +1,15 @@
-/**
- * 
+/**		이메일에 관한 jsp
+ * 			<div class="emailBox">
+				<h2>이메일</h2>
+				<input name="email" type="text" class="inputText1" id="userEmail">
+				<div class="emailCheckBox">
+					<div class="emailCheckInputBox" id="emailCheckInputBoxFalse">
+			        	<input name="emailCheckInput" type="text" class="inputText1" id="userEmailCheckInput" placeholder="인증번호 입력하세요" disabled="disabled">
+		            </div>
+		            <div class="emailButton">인증번호 받기</div>
+				</div>
+		        <span class="ErrorMsg"></span>
+			</div>
  */
 //이메일전송 인증번호 저장하기위한 코드
 var code = "";  

@@ -154,15 +154,18 @@ public class MemberController {
 	        return num;
 	    }
 	    
-	    //아이디 찾기
-	    @RequestMapping(value="/idSearch", method=RequestMethod.GET)
-	    public String idSearch() {
-	    	logger.info("idSearch 아이디찾기 실행");
+		//아이디 찾기 실행
+	    @RequestMapping(value="/infoSearch", method=RequestMethod.GET)
+	    public String infoSearch(Model model) {
+	    	logger.info("/infoSearch 아이디찾기 실행");
+
+	    	int result = 0;
+	    	logger.info("result : "+result);
+	    	model.addAttribute("idResult",result);
 	    	
-	    	return "catdream/idSearch";
+	    	return "catdream/infoSearch";	    	
+	    	
 	    }
-		
-	    
 	    //아이디 찾기 버튼클릭
 	    @RequestMapping(value="/idSearch", method=RequestMethod.POST)
 	    public String idSearch(MemberDTO mdto,Model model) {
@@ -178,12 +181,46 @@ public class MemberController {
 	    }
 	
 	    
-	    //비밀번호 찾기
+	    //비밀번호 찾기의 아이디 입력
 	    @RequestMapping(value="/idInput", method=RequestMethod.GET)
 	    public String idInput() {
 	    	logger.info("idInput 비밀번호찾기 실행");
 	    	
 	    	return "catdream/idInput";
 	    }
+
+	    //비밀번호 이메일입력창 띄우기
+	    @RequestMapping(value="/infoSearch", method=RequestMethod.POST)
+	    public String infoSearch(MemberDTO mdto,Model model) {
+	    	logger.info("/infoSearch 비밀번호찾기 실행");
+	    	
+	    	logger.info("id : "+mdto.getId());
+	    	
+	    	int result = mservice.idChk(mdto);
+	    	logger.info("result : "+result);
+	    	model.addAttribute("id",mdto.getId());
+	    	model.addAttribute("idResult",result);
+	    	
+	    	if(result == 1) {
+	    		return "catdream/infoSearch";	    		
+	    	}
+	    	else {
+	    		//아이디를 입력하라는 창을 안뛰워준다
+	    		return "catdream/idInput";
+	    	}
+	    }
+	    
+	  //비밀번호 변경창 띄우기 또는 변경
+	    @RequestMapping(value="/pwSearch", method=RequestMethod.POST)
+	    public String pwSearch(MemberDTO mdto) {
+	    	logger.info("pwSearch 비밀번호찾기 버튼클릭");
+	    	//내용변경
+	    	return "catdream/pwSearchShow";
+	    }
+	    
+	    
+	    
+	    
+	    
 	
 }
