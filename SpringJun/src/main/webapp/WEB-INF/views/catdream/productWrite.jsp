@@ -40,7 +40,12 @@
 			            	<input type="text" name="pprice">
 	            	 	</div>
 	            	 </div>
-	            	 
+	            	 <div id="pprice">
+	            	 	<label for="pprice">상품 설명</label>
+	            	 	<div>
+			            	<input type="text" name="pcontent">
+	            	 	</div>
+	            	 </div>
 	            	 <div id="pbutton">
 	                 	<input type="submit" class="pbtn" value="등록">
 	                 </div>
