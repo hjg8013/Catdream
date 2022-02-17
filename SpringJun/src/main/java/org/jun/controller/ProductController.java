@@ -50,7 +50,7 @@ public class ProductController {
 		System.out.println("productWrite 포스트 컨트롤러 실행");
 		pservice.productWrite(pdto);
 		System.out.println();
-		return "redirect:/subcatdream";
+		return "redirect:/brands";
 	}
 	
 	// 년/월/일 폴더의 생성

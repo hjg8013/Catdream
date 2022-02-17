@@ -18,7 +18,7 @@
 <%@ include file="header.jsp" %>
  <div id="container">
             <div class="row1">
-                <h2>기능별사료</h2>
+                <h2>브랜드별사료</h2>
 
                 <div class="mainGnb">
                     <ul>

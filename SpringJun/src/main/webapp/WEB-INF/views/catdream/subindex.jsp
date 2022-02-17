@@ -29,7 +29,7 @@
                         <li><a href="#">저칼로리</a></li>
                         <li><a href="#">기능성</a></li>
                         <li><a href="#">피부,모질용</a></li>
-                        <li><a href="#">그레인프리/글루텐프리</a></li>
+                        <li><a href="#">글루텐프리</a></li>
                         <li><a href="#">유리너리사료</a></li>
                         <li><a href="#">인도어(실내생활묘)</a></li>
                         <li><a href="#">입맛까다로운 냥이용</a></li>
