@@ -33,25 +33,15 @@ $(document).ready(function(){
    $("input[type='submit']").on("click",function(e){
       e.preventDefault();
       var str="";
-      // li태그에 있는 data선택자를 이용하여 input태그의 value값으로 세팅
       $("#uploadResult ul li").each(function(i,obj){
          console.log(obj);
-         // data선택자를 이용하여 input태그의 value값으로 셋팅
-         /*
-          * data함수
-          * <span>
-          * $("span").data("age,13") => <span data-age="13"> data함수 괄호안에 매개변수가 두개면 setter
-          * <span data-age="13">
-          * $("span").data("age") => 13 data함수 괄호안에 매개변수가 하나면 getter data-type같이 속성에서 가져옴
-          * $
-          * */
          str+="<input type='hidden' name='attachList["+i+"].fileName' value='"+$(obj).data("filename")+"'>"
          str+="<input type='hidden' name='attachList["+i+"].uuid' value='"+$(obj).data("uuid")+"'>"
          str+="<input type='hidden' name='attachList["+i+"].uploadPath' value='"+$(obj).data("path")+"'>"
          str+="<input type='hidden' name='attachList["+i+"].image' value='"+$(obj).data("type")+"'>"
       })
     
-      formObj.append(str).submit();// html은 덮어쓰기가 되는 것이니 append 사용
+      formObj.append(str).submit();
       
    })
    
@@ -65,8 +55,6 @@ $(document).ready(function(){
    
       
       for(var i=0;i<files.length;i++){
-         //console.log("aaaa");
-         //파일의 크기가 이상이면 밑에 있는거 하지마라!
          if(!checkExtension(files[i].size,files[i].name)){
             return false;
          }
@@ -74,9 +62,6 @@ $(document).ready(function(){
          
       }
       
-      //ajax를 이용해서.......
-      //formData 자체를 데이터로 전송하고 formData를 데이터로 전송할 때에는
-      //processData,contentType는 false로해야함
       $.ajax({
          url:"/uploadAjaxAction",
          type:"post",
@@ -84,12 +69,13 @@ $(document).ready(function(){
          processData:false, 
          contentType:false,
          success:function(result){ //사용자가 선택한 파일을 원하는 경로에 성공적으로 업로드 한 후
-            // showUploadedFile함수 호출
             showUploadedFile(result);
          }
       })//$.ajax 끝
+      
    })
 })// $(document).ready 끝
+
 //사용자가 선택한 파일을 원하는 경로에 성공적으로 업로드 한 후 웹브라우저에 파일을 띄워라에 대한 함수 선언(showUploadedFile)
 function showUploadedFile(uploadResultArr){
    
@@ -97,7 +83,7 @@ function showUploadedFile(uploadResultArr){
    
    $(uploadResultArr).each(function(i,obj){ //each jquery의 반복문
       console.log(obj);
-      
+
       var fileCallPath = encodeURIComponent(obj.uploadPath + "/" + obj.uuid + "_" + obj.fileName)
       var fileCallPath2 = encodeURIComponent(obj.uploadPath + "/s_" + obj.uuid + "_" + obj.fileName)
       if(!obj.image){

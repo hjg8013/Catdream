@@ -12,6 +12,7 @@
 <script type="text/javascript" src="//code.jquery.com/jquery-3.6.0.min.js"></script>
 <script type="text/javascript" src="../resources/js/summernote-lite.js"></script>
 <script type="text/javascript" src="../resources/js/summernote-ko-KR.js"></script>
+<script type="text/javascript" src="../resources/js/uploadAjax2.js"></script>
 <script type="text/javascript" src="../resources/js/write.js"></script>
 <title>글쓰기</title>
 </head>
@@ -19,7 +20,7 @@
 	<div id="wrap">
 		<%@ include file="../header.jsp" %>
 		<div id="container">
-        	<h2 class="notice">공지사항 글쓰기</h2>
+        	<h2 class="notice">공지사항 글쓰기</h2> 
         	<div class="term"><hr></div>
         	
 	        <div class="board">
@@ -38,8 +39,14 @@
 	                        <textarea name="content" id="summernote"></textarea>
 	                    </div>
 	                </div>
+	                <div>
+						<input type="file" name="uploadFile" multiple>
+					</div>
+					<div id="uploadResult">
+						<ul></ul>
+					</div>
 	                <div class="bottom">
-	                    <input type="submit" class="btn" id="btnList" value="완료">
+	                    <input type="button" class="btn" id="btnList" value="완료">
 	                </div>
 	            </form>
 	        </div>
