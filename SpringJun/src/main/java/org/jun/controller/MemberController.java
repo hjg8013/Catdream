@@ -209,12 +209,27 @@ public class MemberController {
 	    	}
 	    }
 	    
-	  //비밀번호 변경창 띄우기 또는 변경
-	    @RequestMapping(value="/passwordReset", method=RequestMethod.GET)
-	    public String pwSearch(MemberDTO mdto) {
-	    	logger.info("passwordReset 비밀번호찾기 버튼클릭후 재생성뜸");
-	    	//내용변경
+	  //비밀번호 찾기 버튼클릭
+	    @RequestMapping(value="/passwordReset", method=RequestMethod.POST)
+	    public String passwordReset(MemberDTO mdto,Model model) {
+	    	logger.info("passwordReset 비밀번호찾기 버튼클릭");
+	    	
+	    	logger.info("비밀번호의 아이디 이름 이메일 확인?"+mservice.pwSearch(mdto));
+	    	model.addAttribute("id",mdto.getId());
+	    	
 	    	return "catdream/passwordReset";
+	    }
+	    
+		 //비밀번호 변경
+	    @RequestMapping(value="/passwordResetGo", method=RequestMethod.POST)
+	    public String passwordResetGo(MemberDTO mdto) {
+	    	logger.info("passwordResetGo 비밀번호 재생성 클릭");
+	    	//내용변경
+	    	//비밀번호 저장된걸로 변경
+	    	logger.info("바뀌는 비밀번호는?"+mdto);
+	    	mservice.updatePassword(mdto);
+	    	
+	    	return "/catdream/index";
 	    }
 	    
 	    

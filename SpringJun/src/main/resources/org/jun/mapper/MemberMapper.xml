@@ -46,7 +46,11 @@
 		where id=#{id} and name= #{name} and email= #{email};
   	</select>
   	
-  	
+  	<update id="updatePassword">
+  		update member
+  		set password=#{password} 
+  		where id=#{id};
+  	</update>
   	
   	
   	

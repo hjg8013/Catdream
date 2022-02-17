@@ -38,4 +38,12 @@ public class MemberServiceImpl implements MemberService{
 		return mmapper.idSearch(mdto);
 	}
 	
+	public MemberDTO pwSearch(MemberDTO mdto) {
+		return mmapper.pwSearch(mdto);
+	}
+	
+	public void updatePassword(MemberDTO mdto) {
+		 mmapper.updatePassword(mdto);
+	}
+	
 }

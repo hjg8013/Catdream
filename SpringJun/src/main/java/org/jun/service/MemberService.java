@@ -16,4 +16,8 @@ public interface MemberService {
 	public int idChk(MemberDTO mdto);
 	
 	public ArrayList<String> idSearch(MemberDTO mdto);
+	
+	public MemberDTO pwSearch(MemberDTO mdto);
+	
+	public void updatePassword(MemberDTO mdto);
 }
