@@ -7,8 +7,8 @@ public class ProductDTO {
 	private String pimgname;
 	private boolean pimage;
 	private String pcontent;
-	private String pprice;
-	private String pbargain;
+	private int pprice;
+	private int pbargain;
 	private String pdate;
 	private String pbrand;
 	private int pstar;
@@ -45,16 +45,16 @@ public class ProductDTO {
 	public void setPcontent(String pcontent) {
 		this.pcontent = pcontent;
 	}
-	public String getPprice() {
+	public int getPprice() {
 		return pprice;
 	}
-	public void setPprice(String pprice) {
+	public void setPprice(int pprice) {
 		this.pprice = pprice;
 	}
-	public String getPbargain() {
+	public int getPbargain() {
 		return pbargain;
 	}
-	public void setPbargain(String pbargain) {
+	public void setPbargain(int pbargain) {
 		this.pbargain = pbargain;
 	}
 	public String getPdate() {

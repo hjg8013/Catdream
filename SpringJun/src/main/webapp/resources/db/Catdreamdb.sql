@@ -64,11 +64,11 @@ select * from attach;
 create table product(
 	pno int primary key auto_increment,  -- 상품번호
     pname varchar(100),					 -- 상품이름
-	pimage int,							 --	상품이미지 확인
-    pimgname varchar(100),				 --	상품이미지 이름
+	pimage int,							 -- 상품이미지 확인
+    pimgname varchar(100),				 -- 상품이미지 이름
     pcontent longtext, 					 -- 상품상세 설명
-    pprice varchar(100), 				 -- 상품가격
-    pbargain varchar(100), 				 -- 상품할인가
+    pprice int, 				 		 -- 상품가격
+    pbargain int, 				 		 -- 상품할인가
     pdate datetime default now(),		 -- 상품 등록 날짜
     pbrand varchar(20),				 	 -- 상품 브랜드
     pstar int,							 -- 상품 별점
