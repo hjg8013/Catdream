@@ -29,13 +29,13 @@
                     			<a href="#"><img src="resources/img/mainSlide01.jpg" alt="이벤트정보"></a>
                     		</li>
                     		<li>
-                    			<a href="#"><img src="resources/img/mainSlide01.jpg" alt="이벤트정보"></a>
+                    			<a href="#"><img src="resources/img/mainSlide02.jpg" alt="이벤트정보"></a>
                     		</li>
                     		<li>
-                    			<a href="#"><img src="resources/img/mainSlide01.jpg" alt="이벤트정보"></a>
+                    			<a href="#"><img src="resources/img/mainSlide03.jpg" alt="이벤트정보"></a>
                     		</li>
                     		<li>
-                    			<a href="#"><img src="resources/img/mainSlide01.jpg" alt="이벤트정보"></a>
+                    			<a href="#"><img src="resources/img/mainSlide04.jpg" alt="이벤트정보"></a>
                     		</li>
                     	</ul>
                     </div>

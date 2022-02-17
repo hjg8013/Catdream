@@ -21,35 +21,37 @@
         	
 	        <div class="product">
 	            <form id="productForm" role="form" action="/product/productWrite" method="post">
-	            	 <div class="pname">
+	            	 <div id="pname">
 	            	 	<label for="pname">상품 이름</label>
-	            	 	<div>
+	            	 	<div class="box">
 			            	<input type="text" name="pname">
 	            	 	</div>
 	            	 </div>
 	            	 
 	            	 <div id="pimage">
-	            	 	<label>상품 이미지</label>
+   						<label>상품 이미지</label>
+   						<input class="upload-name" value="첨부파일" placeholder="첨부파일">
+   						<label for="file" class="imgBtn" >파일찾기</label>
 	            	 	<ul></ul>
-	            	 	<input type="file" name="uploadFile" value="파일변경">
+	            	 	<input id="file" type="file" name="uploadFile" value="파일찾기">
 	            	 </div>
 	            	 
 	            	 <div id="pprice">
 	            	 	<label for="pprice">상품 가격</label>
-	            	 	<div>
+	            	 	<div class="box">
 			            	<input type="text" name="pprice">
 	            	 	</div>
 	            	 </div>
-	            	 <div id="pprice">
-	            	 	<label for="pprice">할인 가격</label>
-	            	 	<div>
+	            	 <div id="pbargain">
+	            	 	<label for="pbargain">할인 가격</label>
+	            	 	<div class="box">
 			            	<input type="text" name="pbargain">
 	            	 	</div>
 	            	 </div>
-	            	 <div id="pprice">
-	            	 	<label for="pprice">상품 설명</label>
-	            	 	<div>
-			            	<input type="text" name="pcontent">
+	            	 <div id="pcontent">
+	            	 	<label for="pcontent">상품 설명</label>
+	            	 	<div class="box">
+	            	 		<textarea name="pcontent" rows="15" cols="50"></textarea>
 	            	 	</div>
 	            	 </div>
 	            	 <div id="pbutton">

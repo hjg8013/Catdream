@@ -73,6 +73,20 @@ $(document).ready(function(){
          }
       })//$.ajax 끝
    })
+
+
+   $("#file").on('change',function(){
+	   var fileName = $("#file").val();
+	   $(".upload-name").val(fileName);
+   });
+
+
+
+
+
+
+
+
 })// $(document).ready 끝
 //사용자가 선택한 파일을 원하는 경로에 성공적으로 업로드 한 후 웹브라우저에 파일을 띄워라에 대한 함수 선언(showUploadedFile)
 function showUploadedFile(uploadResultArr){
