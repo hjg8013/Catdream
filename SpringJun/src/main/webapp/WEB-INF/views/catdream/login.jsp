@@ -20,7 +20,7 @@
 		</a>
             <div class="loginBox1">
                 <h2 class="loginTitle">회원 로그인</h2>
-                <form action="login" method="post" onsubmit="return loginProcess()" >
+                <form action="/catdream" method="post" onsubmit="return loginProcess()" >
                 <div class="loginUser">
                     <div class="loginL">
                         <div class="loginLUp">

@@ -11,12 +11,13 @@ drop database catdreamdb; -- 완전삭제
 create table member(
 	id varchar(15) primary key,  -- 아이디
     password varchar(30) not null, -- 비밀번호
-    name varchar(10), -- 이름
-    birth date, -- 생년월일 날짜
-    gender varchar(2),  -- 성별
-    email varchar(30),  -- 이메일
+    name varchar(10) not null, -- 이름
+    birth date not null, -- 생년월일 날짜
+    gender varchar(2) not null,  -- 성별
+    email varchar(30) not null,  -- 이메일
     phone varchar(15) not null,  -- 휴대폰 번호
-    jobrank varchar(5) -- 직급
+    jobrank varchar(5) not null, -- 직급
+    regdata datetime default now() -- 등록날짜
 );
 -- 생성일자 추가해야하고 성별은 남자M 여자F 선택안함U 인데 남자로 저장되어있다
 insert into member(id,password,name,birth,gender,email,phone,jobrank)

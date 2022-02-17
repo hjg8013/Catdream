@@ -1,6 +1,7 @@
 /**
  * 
  */
+var idbool = false;
 $(document).ready(function(){
 	var userId = getCookie("userId");//저장된 쿠기값 가져오기
     $("input[name='id']").val(userId); 
@@ -10,7 +11,6 @@ $(document).ready(function(){
 	        // 아이디 저장하기 체크되어있을 시,
 	$("#idSave").attr("checked", true); // ID 저장하기를 체크 상태로 두기.
 	}
-
     
 })
 //로그인 실패시 나오는 문구가없다
@@ -38,13 +38,17 @@ function loginProcess(){
         type:"post",
         url: "/login",
         data: {'id':$("#userId").val(),
-        	   'pw':$("#userId").val()},
+        	   'password':$("#userPw").val()},
         dataType: "json",
         success : function(data) {
         	console.log(data);
         	if(data == 1){
+        		idbool = true;
         		alert("로그인이 성공했습니다");
+        		//로그인 성공시 이동하는 홈페이지
+        		window.location.href = "/catdream";
         	}else if(data == 0 ){
+        		idbool = false;
         		alert("로그인이 실패했습니다");
         	}
         }
@@ -52,6 +56,8 @@ function loginProcess(){
 			alert('서버 통신 실패');
 		}
     });
+	//성공못하면 넘기지 않게 하기위해서 위치는 아래지만 중간에 실행한다
+	return false;
 };
 //쿠키 값을 저장하는 이벤트
 function setCookie(cookieName, value, exdays){ 

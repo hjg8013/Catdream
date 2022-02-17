@@ -43,7 +43,6 @@ public class MemberController {
 		@RequestMapping(value = "/login", method = RequestMethod.POST)  // 웹브라우저를 분석해주는 역할
 		public int login(MemberDTO mdto,HttpSession session) {
 		   logger.info("post-login 실행됨."); // console 역할
-		   
 		   int result = mservice.idpwChk(mdto);
 		   logger.info("result"+result);
 		   //아이디와 비밀번호가 있다면 1
@@ -211,11 +210,11 @@ public class MemberController {
 	    }
 	    
 	  //비밀번호 변경창 띄우기 또는 변경
-	    @RequestMapping(value="/pwSearch", method=RequestMethod.POST)
+	    @RequestMapping(value="/passwordReset", method=RequestMethod.GET)
 	    public String pwSearch(MemberDTO mdto) {
-	    	logger.info("pwSearch 비밀번호찾기 버튼클릭");
+	    	logger.info("passwordReset 비밀번호찾기 버튼클릭후 재생성뜸");
 	    	//내용변경
-	    	return "catdream/pwSearchShow";
+	    	return "catdream/passwordReset";
 	    }
 	    
 	    
