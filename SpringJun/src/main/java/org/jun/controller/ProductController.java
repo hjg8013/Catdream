@@ -143,7 +143,7 @@ public class ProductController {
 					//썸네일 파일명 추출
 					FileOutputStream thumbnail = new FileOutputStream(new File(uploadPath,"s_"+uploadFileName));
 					//썸네일 파일 생성
-					Thumbnailator.createThumbnail(multipartFile.getInputStream(),thumbnail,100,100);
+					Thumbnailator.createThumbnail(multipartFile.getInputStream(),thumbnail,300,300);
 					//썸네일 종료(메모리 공간 환수) 정리 개념
 					thumbnail.close();
 				}
