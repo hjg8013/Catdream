@@ -45,7 +45,7 @@
 		</c:when>
 		
 		<c:when test="${idResult eq 1}">
-			<form action="/pwSearch" method="post">
+			<form action="/passwordReset" method="post">
 				<input type="hidden" name="id" class="inputText1" id="userId" value="${id}">
 				<div>
 					<h2>비밀번호 찾기</h1>
