@@ -81,16 +81,16 @@ $(document).ready(function(){
 
 	//bno값 출력하기
 	var bno=$("#bno").html();
-	
+
 	// 상세페이지가 시작되자마자 이미지를 출력하가 위한 ajax
 	$.getJSON(				
 			"/board/fileList/"+bno+".json",
 			function(data){		
 				console.log(data)
+				
 				var str="";
 				
 				$(data).each(function(i,obj){
-					
 					 var fileCallPath = encodeURIComponent(obj.uploadPath + "/" + obj.uuid + "_" + obj.fileName)
 				     var fileCallPath2 = encodeURIComponent(obj.uploadPath + "/s_" + obj.uuid + "_" + obj.fileName)
 					 if(!obj.image){
@@ -105,7 +105,10 @@ $(document).ready(function(){
 				
 				$("#uploadResult ul").html(str);
 				
-				
+				console.log($("#testBox").html());
+				if($("#testBox").html()==""){
+					$("#attachBox").css("display","none");
+				}
 			}	
 	)
 	

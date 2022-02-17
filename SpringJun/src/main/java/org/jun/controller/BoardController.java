@@ -60,7 +60,7 @@ public class BoardController {
 	
 	//게시판 목록 리스트에서 제목을 클릭하면
 	@GetMapping("boardDetail")
-	public String detail(BoardDTO bdto,ReplyDTO rdto,Model model) {
+	public String detail(BoardDTO bdto,ReplyDTO rdto,AttachFileDTO adto,Model model) {
 		model.addAttribute("detail", bservice.detail(bdto));
 		model.addAttribute("reply", bservice.reply(rdto));
 		return "catdream/board/boardDetail";
