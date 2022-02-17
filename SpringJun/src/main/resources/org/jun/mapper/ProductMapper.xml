@@ -6,8 +6,8 @@
 
 
 <insert id="productWrite">
-	insert into product(pname,pimgname,puuid,puploadpath,pprice,pcontent)
-	values(#{pname},#{pimgname},#{puuid},#{puploadpath},#{pprice},#{pcontent});
+	insert into product(pname,pimgname,puuid,puploadpath,pprice,pbargain,pcontent)
+	values(#{pname},#{pimgname},#{puuid},#{puploadpath},#{pprice},#{pbargain},#{pcontent});
 </insert>
 
 <select id="detail" resultType="org.jun.domain.ProductDTO">

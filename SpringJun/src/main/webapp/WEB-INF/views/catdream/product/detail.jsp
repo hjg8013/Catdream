@@ -5,7 +5,7 @@ pageEncoding="UTF-8"%>
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>상품 상세설명</title>
 <link rel="icon" href="/resources/img/logo.png" type="image/x-icon">
 <link rel="stylesheet" href="../resources/css/products/detail.css">
 <link rel="stylesheet" href="/resources/css/header.css">
@@ -40,7 +40,7 @@ pageEncoding="UTF-8"%>
                         <h1 class="display-5 fw-bolder">${detail.pname}</h1>
                         <div class="fs-5 mb-5">
                             <span class="text-decoration-line-through">${detail.pprice}원</span>
-                            <span>${detail.pbargain}</span>
+                            <span>${detail.pbargain}원</span>
                         </div>
                         <p class="lead">${detail.pcontent}</p>
                         <div class="d-flex">
