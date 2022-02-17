@@ -62,19 +62,19 @@ create table attach(
 select * from attach;
 
 create table product(
-	pno int primary key auto_increment,
-    pname varchar(100),
-	pimage int,
-    pimgname varchar(100),
-    pcontent longtext,
-    pprice varchar(100),
-    pbargain varchar(100),
-    pdate datetime default now(),
-    pbrand varchar(20),
-    pstar int,
-    pstarno int,
-    puuid varchar(50),
-    puploadpath varchar(100)
+	pno int primary key auto_increment,  -- 상품번호
+    pname varchar(100),					 -- 상품이름
+	pimage int,							 --	상품이미지 확인
+    pimgname varchar(100),				 --	상품이미지 이름
+    pcontent longtext, 					 -- 상품상세 설명
+    pprice varchar(100), 				 -- 상품가격
+    pbargain varchar(100), 				 -- 상품할인가
+    pdate datetime default now(),		 -- 상품 등록 날짜
+    pbrand varchar(20),				 	 -- 상품 브랜드
+    pstar int,							 -- 상품 별점
+   	preveiw int,						 -- 리뷰인원수
+    puuid varchar(50),   				 -- 상품 uuid
+    puploadpath varchar(100) 			 -- 상품 업로드 경로
 );
 
 
