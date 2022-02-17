@@ -18,4 +18,8 @@ public interface MemberMapper {
 	
 	public ArrayList<String> idSearch(MemberDTO mdto);
 	
+	public MemberDTO pwSearch(MemberDTO mdto);
+	
+	public void updatePassword(MemberDTO mdto);
+	
 }
