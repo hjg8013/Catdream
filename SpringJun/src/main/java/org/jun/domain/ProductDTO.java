@@ -12,7 +12,7 @@ public class ProductDTO {
 	private String pdate;
 	private String pbrand;
 	private int pstar;
-	private int pstarno;
+	private int preveiw;
 	private String puuid;
 	private String puploadpath;
 	public int getPno() {
@@ -30,8 +30,8 @@ public class ProductDTO {
 	public String getPimgname() {
 		return pimgname;
 	}
-	public void setPimgname(String pimgName) {
-		this.pimgname = pimgName;
+	public void setPimgname(String pimgname) {
+		this.pimgname = pimgname;
 	}
 	public boolean isPimage() {
 		return pimage;
@@ -75,11 +75,11 @@ public class ProductDTO {
 	public void setPstar(int pstar) {
 		this.pstar = pstar;
 	}
-	public int getPstarno() {
-		return pstarno;
+	public int getPreveiw() {
+		return preveiw;
 	}
-	public void setPstarno(int pstarno) {
-		this.pstarno = pstarno;
+	public void setPreveiw(int preveiw) {
+		this.preveiw = preveiw;
 	}
 	public String getPuuid() {
 		return puuid;
@@ -93,15 +93,17 @@ public class ProductDTO {
 	public void setPuploadpath(String puploadpath) {
 		this.puploadpath = puploadpath;
 	}
+	
 	@Override
 	public String toString() {
 		return "ProductDTO [pno=" + pno + ", pname=" + pname + ", pimgname=" + pimgname + ", pimage=" + pimage
-				+ ", pcontent=" + pcontent + ", pprice=" + pprice + ", pbargain=" + pbargain + ", pdate=" + pdate + ", pbrand=" + pbrand
-				+ ", pstar=" + pstar + ", pstarno=" + pstarno + ", puuid=" + puuid + ", puploadpath=" + puploadpath
-				+ "]";
+				+ ", pcontent=" + pcontent + ", pprice=" + pprice + ", pbargain=" + pbargain + ", pdate=" + pdate
+				+ ", pbrand=" + pbrand + ", pstar=" + pstar + ", preveiw=" + preveiw + ", puuid=" + puuid
+				+ ", puploadpath=" + puploadpath + "]";
 	}
 	
 	
+
 	
 	
 	
