@@ -46,7 +46,7 @@
 						<ul></ul>
 					</div>
 	                <div class="bottom">
-	                    <input type="submit" class="btn" id="btnList" value="완료">
+	                    <input type="button" class="btn" id="btnList" value="완료">
 	                </div>
 	            </form>
 	        </div>

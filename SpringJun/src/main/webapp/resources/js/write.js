@@ -9,16 +9,26 @@ $(document).ready(function () {
     $("#btnList").click(function(e){
     	
     	code = $("#title").val();
-
+    	var count = 0;
+    	var searchChar = ' '; // 찾으려는 문자
+    	var pos = code.indexOf(searchChar); //pos는 0의 값을 가집니다.
+    	while (pos !== -1) {
+    		  count++;
+    		  pos = code.indexOf(searchChar, pos + 1); // 첫 번째 a 이후의 인덱스부터 a를 찾습니다.
+    	}
+    	console.log(count);
        if(code == "") {
 
           alert("제목은 필수입니다.");
 
           $("#title").focus();
-
-          return false;
-       } else{
-    	   return true;
+       }else if(count==code.length){
+		   alert("제목은 필수입니다.");
+	
+	       $("#title").focus();
+       }else{
+    	   alert("작성완료");
+    	   $("#writeForm").submit();
        }
        
    })
