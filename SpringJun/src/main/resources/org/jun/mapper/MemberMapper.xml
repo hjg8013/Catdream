@@ -39,4 +39,15 @@
 		from member
 		where name= #{name} and email= #{email};
   	</select>
+  	
+  	<select id="pwSearch" resultType="org.jun.domain.MemberDTO">
+  		select *
+		from member
+		where id=#{id} and name= #{name} and email= #{email};
+  	</select>
+  	
+  	
+  	
+  	
+  	
 </mapper>
